@@ -4,368 +4,123 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>T3 Code skins gallery</title>
-<meta name="description" content="A local, filterable gallery of T3 Code community skins shared after the 14 Nov 2026 custom CSS update. Animated previews play in a mock T3 Code UI."/>
-<style>
-:root{
-  --bg:#0a0b0f;
-  --bg2:#101218;
-  --card:#151821;
-  --card2:#1b1f2a;
-  --line:#2a3040;
-  --ink:#f3efe6;
-  --muted:#9aa3b5;
-  --faint:#6b7386;
-  --accent:#d7ff4d;
-  --accent-ink:#14160c;
-  --blue:#8db0ff;
-  --warm:#ffb086;
-  --danger:#ff7a8a;
-  --shadow:0 18px 40px rgba(0,0,0,.35);
-  --radius:16px;
-  --nav:64px;
-}
-*{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--ink);
-  font:15px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  min-height:100%}
-body{background:
-  radial-gradient(1200px 500px at 10% -10%, #1a2238 0%, transparent 55%),
-  radial-gradient(900px 400px at 100% 0%, #2a1c10 0%, transparent 45%),
-  var(--bg)}
-a{color:var(--blue);text-decoration:none}
-a:hover{text-decoration:underline}
-button{font:inherit}
-.wrap{width:min(1280px, calc(100% - 32px));margin-inline:auto}
-header.top{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);
-  background:rgba(10,11,15,.78);border-bottom:1px solid var(--line)}
-.top-inner{display:flex;align-items:center;gap:16px;height:var(--nav)}
-.logo{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:720;letter-spacing:-.03em}
-.logo-mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;
-  background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:800}
-.counts{margin-left:auto;color:var(--muted);font-size:13px}
-.hero{padding:36px 0 12px}
-.hero h1{font-size:clamp(28px, 4.4vw, 52px);letter-spacing:-.045em;line-height:1.05;margin:0 0 10px}
-.hero p{max-width:62ch;color:var(--muted);margin:0 0 8px}
-.hero .note{font-size:13px;color:var(--faint)}
-.filters{position:sticky;top:var(--nav);z-index:30;padding:12px 0 10px;
-  background:linear-gradient(to bottom, rgba(10,11,15,.92), rgba(10,11,15,.86) 70%, transparent);
-  backdrop-filter:blur(10px)}
-.search{width:100%;background:var(--card);border:1px solid var(--line);color:var(--ink);
-  border-radius:12px;padding:11px 14px;outline:none}
-.search:focus{border-color:#556}
-.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
-.chip,.select{
-  appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink);
-  border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer}
-.chip[aria-pressed="true"],.chip.on{background:var(--accent);color:var(--accent-ink);border-color:transparent;font-weight:650}
-.select{padding-right:24px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
-  background-position:calc(100% - 14px) 50%, calc(100% - 9px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
-.chip.ghost{color:var(--muted)}
-#status{color:var(--muted);font-size:13px;margin-left:auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:8px 0 64px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);min-width:0}
-.preview-wrap{position:relative;aspect-ratio:16/10;background:#08090c;overflow:hidden}
-.preview-wrap iframe,.preview-wrap img{width:100%;height:100%;border:0;display:block;object-fit:cover;background:#08090c}
-.preview-wrap .mode-toggle{position:absolute;right:8px;bottom:8px;display:flex;gap:4px;z-index:2}
-.preview-wrap .mode-toggle button{border:0;border-radius:999px;padding:3px 8px;font-size:11px;
-  background:rgba(0,0,0,.55);color:#fff;cursor:pointer;backdrop-filter:blur(8px)}
-.preview-wrap .mode-toggle button.on{background:var(--accent);color:var(--accent-ink)}
-.meta{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
-.title-row{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
-h2{font-size:16px;margin:0;letter-spacing:-.02em;line-height:1.25}
-.author{color:var(--muted);font-size:12px;margin:0}
-.badges,.tags{display:flex;flex-wrap:wrap;gap:5px}
-.badge,.tag{font-size:10px;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 7px;border:1px solid var(--line);color:var(--muted)}
-.badge.anim{background:#d7ff4d22;color:var(--accent);border-color:transparent}
-.badge.css{background:#8db0ff22;color:var(--blue);border-color:transparent}
-.badge.dark{background:#ffffff12}
-.badge.light{background:#fff6;color:#222}
-.badge.x{background:#ffb08622;color:var(--warm);border-color:transparent}
-.actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
-.btn{border:1px solid var(--line);background:var(--card2);color:var(--ink);border-radius:10px;
-  padding:6px 10px;font-size:12px;cursor:pointer;text-decoration:none}
-.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent;font-weight:650}
-.btn:hover{filter:brightness(1.08);text-decoration:none}
-.empty{text-align:center;color:var(--muted);padding:48px 0}
-footer.site{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:13px}
-footer.site h3{color:var(--ink);margin:18px 0 8px;font-size:14px}
-footer.site ul{margin:0;padding-left:18px}
-.modal[hidden]{display:none}
-.modal{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.62);display:grid;place-items:center;padding:24px}
-.modal-card{width:min(1080px,100%);max-height:calc(100vh - 48px);overflow:auto;background:var(--bg2);
-  border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
-.modal-preview{height:min(52vh,520px);background:#000;position:relative}
-.modal-preview iframe,.modal-preview img{width:100%;height:100%;border:0;object-fit:contain;background:#000}
-.modal-body{padding:18px 20px 24px}
-.swatches{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
-.swatch{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
-.swatch i{width:16px;height:16px;border-radius:5px;border:1px solid #fff2;display:block}
-.close{position:sticky;top:10px;float:right;margin:10px;border:0;background:rgba(0,0,0,.55);color:#fff;
-  border-radius:999px;padding:6px 10px;cursor:pointer}
-@media (max-width:640px){
-  .grid{grid-template-columns:1fr}
-  .counts{display:none}
-}
-</style>
+<meta name="description" content="A local, filterable gallery of T3 Code community skins shared after the 14 Nov 2026 custom CSS update. Try any skin on a live mock of T3 Code, then download its theme file."/>
+<meta name="color-scheme" content="light"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap"/>
+<link rel="stylesheet" href="gallery.css"/>
 </head>
 <body>
-<header class="top">
-  <div class="wrap top-inner">
-    <a class="logo" href="./"><span class="logo-mark">T3</span> Skins gallery</a>
-    <div class="counts" id="counts"></div>
-  </div>
+<header class="wrap top">
+  <a class="name" href="./">T3 Code skins</a>
+  <span class="count" id="counts"></span>
+  <nav aria-label="Page sections">
+    <a href="#gallery">All skins</a>
+    <a href="#install">How to install</a>
+    <a href="#sources">Sources</a>
+  </nav>
 </header>
+
+<section class="wrap intro">
+  <h1>Try on any T3 Code skin.</h1>
+  <p>Since <a href="https://x.com/theo/status/2121455838414201200" target="_blank" rel="noopener">Theo announced on 14 Nov 2026</a> that T3 Code can be restyled in-app with custom CSS, people have shared skins on <a href="https://www.t3skins.dev/" target="_blank" rel="noopener">t3skins.dev</a>, GitHub and X. This page collects them. Pick one and the stage below wears it: real palette, real CSS, inside a mock of the T3 Code window, so animated skins move.</p>
+  <p>Works offline from this folder. Install a skin from Settings → Appearance → Add in T3 Code, or with <code>t3 theme set file.json</code> on the server. A personal compilation, not an official T3 product.</p>
+</section>
+
+<section class="stage" aria-label="Stage: the selected skin at full size">
+  <div class="wrap stage-in" id="stage"></div>
+</section>
+
+<div class="rail" id="gallery">
+  <div class="wrap">
+    <div class="rail-row">
+      <input class="search" id="search" type="search" placeholder="Search by name, author, tag or description. Press / to jump here." aria-label="Search skins" autocomplete="off"/>
+      <div class="seg" role="group" aria-label="Appearance">
+        <span>Mode</span>
+        <button type="button" data-filter="mode" data-value="all" aria-pressed="true">Any</button>
+        <button type="button" data-filter="mode" data-value="dark" aria-pressed="false">Dark</button>
+        <button type="button" data-filter="mode" data-value="light" aria-pressed="false">Light</button>
+        <button type="button" data-filter="mode" data-value="dual" aria-pressed="false">Both</button>
+      </div>
+      <div class="seg" role="group" aria-label="Motion">
+        <span>Motion</span>
+        <button type="button" data-filter="motion" data-value="all" aria-pressed="true">Any</button>
+        <button type="button" data-filter="motion" data-value="animated" aria-pressed="false">Animated</button>
+        <button type="button" data-filter="motion" data-value="static" aria-pressed="false">Still</button>
+      </div>
+      <div class="seg" role="group" aria-label="Styling">
+        <span>Styling</span>
+        <button type="button" data-filter="css" data-value="all" aria-pressed="true">Any</button>
+        <button type="button" data-filter="css" data-value="css" aria-pressed="false">Custom CSS</button>
+        <button type="button" data-filter="css" data-value="palette" aria-pressed="false">Palette only</button>
+      </div>
+    </div>
+    <div class="rail-row">
+      <label class="field">Source
+        <select class="select" id="source">
+          <option value="all">All</option>
+          <option value="t3skins.dev">t3skins.dev</option>
+          <option value="GitHub">GitHub</option>
+          <option value="X">X only</option>
+        </select>
+      </label>
+      <label class="field">Tag
+        <select class="select" id="tag"><option value="all">All</option></select>
+      </label>
+      <label class="field">Sort
+        <select class="select" id="sort">
+          <option value="newest">Newest</option>
+          <option value="name">Name</option>
+          <option value="installs">Most installs (t3skins.dev)</option>
+          <option value="animated">Animated first</option>
+        </select>
+      </label>
+      <div class="seg" role="group" aria-label="Previews">
+        <span>Previews</span>
+        <button type="button" data-filter="prev" data-value="live" aria-pressed="true">Live</button>
+        <button type="button" data-filter="prev" data-value="still" aria-pressed="false">Still</button>
+      </div>
+      <div class="seg" role="group" aria-label="Default mode for skins that have both">
+        <span>Dual skins open in</span>
+        <button type="button" data-filter="dual" data-value="dark" aria-pressed="true">Dark</button>
+        <button type="button" data-filter="dual" data-value="light" aria-pressed="false">Light</button>
+      </div>
+      <p class="status" id="status" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
 <main class="wrap">
-  <section class="hero">
-    <h1>Every recent T3 Code skin, previewed live.</h1>
-    <p>On 14 Nov 2026 at 9:41 AM IST, <a href="https://x.com/theo/status/2121455838414201200" target="_blank" rel="noopener">Theo announced</a> that T3 Code can be fully restyled in-app, including custom CSS. This gallery compiles community skins shared in the days after that, from <a href="https://www.t3skins.dev/" target="_blank" rel="noopener">t3skins.dev</a>, GitHub and X. Where a theme file is public, the card runs its real colours and CSS in a mock T3 Code UI, so animated skins actually animate.</p>
-    <p class="note">Offline-friendly: open index.html from this folder. Install a skin in T3 Code via Settings → Appearance → Add, or <code>t3 theme set file.json</code> on the server. This is a personal compilation, not an official T3 product.</p>
-  </section>
-  <section class="filters">
-    <input class="search" id="search" type="search" placeholder="Search name, author, tags, description…" autocomplete="off"/>
-    <div class="row">
-      <button class="chip on" type="button" data-filter="appearance" data-value="all">All modes</button>
-      <button class="chip" type="button" data-filter="appearance" data-value="dark">Dark</button>
-      <button class="chip" type="button" data-filter="appearance" data-value="light">Light</button>
-      <button class="chip" type="button" data-filter="appearance" data-value="dual">Dark + light</button>
-      <button class="chip" type="button" data-filter="motion" data-value="all">All motion</button>
-      <button class="chip" type="button" data-filter="motion" data-value="animated">Animated</button>
-      <button class="chip" type="button" data-filter="motion" data-value="static">Static</button>
-      <button class="chip" type="button" data-filter="css" data-value="all">Any CSS</button>
-      <button class="chip" type="button" data-filter="css" data-value="css">Custom CSS</button>
-      <button class="chip" type="button" data-filter="css" data-value="palette">Palette only</button>
-    </div>
-    <div class="row">
-      <select class="select" id="source">
-        <option value="all">All sources</option>
-        <option value="t3skins.dev">t3skins.dev</option>
-        <option value="GitHub">GitHub</option>
-        <option value="X">X only</option>
-      </select>
-      <select class="select" id="tag"><option value="all">All tags</option></select>
-      <select class="select" id="sort">
-        <option value="newest">Newest</option>
-        <option value="name">Name</option>
-        <option value="installs">Most installs (t3skins)</option>
-        <option value="animated">Animated first</option>
-      </select>
-      <span id="status"></span>
-    </div>
-  </section>
-  <section class="grid" id="grid"></section>
+  <section class="grid" id="grid" aria-label="Skins"></section>
 </main>
-<footer class="site wrap" id="sources">
-  <h3>How to install</h3>
-  <p>Download a skin’s JSON, then in T3 Code open Settings → Appearance, press Add, and drop the file in. On the machine running the T3 server you can also run <code>t3 theme set path/to/skin.json</code>. Built-in fallback: <code>t3 theme set t3-chat</code>.</p>
-  <h3>Main sources</h3>
-  <ul>
-    <li><a href="https://www.t3skins.dev/">t3skins.dev</a> and its <a href="https://www.t3skins.dev/api/skins">JSON API</a> — 41 skins as of 16 Nov 2026, 8:11 PM IST collection time plus later API refresh.</li>
-    <li>Theo’s announcement: <a href="https://x.com/theo/status/2121455838414201200">14 Nov 2026, 9:41 AM IST</a>.</li>
-    <li>@itssotsot launched the gallery: <a href="https://x.com/itssotsot/status/2122052122598674630">16 Nov 2026, 1:10 AM IST</a>.</li>
-    <li>Older colour-only gallery (not the focus here): <a href="https://t3themes.com/">t3themes.com</a> / <a href="https://github.com/SunkenInTime/t3-themes">SunkenInTime/t3-themes</a>.</li>
-    <li>Index of many earlier themes: <a href="https://github.com/Dwite/awesome-t3-code-themes">Dwite/awesome-t3-code-themes</a>.</li>
-    <li>Theme format: <a href="https://github.com/pingdotgg/t3code/blob/main/docs/user/appearance.md">docs/user/appearance.md</a> and PR <a href="https://github.com/pingdotgg/t3code/pull/35247">#35247</a>.</li>
-  </ul>
-  <p>See <a href="SOURCES.md">SOURCES.md</a> for the full source list. Compiled for Shrikant Kalar. Not affiliated with T3 Tools.</p>
+
+<footer class="wrap guide">
+  <section id="install">
+    <h2>How to install a skin</h2>
+    <ol>
+      <li>Download the skin’s JSON from its card or the Details view.</li>
+      <li>In T3 Code open Settings → Appearance, press Add, and drop the file in.</li>
+      <li>Or, on the machine running the T3 server, run <code>t3 theme set path/to/skin.json</code>.</li>
+    </ol>
+    <p class="fine">To undo, pick another theme in Appearance, or run <code>t3 theme set t3-chat</code>. Theme files remain the copyright of their authors; see their repos for licence terms. Previews use a simplified mock of the T3 Code chrome, not the app itself.</p>
+  </section>
+  <section id="sources">
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://www.t3skins.dev/">t3skins.dev</a> and its <a href="https://www.t3skins.dev/api/skins">JSON API</a>: 41 skins as of 16 Nov 2026, 8:11 PM IST collection time plus a later API refresh.</li>
+      <li>Theo’s announcement: <a href="https://x.com/theo/status/2121455838414201200">14 Nov 2026, 9:41 AM IST</a>.</li>
+      <li>@itssotsot launched the gallery: <a href="https://x.com/itssotsot/status/2122052122598674630">16 Nov 2026, 1:10 AM IST</a>.</li>
+      <li>Older colour-only gallery, not the focus here: <a href="https://t3themes.com/">t3themes.com</a> and <a href="https://github.com/SunkenInTime/t3-themes">SunkenInTime/t3-themes</a>.</li>
+      <li>Index of many earlier themes: <a href="https://github.com/Dwite/awesome-t3-code-themes">Dwite/awesome-t3-code-themes</a>.</li>
+      <li>Theme format: <a href="https://github.com/pingdotgg/t3code/blob/main/docs/user/appearance.md">docs/user/appearance.md</a> and PR <a href="https://github.com/pingdotgg/t3code/pull/35247">#35247</a>.</li>
+    </ul>
+    <p class="fine">See <a href="SOURCES.md">SOURCES.md</a> for the full source list. Compiled for Shrikant Kalar. Not affiliated with T3 Tools.</p>
+  </section>
 </footer>
-<div class="modal" id="modal" hidden></div>
+
+<dialog class="details" id="details" aria-label="Skin details"></dialog>
 <script src="data.js"></script>
-<script>
-
-const G = window.GALLERY;
-const $ = (s, r=document) => r.querySelector(s);
-const $$ = (s, r=document) => [...r.querySelectorAll(s)];
-
-const state = {
-  q: "",
-  appearance: "all", // all | dark | light | dual
-  motion: "all",     // all | animated | static
-  css: "all",        // all | css | palette
-  source: "all",
-  tag: "all",
-  sort: "newest",
-};
-
-function modesOf(s){ return s.modes || [s.appearance || "dark"]; }
-function isDual(s){ const m=modesOf(s); return m.includes("dark") && m.includes("light"); }
-function fmtDate(iso){
-  if(!iso) return "";
-  const d = new Date(iso);
-  if(Number.isNaN(d.getTime())) return iso;
-  return new Intl.DateTimeFormat("en-IN", {timeZone:"Asia/Calcutta", day:"numeric", month:"short", year:"numeric"}).format(d);
-}
-function textMatch(s, q){
-  if(!q) return true;
-  const blob = [s.name,s.author,s.description,(s.tags||[]).join(" "),s.source].join(" ").toLowerCase();
-  return q.split(/\s+/).every(t => blob.includes(t));
-}
-
-function filtered(){
-  let list = G.skins.filter(s => {
-    if(!textMatch(s, state.q)) return false;
-    const modes = modesOf(s);
-    if(state.appearance==="dark" && !modes.includes("dark")) return false;
-    if(state.appearance==="light" && !modes.includes("light")) return false;
-    if(state.appearance==="dual" && !isDual(s)) return false;
-    if(state.motion==="animated" && !s.animated) return false;
-    if(state.motion==="static" && s.animated) return false;
-    if(state.css==="css" && !s.hasCss) return false;
-    if(state.css==="palette" && s.hasCss) return false;
-    if(state.source!=="all" && s.source!==state.source) return false;
-    if(state.tag!=="all" && !(s.tags||[]).includes(state.tag)) return false;
-    return true;
-  });
-  const key = {
-    newest: s => -(Date.parse(s.createdAt||0) || 0),
-    name: s => (s.name||"").toLowerCase(),
-    installs: s => -(s.installCount ?? -1),
-    animated: s => (s.animated ? 0 : 1) + (s.name||"").toLowerCase(),
-  }[state.sort];
-  list.sort((a,b) => {
-    const ka=key(a), kb=key(b);
-    if(ka<kb) return -1; if(ka>kb) return 1; return 0;
-  });
-  return list;
-}
-
-function badgeHTML(s){
-  const bits = [];
-  if(s.animated) bits.push(`<span class="badge anim">Animated</span>`);
-  if(s.hasCss) bits.push(`<span class="badge css">Custom CSS</span>`);
-  else if(s.jsonFile) bits.push(`<span class="badge">Palette</span>`);
-  modesOf(s).forEach(m => bits.push(`<span class="badge ${m}">${m}</span>`));
-  bits.push(`<span class="badge ${s.source==="X"?"x":""}">${s.source}</span>`);
-  if((s.tags||[]).includes("preview-only")) bits.push(`<span class="badge x">No file</span>`);
-  return bits.join("");
-}
-
-function previewInner(s, mode){
-  const m = mode || modesOf(s)[0];
-  if(s.previews && s.previews[m]){
-    return `<iframe loading="lazy" title="${escapeAttr(s.name)} preview" src="${s.previews[m]}"></iframe>`;
-  }
-  if(s.images && s.images[0]){
-    return `<img src="${s.images[0].src}" alt="${escapeAttr(s.images[0].alt||s.name)}"/>`;
-  }
-  return `<div style="display:grid;place-items:center;height:100%;color:#666">No preview</div>`;
-}
-
-function escapeAttr(s){ return String(s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-function card(s){
-  const modes = modesOf(s);
-  const def = modes[0];
-  const modeBtns = modes.length>1 ? `<div class="mode-toggle" data-id="${s.id}">${
-    modes.map(m=>`<button type="button" data-mode="${m}" class="${m===def?'on':''}">${m}</button>`).join("")
-  }</div>` : "";
-  const tags = (s.tags||[]).slice(0,6).map(t=>`<span class="tag">${escapeAttr(t)}</span>`).join("");
-  const dl = s.jsonFile ? `<a class="btn primary" href="${s.jsonFile}" download="${s.id}.json">Download JSON</a>` : "";
-  const src = s.sourceUrl ? `<a class="btn" href="${s.sourceUrl}" target="_blank" rel="noopener">Source</a>` : "";
-  return `<article class="card" data-id="${s.id}">
-    <div class="preview-wrap" data-preview-for="${s.id}">
-      ${previewInner(s, def)}
-      ${modeBtns}
-    </div>
-    <div class="meta">
-      <div class="title-row">
-        <div>
-          <h2>${escapeAttr(s.name)}</h2>
-          <p class="author">by ${escapeAttr(s.author)} · ${fmtDate(s.createdAt)}${s.installCount!=null?` · ${s.installCount} installs`:""}</p>
-        </div>
-      </div>
-      <div class="badges">${badgeHTML(s)}</div>
-      <div class="tags">${tags}</div>
-      <div class="actions">
-        ${dl}${src}
-        <button class="btn" type="button" data-open="${s.id}">Details</button>
-      </div>
-    </div>
-  </article>`;
-}
-
-function render(){
-  const list = filtered();
-  $("#grid").innerHTML = list.map(card).join("") || `<p class="empty">No skins match those filters.</p>`;
-  $("#status").textContent = `${list.length} of ${G.skins.length} skins`;
-  $("#counts").textContent = `${G.counts.total} skins · ${G.counts.animated} animated · ${G.counts.withJson} with JSON`;
-}
-
-function openModal(id){
-  const s = G.skins.find(x => x.id===id);
-  if(!s) return;
-  const modal = $("#modal");
-  const modes = modesOf(s);
-  const def = modes[0];
-  const swatches = (s.swatches||[]).map(sw => `<span class="swatch"><i style="background:${escapeAttr(sw.color)}"></i>${escapeAttr(sw.label)} ${escapeAttr(sw.color)}</span>`).join("");
-  const links = (s.links||[]).map(l => `<a class="btn" href="${l.url}" target="_blank" rel="noopener">${escapeAttr(l.label)}</a>`).join("");
-  const dl = s.jsonFile ? `<a class="btn primary" href="${s.jsonFile}" download="${s.id}.json">Download JSON</a>` : "";
-  const install = s.jsonFile ? `<p>Install in T3 Code: open <strong>Settings → Appearance</strong>, press <strong>Add</strong>, and drop <code>${s.id}.json</code>. Or on the server: <code>t3 theme set ${s.id}.json</code>.</p>` : `<p>No public theme file was found for this one. Use the source link for the original post.</p>`;
-  $("#modal").innerHTML = `
-    <div class="modal-card">
-      <button class="close" type="button" data-close>Close</button>
-      <div class="modal-preview" data-preview-for="${s.id}">${previewInner(s,def)}</div>
-      <div class="modal-body">
-        <h2>${escapeAttr(s.name)}</h2>
-        <p class="author">by ${escapeAttr(s.author)} · ${s.source} · ${fmtDate(s.createdAt)}</p>
-        <div class="badges" style="margin:8px 0">${badgeHTML(s)}</div>
-        <p>${escapeAttr(s.description||"")}</p>
-        <div class="swatches">${swatches}</div>
-        ${install}
-        <div class="actions">${dl}${links}</div>
-      </div>
-    </div>`;
-  modal.hidden = false;
-}
-
-function uniqueTags(){
-  const c = {};
-  G.skins.forEach(s => (s.tags||[]).forEach(t => c[t]=(c[t]||0)+1));
-  return Object.entries(c).sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0]));
-}
-
-function boot(){
-  const tagSel = $("#tag");
-  const skip = new Set(["t3-code","t3code","t3-theme","dark-theme","light-theme"]);
-  uniqueTags().filter(([t,n]) => n>=2 && !skip.has(t)).forEach(([t,n]) => {
-    const opt = document.createElement("option");
-    opt.value=t; opt.textContent=`${t} (${n})`;
-    tagSel.appendChild(opt);
-  });
-
-  $("#search").addEventListener("input", e => { state.q=e.target.value.trim().toLowerCase(); render(); });
-  $$("[data-filter]").forEach(btn => btn.addEventListener("click", () => {
-    const key=btn.dataset.filter, val=btn.dataset.value;
-    state[key]=val;
-    $$(`[data-filter="${key}"]`).forEach(b => b.classList.toggle("on", b===btn));
-    render();
-  }));
-  $("#source").addEventListener("change", e => { state.source=e.target.value; render(); });
-  $("#tag").addEventListener("change", e => { state.tag=e.target.value; render(); });
-  $("#sort").addEventListener("change", e => { state.sort=e.target.value; render(); });
-
-  document.addEventListener("click", e => {
-    const modeBtn = e.target.closest("[data-mode]");
-    if(modeBtn){
-      const wrap = modeBtn.closest("[data-preview-for]");
-      const id = wrap?.dataset.previewFor;
-      const s = G.skins.find(x=>x.id===id);
-      if(!s) return;
-      wrap.querySelectorAll("[data-mode]").forEach(b=>b.classList.toggle("on", b===modeBtn));
-      const iframe = wrap.querySelector("iframe");
-      const img = wrap.querySelector("img");
-      if(iframe && s.previews[modeBtn.dataset.mode]) iframe.src = s.previews[modeBtn.dataset.mode];
-      return;
-    }
-    const open = e.target.closest("[data-open]");
-    if(open){ openModal(open.dataset.open); return; }
-    if(e.target.matches("[data-close]") || e.target.id==="modal") $("#modal").hidden=true;
-  });
-  document.addEventListener("keydown", e => { if(e.key==="Escape") $("#modal").hidden=true; });
-  render();
-}
-boot();
-
-</script>
+<script src="gallery.js"></script>
 </body>
 </html>

@@ -1,0 +1,69 @@
+{
+  "results": [
+    {
+      "name": "Offline file:// renders all 78 skins",
+      "pass": true
+    },
+    {
+      "name": "Offline fonts load",
+      "pass": true
+    },
+    {
+      "name": "Offline featured preview loads",
+      "pass": true
+    },
+    {
+      "name": "Saved skins persist on file:// reload",
+      "pass": true
+    },
+    {
+      "name": "Offline saved collection",
+      "pass": true
+    },
+    {
+      "name": "Offline details and light mode",
+      "pass": true
+    },
+    {
+      "name": "Offline JSON download",
+      "pass": true
+    },
+    {
+      "name": "360 px page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Mobile filter controls work",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion pauses every animated live preview",
+      "pass": true
+    },
+    {
+      "name": "Reduced-motion preview can be shown explicitly",
+      "pass": true
+    },
+    {
+      "name": "768 px page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1024 px page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "All 74 live mock previews load",
+      "pass": true
+    },
+    {
+      "name": "All 4 image previews load",
+      "pass": true
+    },
+    {
+      "name": "No browser console or runtime errors",
+      "pass": true
+    }
+  ],
+  "errors": []
+}
