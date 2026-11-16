@@ -4,7 +4,7 @@ A frontend UI/UX benchmark for frontier LLMs. Each test case gives every model t
 
 ## Use the viewer
 
-Open `index.html` through any static server, or use the deployed site.
+Live site: https://ui-bench-iota.vercel.app. Locally, open `index.html` through any static server.
 
 - Pick a model in the top bar. "Original" shows the page before any redesign.
 - **Design skill** switches between the run with the skill and the run without it.
