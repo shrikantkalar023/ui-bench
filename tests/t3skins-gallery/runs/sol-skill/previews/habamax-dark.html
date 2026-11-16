@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme-id="preview" data-theme-selected="true" style="--app-theme-canvas:#1c1c1c;--app-theme-chrome:#1c1c1c;--app-theme-toolbar:#1c1c1c;--app-theme-toolbar-foreground:#dadada;--app-theme-toolbar-border:#4e4e4e;--app-theme-toolbar-control:#303030;--app-theme-toolbar-control-foreground:#dadada;--app-theme-toolbar-control-hover:#3a3a3a;--app-theme-surface:#262626;--app-theme-surface-raised:#303030;--app-theme-surface-overlay:#3a3a3a;--app-theme-text:#dadada;--app-theme-text-muted:#b2b2b2;--app-theme-border:#4e4e4e;--app-theme-input:#6c6c6c;--app-theme-focus:#87afd7;--app-theme-accent:#87afd7;--app-theme-accent-foreground:#1c1c1c;--app-theme-secondary:#303030;--app-theme-secondary-foreground:#dadada;--app-theme-muted:#262626;--app-theme-muted-foreground:#b2b2b2;--app-theme-placeholder:#8a8a8a;--app-theme-secondary-label:#b2b2b2;--app-theme-icon-muted:#a8a8a8;--app-theme-error:#d75f5f;--app-theme-error-foreground:#d78787;--app-theme-error-surface:#2f1f1a;--app-theme-warning:#ffaf5f;--app-theme-warning-foreground:#d7af87;--app-theme-warning-surface:#37352f;--app-theme-update:#87afd7;--app-theme-update-foreground:#afd7ff;--app-theme-update-surface:#1a3456;--app-theme-accent-surface:#303030;--app-theme-accent-surface-foreground:#eeeeee;--app-theme-message-surface:#303030;--app-theme-message-foreground:#dadada;--app-theme-message-action:#87afd7;--app-theme-message-action-foreground:#1c1c1c;--app-theme-message-action-hover:#afd7ff;--app-theme-code-background:#1c1c1c;--app-theme-code-foreground:#c7c7c7;--app-theme-search-match-background:#374a44;--app-theme-search-match-foreground:#eeeeee;--app-theme-search-match-active-background:#5a4a45;--app-theme-search-match-active-foreground:#eeeeee;--app-theme-sidebar:#262626;--app-theme-sidebar-foreground:#dadada;--app-theme-sidebar-muted-foreground:#bcbcbc;--app-theme-sidebar-control-surface:#303030;--app-theme-sidebar-row-hover:#303030;--app-theme-sidebar-row-active:#3a3a3a;--app-theme-sidebar-row-selected:#444444;--app-theme-sidebar-border:#4e4e4e;--app-theme-terminal-background:#1c1c1c;--app-theme-terminal-foreground:#c7c7c7;--app-theme-terminal-cursor:#eeeeee;--app-theme-terminal-selection:#1a3456;--app-theme-terminal-scrollbar:#444444;--app-theme-terminal-scrollbar-hover:#6c6c6c;color-scheme:dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Habamax preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#1c1c1c}
+/* Habamax (dark) / Xamabah (light) - https://github.com/habamax/vim-habamax */
+/* diff markers use Added/Removed; diff line backgrounds resolve to DiffAdd/DiffDelete */
+:root.dark{--diff-addition:#5fd75f;--diff-deletion:#d75f5f;--diff-addition-foreground:#5fd75f;--diff-deletion-foreground:#d75f5f}
+:root.dark diffs-container{--diff-addition:#417d33;--diff-deletion:#5b2615}
+:root:not(.dark){--diff-addition:#008700;--diff-deletion:#d70000;--diff-addition-foreground:#008700;--diff-deletion-foreground:#d70000}
+:root:not(.dark) diffs-container{--diff-addition:#97b797;--diff-deletion:#d79797}
+/* Visual */
+:root.dark ::selection{background:#1a3456}
+:root:not(.dark) ::selection{background:#a0c0e0}
+/* chat code blocks: syntax groups */
+.chat-markdown-shiki pre{color:var(--app-theme-code-foreground)!important}
+:root.dark .chat-markdown-shiki span:is([style*="#5ecc71" i],[style*="rgb(94, 204, 113)"]){color:#87af87!important}
+:root.dark .chat-markdown-shiki span:is([style*="#ffd452" i],[style*="rgb(255, 212, 82)"],[style*="#68cdf2" i],[style*="rgb(104, 205, 242)"]){color:#d7af87!important}
+:root.dark .chat-markdown-shiki span:is([style*="#ff678d" i],[style*="rgb(255, 103, 141)"],[style*="#08c0ef" i],[style*="rgb(8, 192, 239)"]){color:#af87af!important}
+:root.dark .chat-markdown-shiki span:is([style*="#9d6afb" i],[style*="rgb(157, 106, 251)"],[style*="#009fff" i],[style*="rgb(0, 159, 255)"]){color:#87afaf!important}
+:root.dark .chat-markdown-shiki span:is([style*="#d568ea" i],[style*="rgb(213, 104, 234)"]){color:#5f87af!important}
+:root.dark .chat-markdown-shiki span:is([style*="#60d199" i],[style*="rgb(96, 209, 153)"],[style*="#69b1ff" i],[style*="rgb(105, 177, 255)"]){color:#af875f!important}
+:root.dark .chat-markdown-shiki span:is([style*="#61d5c0" i],[style*="rgb(97, 213, 192)"],[style*="#64d1db" i],[style*="rgb(100, 209, 219)"],[style*="#ffab16" i],[style*="rgb(255, 171, 22)"],[style*="#ff855e" i],[style*="rgb(255, 133, 94)"],[style*="#636363" i],[style*="rgb(99, 99, 99)"]){color:#5f8787!important}
+:root.dark .chat-markdown-shiki span:is([style*="#ffa359" i],[style*="rgb(255, 163, 89)"],[style*="#a3a3a3" i],[style*="rgb(163, 163, 163)"],[style*="#fafafa" i],[style*="rgb(250, 250, 250)"]){color:#c7c7c7!important}
+:root.dark .chat-markdown-shiki span:is([style*="#07c480" i],[style*="rgb(7, 196, 128)"]){color:#5fd75f!important}
+:root.dark .chat-markdown-shiki span:is([style*="#ff2e3f" i],[style*="rgb(255, 46, 63)"]){color:#d75f5f!important}
+:root.dark .chat-markdown-shiki span:is([style*="#ffca00" i],[style*="rgb(255, 202, 0)"]){color:#ffaf5f!important}
+:root.dark .chat-markdown-shiki span:is([style*="#737373" i],[style*="rgb(115, 115, 115)"]){color:#8a8a8a!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#106a2b" i],[style*="rgb(16, 106, 43)"]){color:#007700!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#735b02" i],[style*="rgb(115, 91, 2)"],[style*="#0b5267" i],[style*="rgb(11, 82, 103)"]){color:#af5f00!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#b12251" i],[style*="rgb(177, 34, 81)"],[style*="#006781" i],[style*="rgb(0, 103, 129)"]){color:#870087!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#693acf" i],[style*="rgb(105, 58, 207)"],[style*="#00609f" i],[style*="rgb(0, 96, 159)"]){color:#005f5f!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#912ba7" i],[style*="rgb(145, 43, 167)"]){color:#005faf!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#0d4c7d" i],[style*="rgb(13, 76, 125)"]){color:#875f00!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#0b685b" i],[style*="rgb(11, 104, 91)"],[style*="#0d6971" i],[style*="rgb(13, 105, 113)"],[style*="#7e540e" i],[style*="rgb(126, 84, 14)"],[style*="#a43d23" i],[style*="rgb(164, 61, 35)"]){color:#008787!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#8f4e17" i],[style*="rgb(143, 78, 23)"],[style*="#4b4b4b" i],[style*="rgb(75, 75, 75)"],[style*="#0a0a0a" i],[style*="rgb(10, 10, 10)"]){color:#000000!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#0e6944" i],[style*="rgb(14, 105, 68)"]){color:#008700!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#b3242c" i],[style*="rgb(179, 36, 44)"]){color:#d70000!important}
+:root:not(.dark) .chat-markdown-shiki span:is([style*="#5c5c5c" i],[style*="rgb(92, 92, 92)"]){color:#626262!important}
+</style>
+</head>
+<body class="dark">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Habamax</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Habamax</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Habamax</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

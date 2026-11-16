@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme-id="preview" data-theme-selected="true" style="--app-theme-text:#e6e7ea;--app-theme-error:#f87171;--app-theme-focus:#5eead4;--app-theme-input:#2e323a;--app-theme-muted:#1a1c21;--app-theme-accent:#5eead4;--app-theme-border:#22242a;--app-theme-canvas:#0a0a0c;--app-theme-chrome:#0a0a0c;--app-theme-update:#4ade80;--app-theme-sidebar:#08080a;--app-theme-surface:#111215;--app-theme-toolbar:#0a0a0c;--app-theme-warning:#fbbf24;--app-theme-icon-muted:#5b606b;--app-theme-secondary:#1a1c21;--app-theme-text-muted:#8a8e98;--app-theme-placeholder:#5b606b;--app-theme-error-surface:#2b1214;--app-theme-accent-surface:#0f2a27;--app-theme-message-action:#1a1c21;--app-theme-sidebar-border:#22242a;--app-theme-surface-raised:#16171b;--app-theme-toolbar-border:#22242a;--app-theme-update-surface:#0f2417;--app-theme-code-background:#07080a;--app-theme-code-foreground:#b6f3e8;--app-theme-message-surface:#13151a;--app-theme-secondary-label:#8a8e98;--app-theme-surface-overlay:#16171b;--app-theme-terminal-cursor:#5eead4;--app-theme-toolbar-control:#1a1c21;--app-theme-warning-surface:#2a210a;--app-theme-error-foreground:#ffffff;--app-theme-muted-foreground:#8a8e98;--app-theme-sidebar-row-hover:#1f2228;--app-theme-accent-foreground:#04201c;--app-theme-sidebar-row-active:#0f2a27;--app-theme-update-foreground:#0a0a0c;--app-theme-message-foreground:#e6e7ea;--app-theme-sidebar-foreground:#e6e7ea;--app-theme-terminal-scrollbar:#22242a;--app-theme-terminal-selection:#0f2a27;--app-theme-toolbar-foreground:#e6e7ea;--app-theme-warning-foreground:#0a0a0c;--app-theme-message-action-hover:#1f2228;--app-theme-sidebar-row-selected:#0f2a27;--app-theme-terminal-background:#07080a;--app-theme-terminal-foreground:#b6f3e8;--app-theme-secondary-foreground:#e6e7ea;--app-theme-toolbar-control-hover:#1f2228;--app-theme-search-match-background:#0f2a27;--app-theme-search-match-foreground:#e6e7ea;--app-theme-sidebar-control-surface:#1a1c21;--app-theme-sidebar-muted-foreground:#8a8e98;--app-theme-terminal-scrollbar-hover:#2e323a;--app-theme-accent-surface-foreground:#5eead4;--app-theme-message-action-foreground:#8a8e98;--app-theme-toolbar-control-foreground:#e6e7ea;--app-theme-search-match-active-background:#5eead4;--app-theme-search-match-active-foreground:#04201c;color-scheme:dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Telemetry preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#0a0a0c}
+:root{--radius:3px!important;--radius-sm:1px!important;--radius-md:2px!important;--radius-lg:3px!important;--radius-xl:4px!important}
+::selection{background:#5eead4;color:#04201c}
+*{caret-color:#5eead4}
+[data-message-role="assistant"]{border-left:1px dashed #2e323a;padding-left:12px}
+.chat-markdown h1,.chat-markdown h2,.chat-markdown h3{font-family:ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.06em;color:#5eead4}
+.chat-markdown h1::before,.chat-markdown h2::before,.chat-markdown h3::before{content:"// ";color:#5b606b}
+[data-workspace-area="conversation"]::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px)}
+[data-slot="switch"][data-checked],[data-slot="switch"][aria-checked="true"]{box-shadow:0 0 12px #5eead455}
+
+:root{--tl-a:#5eead4;--tl-l:#22242a;--tl-l2:#2e323a}
+body,[data-chat-header],[data-thread-item],[data-thread-details-card],.composer-tiptap,[data-slot="button"],[data-slot="input"]{font-family:ui-monospace,"SF Mono",SFMono-Regular,Menlo,monospace!important}
+.chat-markdown{font-family:ui-sans-serif,system-ui,sans-serif}
+[data-workspace-area="conversation"]{background-color:#0a0a0c!important;background-image:radial-gradient(circle,#262a32 1px,transparent 1.6px)!important;background-size:22px 22px!important}
+[data-chat-header]{border-bottom:1px solid var(--tl-l)!important;letter-spacing:.04em;text-transform:uppercase;font-size:12px}
+[data-slot="sidebar"]{border-right:1px solid var(--tl-l)!important}
+[data-thread-item] [data-sidebar-row]{border-left:2px solid transparent!important;border-radius:2px!important}
+[data-thread-item] [data-sidebar-row]:hover{border-left-color:var(--tl-l2)!important}
+[data-thread-item] [aria-current]:not([aria-current="false"]){border-left-color:var(--tl-a)!important}
+[data-slot="composer-host"],[data-thread-details-card],[data-slot="dialog-popup"],[data-slot="popover-popup"],[data-slot="menu-popup"]{border:1px solid var(--tl-l2)!important;border-radius:3px!important;box-shadow:none!important;
+ background-image:linear-gradient(var(--tl-a),var(--tl-a)),linear-gradient(var(--tl-a),var(--tl-a)),linear-gradient(var(--tl-a),var(--tl-a)),linear-gradient(var(--tl-a),var(--tl-a))!important;
+ background-size:10px 1px,1px 10px,10px 1px,1px 10px!important;background-position:0 0,0 0,100% 100%,100% 100%!important;background-repeat:no-repeat!important}
+[data-slot="composer-host"]:focus-within{border-color:var(--tl-a)!important;box-shadow:0 0 0 1px #5eead433,0 0 24px #5eead414!important}
+[data-user-message-bubble]{border:1px solid var(--tl-l2)!important;border-left:2px solid var(--tl-a)!important;border-radius:2px!important}
+.chat-markdown-codeblock{border:1px solid var(--tl-l)!important;border-radius:2px!important}
+[data-slot="button"],[data-slot="input"],[data-slot="select-trigger"]{border-radius:2px!important}
+[data-slot="tooltip-popup"]{border:1px solid var(--tl-a)!important;border-radius:2px!important;font-family:ui-monospace,"SF Mono",SFMono-Regular,Menlo,monospace!important}
+svg.lucide{stroke-width:1.6}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:#2e323a;border-radius:0}::-webkit-scrollbar-thumb:hover{background:#5eead4}
+</style>
+</head>
+<body class="dark">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Telemetry</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Telemetry</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Telemetry</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

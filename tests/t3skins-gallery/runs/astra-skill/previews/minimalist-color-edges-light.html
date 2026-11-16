@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" class="" data-theme-id="preview" data-theme-selected="true" style="--app-theme-canvas:oklch(0.982446 0.010114 325.653);color-scheme:light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Minimalist color edges preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:oklch(0.982446 0.010114 325.653)}
+/* Minimalist color edges (themeId status-edge): the thread status becomes a 3 px colour bar on the row's right edge.
+   CSS port of the Labs "status as a colour bar" rows (pingdotgg/t3code discussion #33613)
+   onto the stock card row. Hooks: [data-thread-item], data-testid="sidebar-row-card",
+   the Tailwind class group/sidebar-status-slot and the status text colour classes.
+   Line 1 is the title, line 2 the project with the status slot, line 3 the meta line. */
+
+/* Opening (330 ms): the bar shrinks to the project line, sweeps left over the label and
+   fades out as it arrives. Closing (230 ms) runs the path back. */
+[data-thread-item] > [data-testid="sidebar-row-card"] {
+  --t3se-open: 0;
+  --t3se-shrink: 90ms cubic-bezier(0.65, 0, 0.35, 1) 140ms;
+  --t3se-sweep: 140ms cubic-bezier(0.32, 0, 0.67, 0) 20ms;
+  --t3se-fade: 140ms cubic-bezier(0.65, 0, 0.35, 1);
+  --t3se-slot-hold: 160ms;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"]:is(:hover, :focus-visible, :has(:focus-visible)) {
+  --t3se-open: 1;
+  --t3se-shrink: 125ms cubic-bezier(0.65, 0, 0.35, 1);
+  --t3se-sweep: 205ms cubic-bezier(0.33, 1, 0.68, 1) 100ms;
+  --t3se-fade: 170ms cubic-bezier(0.65, 0, 0.35, 1) 150ms;
+  --t3se-slot-hold: 0s;
+}
+@media (any-hover: none) {
+  [data-thread-item] > [data-testid="sidebar-row-card"] {
+    --t3se-open: 1;
+  }
+}
+
+/* Title on line 1, alone, so status and hover never change its width. */
+[data-thread-item] > [data-testid="sidebar-row-card"] > div {
+  display: flex;
+  flex-direction: column;
+  height: 4.875rem !important;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] > div > div:nth-child(2) {
+  order: -1;
+  flex: none;
+  height: 1.25rem;
+  margin-top: 0 !important;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] > div > div:nth-child(1) {
+  flex: none;
+  margin-top: 0.25rem;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] > div > div:nth-child(3) {
+  padding-inline-start: 1.375rem;
+}
+/* Without a meta line the app puts the model icons on the title line. The row keeps its
+   full height here, so they go back to the end of line 3. */
+[data-thread-item] > [data-testid="sidebar-row-card"] > div:not(:has(> div:nth-child(3))) > div:nth-child(2) > span.inline-flex.shrink-0 {
+  position: absolute;
+  right: var(--sidebar-row-content-inset);
+  bottom: var(--sidebar-content-inset);
+  height: 1rem;
+}
+
+/* The slot takes no width at rest; the negative margin cancels the line's gap. It keeps
+   its width until the closing sweep has covered the label again. */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot {
+  min-width: 0 !important;
+  max-width: calc(var(--t3se-open) * 10rem);
+  margin-inline-start: calc((var(--t3se-open) - 1) * 0.375rem) !important;
+  transition:
+    max-width 0s var(--t3se-slot-hold),
+    margin-inline-start 0s var(--t3se-slot-hold);
+}
+/* A jump hint takes the label's place; the bar stays at rest beside it. */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot:has(> [data-jump-hint]) {
+  --t3se-open: 0;
+  max-width: none;
+  margin-inline-start: 0 !important;
+}
+
+/* The label stays in place on hover; the app would hide it under Snooze and Settle. */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot:not(:has(> [data-jump-hint])) > span:first-child {
+  position: static !important;
+  opacity: 1 !important;
+}
+/* The clip edge follows the bar as it sweeps. */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot > span:first-child:has(> .font-medium) {
+  clip-path: inset(0 0 0 calc((1 - var(--t3se-open)) * (100% + var(--sidebar-row-content-inset))));
+  transition: clip-path var(--t3se-sweep);
+}
+/* Idle rows: no bar, and the age only shows on hover. */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot > span:first-child:not(:has(> .font-medium)) {
+  display: none !important;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"]:is(:hover, :focus-visible, :has(:focus-visible)) .group\/sidebar-status-slot > span:first-child:not(:has(> .font-medium)) {
+  display: flex !important;
+}
+@media (any-hover: none) {
+  [data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot > span:first-child:not(:has(> .font-medium)) {
+    display: flex !important;
+  }
+}
+
+/* Colour means state. Row text is neutral, and each status has a bar tone (3:1 on the sidebar)
+   and a label tone (4.5:1), Tailwind v4 shades chosen for the T3 Chat sidebar.
+   Project and branch text, and a read thread's title, are the title colour mixed toward the
+   sidebar. They follow the Appearance contrast setting, so the three steps keep their order
+   (title, read title, project) at any contrast: about 16:1, 13:1 and 9:1 at 165. */
+[data-thread-item] {
+  --contrast-secondary-label: color-mix(in oklab, var(--contrast-foreground) 70%, var(--sidebar));
+  --contrast-sidebar-muted-foreground: var(--contrast-secondary-label);
+  --t3se-receded: color-mix(in oklab, var(--contrast-foreground) 85%, var(--sidebar));
+  --sidebar-row-hover: oklch(0.955 0.018 322.6);
+  --t3se-ring: oklch(0.8 0.04 330);
+  --t3se-bar-approval: oklch(0.555 0.163 48.998); /* amber-700 */
+  --t3se-bar-input: oklch(0.457 0.24 277.023); /* indigo-700 */
+  --t3se-bar-request: oklch(0.591 0.293 322.896); /* fuchsia-600 */
+  --t3se-bar-working: oklch(0.623 0.214 259.815); /* blue-500 */
+  --t3se-bar-waiting: oklch(0.6 0.02 330);
+  --t3se-bar-done: oklch(0.508 0.118 165.612); /* emerald-700 */
+  --t3se-bar-failed: oklch(0.505 0.213 27.518); /* red-700 */
+  --t3se-label-warning: oklch(0.473 0.137 46.201); /* amber-800 */
+  --t3se-label-input: oklch(0.457 0.24 277.023);
+  --t3se-label-request: oklch(0.518 0.253 323.949); /* fuchsia-700 */
+  --t3se-label-working: oklch(0.488 0.243 264.376); /* blue-700 */
+  --t3se-label-done: oklch(0.432 0.095 166.913); /* emerald-800 */
+  --t3se-label-failed: oklch(0.505 0.213 27.518);
+}
+.dark [data-thread-item] {
+  --sidebar-row-hover: oklch(0.215 0.022 330);
+  --sidebar-row-active: oklch(0.255 0.03 338.2);
+  --t3se-ring: oklch(0.4 0.03 340);
+  --t3se-bar-approval: oklch(0.769 0.188 70.08); /* amber-500 */
+  --t3se-bar-input: oklch(0.785 0.115 274.713); /* indigo-300 */
+  --t3se-bar-request: oklch(0.591 0.293 322.896); /* fuchsia-600 */
+  --t3se-bar-working: oklch(0.623 0.214 259.815); /* blue-500 */
+  --t3se-bar-waiting: oklch(0.509 0.02 330);
+  --t3se-bar-done: oklch(0.845 0.143 164.978); /* emerald-300 */
+  --t3se-bar-failed: oklch(0.577 0.245 27.325); /* red-600 */
+  --t3se-label-warning: var(--warning-foreground);
+  --t3se-label-input: oklch(0.785 0.115 274.713);
+  --t3se-label-request: oklch(0.833 0.145 321.434); /* fuchsia-300 */
+  --t3se-label-working: oklch(0.707 0.165 254.624); /* blue-400 */
+  --t3se-label-done: oklch(0.765 0.177 163.223); /* emerald-400 */
+  --t3se-label-failed: oklch(0.704 0.191 22.216); /* red-400 */
+}
+
+/* Line 3 is code (branch), line 2 a name (project). */
+[data-thread-item] > [data-testid="sidebar-row-card"] > div > div:nth-child(3) > span.flex.flex-1 {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+/* A read thread's title recedes, but stays above its project line. */
+[data-thread-item] > [data-testid="sidebar-row-card"]:not(:hover, :focus-visible, :has(:focus-visible)) .text-foreground\/75 {
+  color: var(--t3se-receded);
+}
+/* The current thread has the hover fill, so it also gets a ring, in both appearances. */
+[data-thread-item] > [data-testid="sidebar-row-card"][aria-current]:not([aria-current="false"]):not(:focus-visible) {
+  box-shadow: inset 0 0 0 1px var(--t3se-ring);
+}
+
+/* Status by label class and icon. Amber covers Approval, Limited and Woke; the icon tells them apart. */
+[data-thread-item] .group\/sidebar-status-slot > span:first-child > .text-warning-foreground {
+  color: var(--t3se-label-warning);
+}
+[data-thread-item] .group\/sidebar-status-slot > span:first-child > .text-indigo-600 {
+  color: var(--t3se-label-input);
+}
+[data-thread-item] .group\/sidebar-status-slot > span:first-child > .text-guest-foreground {
+  color: var(--t3se-label-request);
+}
+[data-thread-item] .group\/sidebar-status-slot > span:first-child > .text-info-foreground {
+  color: var(--t3se-label-working);
+}
+[data-thread-item] .group\/sidebar-status-slot > span:first-child > .text-success-foreground {
+  color: var(--t3se-label-done);
+}
+[data-thread-item] .group\/sidebar-status-slot > span:first-child > .text-error-foreground {
+  color: var(--t3se-label-failed);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-warning-foreground .lucide-shield-question-mark) {
+  --t3se-bar: var(--t3se-bar-approval);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-indigo-600) {
+  --t3se-bar: var(--t3se-bar-input);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-guest-foreground) {
+  --t3se-bar: var(--t3se-bar-request);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-success-foreground) {
+  --t3se-bar: var(--t3se-bar-done);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-error-foreground) {
+  --t3se-bar: var(--t3se-bar-failed);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-warning-foreground .lucide-alarm-clock) {
+  --t3se-bar: var(--t3se-bar-approval);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-info-foreground) {
+  --t3se-bar: var(--t3se-bar-working);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-muted-foreground) {
+  --t3se-bar: var(--t3se-bar-waiting);
+}
+[data-thread-item] .group\/sidebar-status-slot:has(> span:first-child > .text-warning-foreground .lucide-circle-alert) {
+  --t3se-bar: var(--t3se-bar-approval);
+}
+
+/* Shape by what the thread needs from you. A full bar means it waits on you (Approval, Input,
+   Request). A short bar on the project line, where the label appears, means a result to read
+   (Done, Failed, Woke). A dashed bar means it is running or held (Working, Waiting, Limited). */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot {
+  --t3se-rest-top: -1.5rem;
+  --t3se-rest-height: calc(4.875rem - 2 * var(--sidebar-content-inset));
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot:has(> span:first-child > :is(.text-success-foreground, .text-error-foreground)),
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot:has(> span:first-child > .text-warning-foreground .lucide-alarm-clock) {
+  --t3se-rest-top: 0rem;
+  --t3se-rest-height: 1.25rem;
+}
+/* Dashes are 0.4375rem with 0.25rem gaps: six fit the 3.875rem bar exactly, so none is cut. */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot:has(> span:first-child > :is(.text-info-foreground, .text-muted-foreground))::after,
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot:has(> span:first-child > .text-warning-foreground .lucide-circle-alert)::after {
+  --t3se-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 11' preserveAspectRatio='none'%3E%3Crect width='3' height='7' rx='1.5'/%3E%3C/svg%3E");
+  -webkit-mask: var(--t3se-dash) top / 100% 0.6875rem repeat-y;
+  mask: var(--t3se-dash) top / 100% 0.6875rem repeat-y;
+}
+
+/* At rest the bar sits on the row's right edge: from the title line to the meta line, or on the
+   project line for a short bar. The slot is on the project line, 1.5rem below the title line. */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot:has(> span:first-child > .font-medium)::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  border-radius: 9999px;
+  background-color: var(--t3se-bar, currentColor);
+  pointer-events: none;
+  top: calc(var(--t3se-open) * 3px + (1 - var(--t3se-open)) * var(--t3se-rest-top));
+  right: calc(
+    var(--t3se-open) * (100% + 1px) - (1 - var(--t3se-open)) * var(--sidebar-row-content-inset)
+  );
+  height: calc(
+    var(--t3se-rest-height) - var(--t3se-open) * (var(--t3se-rest-height) - 0.875rem)
+  );
+  opacity: calc(1 - var(--t3se-open));
+  transition:
+    top var(--t3se-shrink),
+    height var(--t3se-shrink),
+    right var(--t3se-sweep),
+    opacity var(--t3se-fade);
+}
+@media (any-hover: none) {
+  [data-thread-item] .group\/sidebar-status-slot::after {
+    display: none !important;
+  }
+}
+
+/* Snooze and Settle: icon buttons at the end of line 3, over the model and branch icons.
+   They wait 300 ms under the pointer, so a click meant to open the thread can't land on
+   them. Keyboard focus and an open snooze menu show them at once. */
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot > span:not(:first-child) {
+  position: absolute !important;
+  inset: 100% -0.3125rem auto auto !important;
+  height: 1.25rem;
+  align-items: center !important;
+  opacity: 0 !important;
+  visibility: hidden;
+  pointer-events: auto !important;
+  transition:
+    opacity 150ms ease,
+    visibility 0s linear 150ms;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot > span:not(:first-child) > button {
+  width: 1.5rem;
+  height: 1.25rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0 !important;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot > span:not(:first-child) > button:hover {
+  background-color: color-mix(in srgb, currentColor 12%, transparent);
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot > span:not(:first-child) > button svg {
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+}
+/* One colour per action, from the status tones: Settle the done green, Snooze the amber of
+   Woke (the alarm it sets), Discard draft the failed red. The hover fill takes the same tint.
+   Icons are 4.4:1 or more on a hovered row in both appearances. */
+[data-thread-item] .group\/sidebar-status-slot > span:not(:first-child) button[aria-label="Settle thread"] {
+  color: var(--t3se-label-done);
+}
+[data-thread-item] .group\/sidebar-status-slot > span:not(:first-child) button[aria-label="Snooze thread"] {
+  color: var(--t3se-bar-approval);
+}
+[data-thread-item] .group\/sidebar-status-slot > span:not(:first-child) button[aria-label="Discard draft"] {
+  color: var(--t3se-label-failed);
+}
+/* Room for the buttons on line 3, by count. */
+[data-thread-item] > [data-testid="sidebar-row-card"] > div:has(.group\/sidebar-status-slot > span:not(:first-child) > :nth-child(1)) {
+  --t3se-actions-width: 1.5rem;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] > div:has(.group\/sidebar-status-slot > span:not(:first-child) > :nth-child(2)) {
+  --t3se-actions-width: 3rem;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"] > div:has(.group\/sidebar-status-slot > span:not(:first-child) > :nth-child(3)) {
+  --t3se-actions-width: 4.5rem;
+}
+@media (any-hover: hover) {
+  [data-thread-item] > [data-testid="sidebar-row-card"]:hover .group\/sidebar-status-slot:not(:has(> [data-jump-hint])) > span:not(:first-child) {
+    opacity: 1 !important;
+    visibility: visible;
+    transition:
+      opacity 150ms ease 300ms,
+      visibility 0s linear 300ms;
+  }
+  [data-thread-item] > [data-testid="sidebar-row-card"]:hover > div:has(.group\/sidebar-status-slot > span:not(:first-child)) > div:nth-child(3) {
+    padding-inline-end: var(--t3se-actions-width);
+    transition: padding-inline-end 0s linear 300ms;
+  }
+  [data-thread-item] > [data-testid="sidebar-row-card"]:hover > div:has(.group\/sidebar-status-slot > span:not(:first-child)) > div:nth-child(3) > .flex-1 ~ *,
+  [data-thread-item] > [data-testid="sidebar-row-card"]:hover > div:has(.group\/sidebar-status-slot > span:not(:first-child)) > div:nth-child(2) > span.inline-flex.shrink-0 {
+    display: none;
+    transition: display 0s linear 300ms allow-discrete;
+  }
+}
+[data-thread-item] > [data-testid="sidebar-row-card"]:is(:focus-visible, :has(:focus-visible)) .group\/sidebar-status-slot:not(:has(> [data-jump-hint])) > span:not(:first-child),
+[data-thread-item] > [data-testid="sidebar-row-card"] .group\/sidebar-status-slot > span:not(:first-child):has([data-popup-open], [aria-expanded="true"]) {
+  opacity: 1 !important;
+  visibility: visible;
+  transition: none;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"]:is(:focus-visible, :has(:focus-visible)) > div:has(.group\/sidebar-status-slot > span:not(:first-child)) > div:nth-child(3),
+[data-thread-item] > [data-testid="sidebar-row-card"] > div:has(.group\/sidebar-status-slot > span:not(:first-child) :is([data-popup-open], [aria-expanded="true"])) > div:nth-child(3) {
+  padding-inline-end: var(--t3se-actions-width);
+  transition: none;
+}
+[data-thread-item] > [data-testid="sidebar-row-card"]:is(:focus-visible, :has(:focus-visible)) > div:has(.group\/sidebar-status-slot > span:not(:first-child)) > div:nth-child(3) > .flex-1 ~ *,
+[data-thread-item] > [data-testid="sidebar-row-card"] > div:has(.group\/sidebar-status-slot > span:not(:first-child) :is([data-popup-open], [aria-expanded="true"])) > div:nth-child(3) > .flex-1 ~ *,
+[data-thread-item] > [data-testid="sidebar-row-card"]:is(:focus-visible, :has(:focus-visible)) > div:has(.group\/sidebar-status-slot > span:not(:first-child)) > div:nth-child(2) > span.inline-flex.shrink-0,
+[data-thread-item] > [data-testid="sidebar-row-card"] > div:has(.group\/sidebar-status-slot > span:not(:first-child) :is([data-popup-open], [aria-expanded="true"])) > div:nth-child(2) > span.inline-flex.shrink-0 {
+  display: none;
+  transition: none;
+}
+
+/* Reduced motion drops the sweep, not the 300 ms wait before Snooze and Settle. */
+@media (prefers-reduced-motion: reduce) {
+  [data-thread-item] .group\/sidebar-status-slot,
+  [data-thread-item] .group\/sidebar-status-slot > span:first-child,
+  [data-thread-item] .group\/sidebar-status-slot::after {
+    transition: none !important;
+  }
+}
+
+</style>
+</head>
+<body class="">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Minimalist color edges</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Minimalist color edges</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Minimalist color edges</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

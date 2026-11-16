@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="" data-theme-id="preview" data-theme-selected="true" style="--app-theme-canvas:#f5f5f2;--app-theme-chrome:#f5f5f2;--app-theme-toolbar:#f5f5f2;--app-theme-toolbar-foreground:#11151c;--app-theme-toolbar-border:#dcdcd6;--app-theme-toolbar-control:#ffffff;--app-theme-toolbar-control-foreground:#11151c;--app-theme-toolbar-control-hover:#ebebe6;--app-theme-surface:#ffffff;--app-theme-surface-raised:#fafaf8;--app-theme-surface-overlay:#ffffff;--app-theme-text:#11151c;--app-theme-text-muted:#535b68;--app-theme-border:#dcdcd6;--app-theme-input:#c9c9c1;--app-theme-focus:#c2410c;--app-theme-accent:#c2410c;--app-theme-accent-foreground:#ffffff;--app-theme-secondary:#edede8;--app-theme-secondary-foreground:#11151c;--app-theme-muted:#edede8;--app-theme-muted-foreground:#535b68;--app-theme-placeholder:#6b7380;--app-theme-secondary-label:#535b68;--app-theme-icon-muted:#626a77;--app-theme-error:#c81e1e;--app-theme-error-foreground:#a11616;--app-theme-error-surface:#fbe4e4;--app-theme-warning:#b7791f;--app-theme-warning-foreground:#7c5210;--app-theme-warning-surface:#f8efdc;--app-theme-update:#c2410c;--app-theme-update-foreground:#c2410c;--app-theme-update-surface:#fbe8dc;--app-theme-accent-surface:#fbe8dc;--app-theme-accent-surface-foreground:#7a2a06;--app-theme-message-surface:#e9edf3;--app-theme-message-foreground:#11151c;--app-theme-message-action:#c2410c;--app-theme-message-action-foreground:#ffffff;--app-theme-message-action-hover:#a8380a;--app-theme-code-background:#f0f0eb;--app-theme-code-foreground:#11151c;--app-theme-search-match-background:#ffde8b;--app-theme-search-match-foreground:#21180a;--app-theme-search-match-active-background:#eea52b;--app-theme-search-match-active-foreground:#21180a;--app-theme-sidebar:#ecece7;--app-theme-sidebar-foreground:#11151c;--app-theme-sidebar-muted-foreground:#535b68;--app-theme-sidebar-control-surface:#e2e2dc;--app-theme-sidebar-row-hover:#e2e2dc;--app-theme-sidebar-row-active:#d9d9d2;--app-theme-sidebar-row-selected:#ffffff;--app-theme-sidebar-border:#dcdcd6;--app-theme-terminal-background:#f5f5f2;--app-theme-terminal-foreground:#11151c;--app-theme-terminal-cursor:#c2410c;--app-theme-terminal-selection:#dfe5ee;--app-theme-terminal-scrollbar:#dcdcd6;--app-theme-terminal-scrollbar-hover:#c9c9c1;color-scheme:light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Orbit preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#f5f5f2}
+/* Orbit: flight-document lettering, a star field and orbit rings behind the chat. */
+[data-chat-header], .chat-markdown :is(h1, h2, h3) { font-family: var(--font-mono, ui-monospace, monospace); }
+.chat-markdown :is(h1, h2, h3) { text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* Deep space: three tiled star layers (tile sizes that do not line up), orbit rings and a faint sun. */
+.dark [data-workspace-area="conversation"] {
+  background-image:
+    radial-gradient(1.2px 1.2px at 23px 41px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 151px 97px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 97px 171px, rgba(200, 220, 255, 0.6), transparent),
+    radial-gradient(1.5px 1.5px at 211px 263px, rgba(255, 240, 220, 0.9), transparent),
+    radial-gradient(1px 1px at 289px 31px, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 61px 337px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1.2px 1.2px at 401px 211px, rgba(200, 220, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 353px 389px, rgba(255, 255, 255, 0.5), transparent),
+    repeating-radial-gradient(circle at 104% 112%, transparent 0 179px, rgba(150, 175, 215, 0.10) 179px 180px),
+    radial-gradient(circle at 104% 112%, rgba(255, 138, 61, 0.16), transparent 340px) !important;
+  background-size: 211px 211px, 211px 211px, 211px 211px, 433px 433px, 433px 433px, 433px 433px, 457px 457px, 457px 457px, auto, auto !important;
+}
+
+/* Flight document: only the orbit rings, in faint ink. */
+:root:not(.dark) [data-workspace-area="conversation"] {
+  background-image:
+    repeating-radial-gradient(circle at 104% 112%, transparent 0 179px, rgba(17, 21, 28, 0.07) 179px 180px),
+    radial-gradient(circle at 104% 112%, rgba(194, 65, 12, 0.08), transparent 340px) !important;
+}
+
+/* The composer glows like an engine when it has focus. */
+.dark [data-slot="composer-host"]:focus-within { box-shadow: 0 0 0 1px rgba(255, 138, 61, 0.45), 0 0 28px rgba(255, 138, 61, 0.18) !important; }
+:root:not(.dark) [data-slot="composer-host"]:focus-within { box-shadow: 0 0 0 1px rgba(194, 65, 12, 0.45) !important; }
+
+/* Links and "Working" in ion blue. */
+:root:not(.dark) { --info: #1f5f99 !important; --info-foreground: #1f5f99 !important; }
+.dark { --info: #7cc4ff !important; --info-foreground: #7cc4ff !important; }
+:root:not(.dark) ::selection { background: #fbd6bf; color: #11151c; }
+.dark ::selection { background: #5a3418; color: #fff4ea; }
+</style>
+</head>
+<body class="">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Orbit</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Orbit</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Orbit</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

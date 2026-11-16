@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme-id="preview" data-theme-selected="true" style="--app-theme-text:#D1D3D9;--app-theme-error:#E4656E;--app-theme-focus:#3871E1;--app-theme-input:#40434A;--app-theme-muted:#212326;--app-theme-border:#33353B;--app-theme-chrome:#26282C;--app-theme-update:#3871E1;--app-theme-sidebar:#191A1C;--app-theme-surface:#212326;--app-theme-toolbar:#26282C;--app-theme-warning:#D59637;--app-theme-icon-muted:#9FA2A8;--app-theme-secondary:#33353B;--app-theme-text-muted:#9FA2A8;--app-theme-placeholder:#73767C;--app-theme-error-surface:#3F1E21;--app-theme-accent-surface:#33353B;--app-theme-message-action:#3871E1;--app-theme-sidebar-border:#33353B;--app-theme-surface-raised:#212326;--app-theme-toolbar-border:#40434A;--app-theme-update-surface:#1B283F;--app-theme-code-background:#212326;--app-theme-code-foreground:#BCBEC4;--app-theme-message-surface:#26282C;--app-theme-secondary-label:#8B8E94;--app-theme-surface-overlay:#26282C;--app-theme-terminal-cursor:#F0F0F0;--app-theme-toolbar-control:#26282C;--app-theme-warning-surface:#322517;--app-theme-error-foreground:#F57E84;--app-theme-muted-foreground:#9FA2A8;--app-theme-sidebar-row-hover:#2A2B2E;--app-theme-accent-foreground:#FFFFFF;--app-theme-sidebar-row-active:#2A4371;--app-theme-update-foreground:#71A1FE;--app-theme-message-foreground:#D1D3D9;--app-theme-sidebar-foreground:#D1D3D9;--app-theme-terminal-scrollbar:#3D3E40;--app-theme-terminal-selection:#08335E;--app-theme-toolbar-foreground:#D1D3D9;--app-theme-warning-foreground:#E4AD5F;--app-theme-message-action-hover:#2F5EB9;--app-theme-sidebar-row-selected:#233558;--app-theme-terminal-background:#191A1C;--app-theme-terminal-foreground:#BDBDBD;--app-theme-secondary-foreground:#D1D3D9;--app-theme-toolbar-control-hover:#3A3C40;--app-theme-search-match-background:#BA9752;--app-theme-search-match-foreground:#000000;--app-theme-sidebar-control-surface:#33353B;--app-theme-sidebar-muted-foreground:#9FA2A8;--app-theme-terminal-scrollbar-hover:#525355;--app-theme-accent-surface-foreground:#D1D3D9;--app-theme-message-action-foreground:#FFFFFF;--app-theme-toolbar-control-foreground:#C3C5CB;--app-theme-search-match-active-background:#E4AD5F;--app-theme-search-match-active-foreground:#000000;--app-theme-canvas:#191A1C;--app-theme-accent:#3871E1;color-scheme:dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>JetBrains Islands preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#191A1C}
+/* Rider Islands. Values come from Rider 2026.2: themes/islands/ManyIslandsDark|Light.theme.json
+   and colorSchemes/RiderIslandsDark.xml. Island.arc 20 = 10px radius, Island.borderWidth 6 = 6px gap,
+   Component.arc 8 = 4px radius. Islands have no outline and no shadow: the frame is the separator. */
+:root{--isl-gap:6px;--isl-arc:10px;--isl-frame:#E9EAEE;--isl-bg:#FFFFFF;--isl-hover:#00000012;--isl-press:#00000020;--isl-row-hover:#0000000D;--isl-popup:#FFFFFF;--isl-popup-line:#D1D3D9;--isl-tip:#FFFFFF;--isl-tip-line:#D1D3D9;--isl-tip-text:#000000;--isl-line:#E9EAEE;--isl-shadow:#00000026;--isl-success:#338555;--isl-accent:#3871E1;--isl-glow:radial-gradient(ellipse 620px 220px at 6% -50px,#3871E12E,#3871E100 70%)}
+.dark{--isl-frame:#26282C;--isl-bg:#191A1C;--isl-hover:#FFFFFF17;--isl-press:#FFFFFF29;--isl-row-hover:#FFFFFF10;--isl-popup:#26282C;--isl-popup-line:#33353B;--isl-tip:#33353B;--isl-tip-line:#33353B;--isl-tip-text:#D1D3D9;--isl-line:#26282C;--isl-shadow:#00000066;--isl-success:#6DB083;--isl-glow:radial-gradient(ellipse 620px 220px at 6% -50px,#3F448D66,#3F448D00 70%)}
+
+/* Frame: MainWindow.background. Toolbars sit on it directly, as in the IDE. */
+html,body{background-color:var(--isl-frame)!important}
+body{font-family:"Inter Variable",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+[data-slot=sidebar-wrapper]{background:var(--isl-glow) no-repeat,var(--isl-frame)!important}
+[data-slot=sidebar-container],[data-slot=sidebar-inner]{background:transparent!important;border:0!important;box-shadow:none!important}
+main[data-slot=sidebar-inset]:has([data-chat-column]>[data-chat-header]),div:has(>[data-chat-column]>[data-chat-header]),[data-chat-column]:has(>[data-chat-header]),[data-chat-header]{background:transparent!important}
+[data-chat-header]{border:0!important;box-shadow:none!important}
+
+/* Islands: thread list, conversation, terminal, side panel. */
+[data-slot=sidebar-inner] :has(>[data-slot=scroll-area-viewport]>[data-slot=sidebar-content]){background:var(--isl-bg)!important;border-radius:var(--isl-arc)!important;margin:0 0 var(--isl-gap) var(--isl-gap)!important;width:calc(100% - var(--isl-gap))!important;overflow:hidden!important}
+[data-chat-column]>[data-chat-header]+div{background:var(--isl-bg)!important;border-radius:var(--isl-arc)!important;margin:0 var(--isl-gap) var(--isl-gap)!important;overflow:hidden!important}
+[data-thread-terminal-drawer][data-terminal-owner=drawer]{margin:0 var(--isl-gap) var(--isl-gap)!important;border:0!important;border-radius:var(--isl-arc)!important;box-shadow:none!important}
+/* The side panel keeps its box; a frame-coloured border makes the gap (Island.borderWidth). */
+[data-workspace-area=panel]{border:solid transparent!important;border-width:var(--isl-gap) var(--isl-gap) var(--isl-gap) 0!important;border-radius:10px 16px 16px 10px/16px!important;background-color:var(--isl-bg)!important;background-clip:padding-box!important;overflow:hidden!important;box-shadow:none!important}
+[data-thread-details-card]{border:1px solid var(--isl-popup-line)!important;border-radius:8px!important;box-shadow:0 8px 24px var(--isl-shadow)!important}
+
+/* Toolbar buttons: flat, grey hover (ActionButton.hoverBackground). */
+html[data-theme-id] [data-chat-header] :is([data-slot=button],[data-slot=menu-trigger],[data-toolbar-control]){background-color:transparent!important;border-color:transparent!important;box-shadow:none!important;border-radius:6px!important}
+html[data-theme-id] [data-chat-header] :is([data-slot=button],[data-slot=menu-trigger],[data-toolbar-control]):is(:hover,[data-pressed]){background-color:var(--isl-hover)!important}
+html[data-theme-id] [data-chat-header] :is([data-slot=button],[data-slot=menu-trigger],[data-toolbar-control]):active{background-color:var(--isl-press)!important}
+
+/* Tree rows: Tree.hoverBackground, selection-bg-active, no accent bar. */
+html[data-theme-id] [data-app-sidebar]{--sidebar-row-hover:var(--isl-row-hover)!important}
+[data-thread-item],[data-sidebar-row]{border-radius:6px!important}
+[data-slot=project-monogram]{border-radius:4px!important}
+
+/* Controls: Component.arc / Button.arc. */
+[data-slot=button],[data-slot=input],[data-slot=select-trigger]{border-radius:4px!important}
+[data-slot=button]:focus-visible,[data-slot=input]:focus-visible,[data-slot=select-trigger]:focus-visible{outline:2px solid var(--isl-accent)!important;outline-offset:1px!important}
+svg.lucide{stroke-width:1.5}
+
+/* Chat input and messages, inside the editor island. */
+[data-slot=composer-host]{border-radius:var(--isl-arc)!important;box-shadow:none!important}
+[data-slot=composer-host]::before,[data-slot=composer-host]::after,[data-chat-composer-main-surface]{border-radius:var(--isl-arc)!important}
+[data-user-message-bubble]{border-radius:var(--isl-arc)!important;box-shadow:none!important}
+.chat-markdown-codeblock{border-radius:6px!important}
+.chat-markdown code,.chat-markdown pre,.chat-markdown-codeblock,.composer-tiptap code{font-family:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace!important}
+
+/* Popups: Popup.background + Popup.borderColor. Tooltips: ToolTip.background. */
+[data-slot=menu-popup],[data-slot=popover-popup],[data-slot=dialog-popup]{background-color:var(--isl-popup)!important;border:1px solid var(--isl-popup-line)!important;box-shadow:0 8px 24px var(--isl-shadow)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+[data-slot=menu-popup],[data-slot=popover-popup]{border-radius:8px!important}
+[data-slot=dialog-popup]{border-radius:var(--isl-arc)!important}
+[data-slot=tooltip-popup]{background-color:var(--isl-tip)!important;color:var(--isl-tip-text)!important;border:1px solid var(--isl-tip-line)!important;border-radius:6px!important;box-shadow:0 4px 12px var(--isl-shadow)!important}
+
+/* Scrollbars: ScrollBar.thumbColor / hoverThumbColor. */
+html[data-theme-id]{--app-scrollbar-thumb:#80808059!important;--app-scrollbar-thumb-hover:#8080808C!important}
+[data-slot=scroll-area-thumb]{border-radius:4px!important}
+::-webkit-scrollbar-thumb{background-color:#80808059;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background-color:#8080808C}
+
+/* Sidebar sections: Recents on top, status shelves together at the bottom. */
+ul:has(>li[data-thread-item]){display:flex!important;flex-direction:column!important}
+ul:has(>li[data-thread-item])::before{content:'Recents';display:block;order:0;padding:8px 10px 4px;color:var(--sidebar-muted-foreground);font-size:12px;font-weight:600}
+[data-testid*=working-h]{order:10!important;margin-top:4px!important;margin-bottom:4px!important}
+[data-testid*=working-h]~:not([data-testid*=snoozed-h],[data-testid*=settled-h],[data-testid*=snoozed-h]~*,[data-testid*=settled-h]~*){order:11!important}
+:is([data-testid*=snoozed-h],[data-testid*=settled-h]){margin-top:4px!important}
+[data-testid*=snoozed-h]{margin-top:auto!important}
+ul:not(:has(>[data-testid*=snoozed-h]))>[data-testid*=settled-h]{margin-top:auto!important}
+ul:not(:has(>[data-testid*=snoozed-h],>[data-testid*=settled-h]))>[data-testid*=working-h]{margin-top:auto!important}
+[data-testid$=-shelf-toggle]{border-radius:6px!important;font-size:12px!important}
+[data-thread-item]:is(:has([data-sidebar-parent='shelf:settled']),:has([data-sidebar-row][aria-label*=', Done'])) .text-sm{color:var(--isl-success)!important}
+
+</style>
+</head>
+<body class="dark">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">JetBrains Islands</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>JetBrains Islands</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>JetBrains Islands</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

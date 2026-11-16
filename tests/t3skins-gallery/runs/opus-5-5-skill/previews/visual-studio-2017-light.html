@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="" data-theme-id="preview" data-theme-selected="true" style="--app-theme-text:#1e1e1e;--app-theme-error:#cd1a00;--app-theme-focus:#007acc;--app-theme-input:#ffffff;--app-theme-muted:#eeeef2;--app-theme-border:#cccedb;--app-theme-chrome:#eeeef2;--app-theme-update:#2e7d32;--app-theme-sidebar:#f5f5f5;--app-theme-surface:#f5f5f5;--app-theme-toolbar:#eeeef2;--app-theme-warning:#9a6700;--app-theme-icon-muted:#6a6a6a;--app-theme-secondary:#e0e1e9;--app-theme-text-muted:#6a6a6a;--app-theme-placeholder:#767676;--app-theme-error-surface:#fde7e3;--app-theme-accent-surface:#c9def5;--app-theme-message-action:#e0e1e9;--app-theme-sidebar-border:#cccedb;--app-theme-surface-raised:#ffffff;--app-theme-toolbar-border:#cccedb;--app-theme-update-surface:#e3f3e3;--app-theme-code-background:#f5f5f5;--app-theme-code-foreground:#1e1e1e;--app-theme-message-surface:#eeeef2;--app-theme-secondary-label:#6a6a6a;--app-theme-surface-overlay:#f6f6f6;--app-theme-terminal-cursor:#1e1e1e;--app-theme-toolbar-control:#ffffff;--app-theme-warning-surface:#fff4ce;--app-theme-error-foreground:#ffffff;--app-theme-muted-foreground:#6a6a6a;--app-theme-sidebar-row-hover:#c9def5;--app-theme-accent-foreground:#ffffff;--app-theme-sidebar-row-active:#bcdcf4;--app-theme-update-foreground:#ffffff;--app-theme-message-foreground:#1e1e1e;--app-theme-sidebar-foreground:#1e1e1e;--app-theme-terminal-scrollbar:#c2c3c9;--app-theme-terminal-selection:#add6ff;--app-theme-toolbar-foreground:#1e1e1e;--app-theme-warning-foreground:#ffffff;--app-theme-message-action-hover:#c9def5;--app-theme-sidebar-row-selected:#bcdcf4;--app-theme-terminal-background:#ffffff;--app-theme-terminal-foreground:#1e1e1e;--app-theme-secondary-foreground:#1e1e1e;--app-theme-toolbar-control-hover:#c9def5;--app-theme-search-match-background:#ffe8a6;--app-theme-search-match-foreground:#1e1e1e;--app-theme-sidebar-control-surface:#ffffff;--app-theme-sidebar-muted-foreground:#6a6a6a;--app-theme-terminal-scrollbar-hover:#686868;--app-theme-accent-surface-foreground:#005a9e;--app-theme-message-action-foreground:#1e1e1e;--app-theme-toolbar-control-foreground:#1e1e1e;--app-theme-search-match-active-background:#f6b94d;--app-theme-search-match-active-foreground:#1e1e1e;--app-theme-canvas:#ffffff;--app-theme-accent:#007acc;color-scheme:light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Visual Studio 2017 preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#ffffff}
+/* Visual Studio 2017: flat, square, blue-accented. */
+
+/* Type: Segoe UI for chrome, Consolas for code (falls back off Windows). */
+body { font-family: "Segoe UI", "Selawik", system-ui, -apple-system, "Helvetica Neue", sans-serif !important; }
+.chat-markdown code, .chat-markdown pre, .chat-markdown-codeblock pre, .chat-markdown-codeblock code {
+  font-family: Consolas, "Cascadia Mono", Menlo, Monaco, monospace !important;
+}
+
+/* Square corners everywhere, as in the VS shell. */
+[data-slot="sidebar"], [data-slot="sidebar-inner"], [data-thread-item], [data-thread-item] *,
+[data-chat-header], [data-user-message-bubble], .chat-markdown-codeblock, .chat-markdown code,
+[data-thread-details-card], [data-thread-terminal-drawer],
+[data-slot="button"], [data-slot="input"], [data-slot="select-trigger"],
+[data-slot="switch"], [data-slot="switch"] *, [data-slot="project-monogram"],
+[data-slot="dialog-popup"], [data-slot="popover-popup"], [data-slot="menu-popup"], [data-slot="menu-popup"] *,
+[data-slot="tooltip-popup"], [data-slot="scroll-area-scrollbar"], [data-slot="scroll-area-thumb"],
+[data-slot="composer-host"], [data-slot="composer-host"] *,
+[data-slot="composer-host"]::before, [data-slot="composer-host"]::after,
+[data-slot="composer-host"] *::before, [data-slot="composer-host"] *::after,
+[data-chat-composer-form], [data-chat-composer-form] *,
+[data-chat-composer-form]::before, [data-chat-composer-form]::after,
+[data-chat-composer-form] *::before, [data-chat-composer-form] *::after {
+  border-radius: 0 !important;
+}
+[data-slot="project-monogram"] svg rect { rx: 0; ry: 0; }
+
+/* Sharp glyphs, like the VS icon set. */
+svg.lucide { stroke-linecap: square; stroke-linejoin: miter; }
+
+/* Solution Explorer density for thread rows. */
+[data-thread-item] { min-height: 24px !important; padding-block: 1px !important; margin-block: 0 !important; }
+
+/* Document well: the blue line under the tab strip. */
+[data-chat-header] { border-bottom: 2px solid #007acc !important; box-shadow: none !important; }
+
+/* Flat panels: borders, no shadows. */
+[data-slot="composer-host"] { box-shadow: none !important; }
+.dark [data-slot="composer-host"] { border: 1px solid #3f3f46 !important; }
+:root:not(.dark) [data-slot="composer-host"] { border: 1px solid #cccedb !important; }
+[data-slot="composer-host"]:focus-within { border-color: #007acc !important; }
+
+.dark [data-user-message-bubble], .dark .chat-markdown-codeblock { border: 1px solid #3f3f46 !important; }
+:root:not(.dark) [data-user-message-bubble], :root:not(.dark) .chat-markdown-codeblock { border: 1px solid #cccedb !important; }
+.dark .chat-markdown-codeblock { background: #1e1e1e !important; }
+
+/* Menus and popovers: flat with a soft drop shadow. Dialogs get the active-window accent border. */
+.dark [data-slot="menu-popup"], .dark [data-slot="popover-popup"] {
+  border: 1px solid #333337 !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+}
+:root:not(.dark) [data-slot="menu-popup"], :root:not(.dark) [data-slot="popover-popup"] {
+  border: 1px solid #cccedb !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+[data-slot="dialog-popup"] { border: 1px solid #007acc !important; box-shadow: 0 0 12px rgba(0, 0, 0, 0.5) !important; }
+
+/* Tooltips. */
+.dark [data-slot="tooltip-popup"] {
+  background: #424245 !important; color: #f1f1f1 !important; border: 1px solid #4d4d50 !important; box-shadow: none !important;
+}
+:root:not(.dark) [data-slot="tooltip-popup"] {
+  background: #ffffff !important; color: #1e1e1e !important; border: 1px solid #cccedb !important; box-shadow: none !important;
+}
+
+/* Scrollbars: grey thumb on a visible track. */
+.dark ::-webkit-scrollbar { width: 12px; height: 12px; background: #3e3e42; }
+.dark ::-webkit-scrollbar-thumb { background: #686868; border: 3px solid #3e3e42; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #9e9e9e; }
+.dark ::-webkit-scrollbar-corner { background: #3e3e42; }
+:root:not(.dark) ::-webkit-scrollbar { width: 12px; height: 12px; background: #e8e8ec; }
+:root:not(.dark) ::-webkit-scrollbar-thumb { background: #c2c3c9; border: 3px solid #e8e8ec; }
+:root:not(.dark) ::-webkit-scrollbar-thumb:hover { background: #686868; }
+:root:not(.dark) ::-webkit-scrollbar-corner { background: #e8e8ec; }
+.dark [data-slot="scroll-area-thumb"] { background: #686868 !important; }
+:root:not(.dark) [data-slot="scroll-area-thumb"] { background: #c2c3c9 !important; }
+
+/* Editor selection. */
+.dark ::selection { background: #264f78; color: #ffffff; }
+:root:not(.dark) ::selection { background: #add6ff; color: #1e1e1e; }
+
+/* ---- Search surfaces: command palette, project search, file picker, model picker. ----
+   Styled after VS Quick Launch / Go To All: accent window border, boxed search field,
+   solid blue selection, status-bar footer. Row heights are left alone (lists are virtualized). */
+[data-command-palette], [data-command-palette] *,
+[data-command-palette] *::before, [data-command-palette] *::after,
+[data-model-picker-content], [data-model-picker-content] *,
+[data-model-picker-content] *::before, [data-model-picker-content] *::after,
+[data-chat-provider-model-picker],
+[data-slot$="-popup"], :has(> [data-slot$="-popup"]) {
+  border-radius: 0 !important;
+}
+
+/* Window frame. */
+[data-command-palette],
+[data-slot$="-popup"]:has([data-model-picker-content]) {
+  border: 1px solid #007acc !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55) !important;
+}
+.dark [data-command-palette], .dark [data-slot$="-popup"]:has([data-model-picker-content]) { background: #252526 !important; }
+:root:not(.dark) [data-command-palette], :root:not(.dark) [data-slot$="-popup"]:has([data-model-picker-content]) { background: #eeeef2 !important; }
+
+/* Search field: a boxed VS text box that turns blue on focus. */
+.dark [data-command-palette] [data-slot="autocomplete-input"],
+.dark [data-model-picker-content] [data-slot="combobox-input"] {
+  background: #333337 !important; color: #f1f1f1 !important; box-shadow: inset 0 0 0 1px #3f3f46 !important;
+}
+:root:not(.dark) [data-command-palette] [data-slot="autocomplete-input"],
+:root:not(.dark) [data-model-picker-content] [data-slot="combobox-input"] {
+  background: #ffffff !important; color: #1e1e1e !important; box-shadow: inset 0 0 0 1px #cccedb !important;
+}
+:root [data-command-palette] [data-slot="autocomplete-input"]:is(:focus, :focus-within),
+:root [data-model-picker-content] [data-slot="combobox-input"]:is(:focus, :focus-within) {
+  box-shadow: inset 0 0 0 1px #007acc !important; outline: none !important;
+}
+
+/* Highlighted result: solid accent with white text. */
+[data-command-palette] :is([data-slot="command-item"], [data-slot="autocomplete-item"])[data-highlighted],
+[data-model-picker-content] [data-slot="combobox-item"][data-highlighted] {
+  background: #007acc !important; color: #ffffff !important;
+}
+[data-command-palette] :is([data-slot="command-item"], [data-slot="autocomplete-item"])[data-highlighted] *,
+[data-model-picker-content] [data-slot="combobox-item"][data-highlighted] * {
+  color: #ffffff !important;
+}
+
+/* Current model: the grey inactive selection. */
+.dark [data-model-picker-content] [data-slot="combobox-item"][data-selected]:not([data-highlighted]) { background: #3f3f46 !important; }
+:root:not(.dark) [data-model-picker-content] [data-slot="combobox-item"][data-selected]:not([data-highlighted]) { background: #cccedb !important; }
+
+/* Category headers, as in Quick Launch results. */
+[data-command-palette] [data-slot="command-group-label"] {
+  font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0 !important; text-transform: none !important;
+}
+.dark [data-command-palette] [data-slot="command-group-label"] { color: #f1f1f1 !important; box-shadow: inset 0 -1px 0 #3f3f46 !important; }
+:root:not(.dark) [data-command-palette] [data-slot="command-group-label"] { color: #1e1e1e !important; box-shadow: inset 0 -1px 0 #cccedb !important; }
+
+/* Footer: the blue status bar. */
+[data-command-palette] [data-slot="command-footer"] {
+  background: #007acc !important; border-top-color: #007acc !important; color: #ffffff !important;
+}
+[data-command-palette] [data-slot="command-footer"] * { color: #ffffff !important; }
+[data-command-palette] [data-slot="command-footer"] [data-slot="kbd"] { background: rgba(255, 255, 255, 0.2) !important; }
+
+/* Model picker provider rail: a vertical tool tab strip. */
+.dark [data-model-picker-sidebar] { background: #2d2d30 !important; box-shadow: inset -1px 0 0 #3f3f46 !important; }
+:root:not(.dark) [data-model-picker-sidebar] { background: #eeeef2 !important; box-shadow: inset -1px 0 0 #cccedb !important; }
+[data-model-picker-selected-indicator] { background: #007acc !important; }
+.dark [data-model-picker-provider] [aria-pressed="true"] { background: #3f3f46 !important; }
+:root:not(.dark) [data-model-picker-provider] [aria-pressed="true"] { background: #c9def5 !important; }
+
+/* Model picker trigger: a VS toolbar combo box. */
+.dark [data-chat-provider-model-picker] { background: #333337 !important; box-shadow: inset 0 0 0 1px #434346 !important; }
+:root:not(.dark) [data-chat-provider-model-picker] { background: #ffffff !important; box-shadow: inset 0 0 0 1px #cccedb !important; }
+.dark [data-chat-provider-model-picker]:is(:hover, [aria-expanded="true"]) { background: #3f3f46 !important; box-shadow: inset 0 0 0 1px #007acc !important; }
+:root:not(.dark) [data-chat-provider-model-picker]:is(:hover, [aria-expanded="true"]) { background: #c9def5 !important; box-shadow: inset 0 0 0 1px #007acc !important; }
+
+</style>
+</head>
+<body class="">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Visual Studio 2017</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Visual Studio 2017</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Visual Studio 2017</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

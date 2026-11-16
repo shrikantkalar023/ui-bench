@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="" data-theme-id="preview" data-theme-selected="true" style="--app-theme-canvas:#f1e5cf;--app-theme-chrome:#f1e5cf;--app-theme-toolbar:#f1e5cf;--app-theme-toolbar-foreground:#3d3022;--app-theme-toolbar-border:#d9c7a6;--app-theme-toolbar-control:#f7eedd;--app-theme-toolbar-control-foreground:#3d3022;--app-theme-toolbar-control-hover:#ebe2d2;--app-theme-surface:#f7eedd;--app-theme-surface-raised:#f7eedd;--app-theme-surface-overlay:#f7eedd;--app-theme-text:#3d3022;--app-theme-text-muted:#665540;--app-theme-border:#d9c7a6;--app-theme-input:#bcaa8c;--app-theme-focus:#93542a;--app-theme-accent:#93542a;--app-theme-accent-foreground:#fbf3e4;--app-theme-secondary:#e7d8bc;--app-theme-secondary-foreground:#3d3022;--app-theme-muted:#e7d8bc;--app-theme-muted-foreground:#665540;--app-theme-placeholder:#665540;--app-theme-secondary-label:#665540;--app-theme-icon-muted:#665540;--app-theme-error:#a8402f;--app-theme-error-foreground:#a8402f;--app-theme-error-surface:#e8d1bc;--app-theme-warning:#86570c;--app-theme-warning-foreground:#86570c;--app-theme-warning-surface:#e4d4b8;--app-theme-update:#3f6b73;--app-theme-update-foreground:#3f6b73;--app-theme-update-surface:#dcd6c4;--app-theme-accent-surface:#e8d6be;--app-theme-accent-surface-foreground:#3d3022;--app-theme-message-surface:#e6d5b6;--app-theme-message-foreground:#3d3022;--app-theme-message-action:#93542a;--app-theme-message-action-foreground:#fbf3e4;--app-theme-message-action-hover:#814a25;--app-theme-code-background:#e9dcc3;--app-theme-code-foreground:#3d3022;--app-theme-search-match-background:#f0cf7a;--app-theme-search-match-foreground:#2a2016;--app-theme-search-match-active-background:#d49a35;--app-theme-search-match-active-foreground:#2a2016;--app-theme-sidebar:#e7d8bc;--app-theme-sidebar-foreground:#3d3022;--app-theme-sidebar-muted-foreground:#665540;--app-theme-sidebar-control-surface:#f1e5cf;--app-theme-sidebar-row-hover:#dbcdb3;--app-theme-sidebar-row-active:#d5c7ad;--app-theme-sidebar-row-selected:#dbc6a8;--app-theme-sidebar-border:#d9c7a6;--app-theme-terminal-background:#e9dcc3;--app-theme-terminal-foreground:#3d3022;--app-theme-terminal-cursor:#93542a;--app-theme-terminal-selection:#d4ba9d;--app-theme-terminal-scrollbar:#d9c7a6;--app-theme-terminal-scrollbar-hover:#a08e73;color-scheme:light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Bookshelf Calm preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#f1e5cf}
+
+</style>
+</head>
+<body class="">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Bookshelf Calm</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Bookshelf Calm</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Bookshelf Calm</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme-id="preview" data-theme-selected="true" style="--app-theme-text:#eeeeee;--app-theme-error:#e06c75;--app-theme-focus:#EC5B2B;--app-theme-input:#282828;--app-theme-muted:#141414;--app-theme-accent:#EC5B2B;--app-theme-border:#1e1e1e;--app-theme-canvas:#0a0a0a;--app-theme-chrome:#0a0a0a;--app-theme-update:#EC5B2B;--app-theme-sidebar:#0a0a0a;--app-theme-surface:#141414;--app-theme-toolbar:#0a0a0a;--app-theme-warning:#e5c07b;--app-theme-icon-muted:#808080;--app-theme-secondary:#141414;--app-theme-text-muted:#808080;--app-theme-placeholder:#606060;--app-theme-error-surface:#37222c;--app-theme-accent-surface:#1e1e1e;--app-theme-message-action:#EC5B2B;--app-theme-sidebar-border:#1e1e1e;--app-theme-surface-raised:#141414;--app-theme-toolbar-border:#1e1e1e;--app-theme-update-surface:#2a1710;--app-theme-code-background:#141414;--app-theme-code-foreground:#eeeeee;--app-theme-message-surface:#1e1e1e;--app-theme-secondary-label:#808080;--app-theme-surface-overlay:#1e1e1e;--app-theme-terminal-cursor:#EC5B2B;--app-theme-toolbar-control:#141414;--app-theme-warning-surface:#2a2315;--app-theme-error-foreground:#e26a75;--app-theme-muted-foreground:#808080;--app-theme-sidebar-row-hover:#141414;--app-theme-accent-foreground:#0a0a0a;--app-theme-sidebar-row-active:#1e1e1e;--app-theme-update-foreground:#EE7948;--app-theme-message-foreground:#eeeeee;--app-theme-sidebar-foreground:#eeeeee;--app-theme-terminal-scrollbar:#282828;--app-theme-terminal-selection:#3a2015;--app-theme-toolbar-foreground:#eeeeee;--app-theme-warning-foreground:#e5c07b;--app-theme-message-action-hover:#EE7948;--app-theme-sidebar-row-selected:#1f1510;--app-theme-terminal-background:#0a0a0a;--app-theme-terminal-foreground:#eeeeee;--app-theme-secondary-foreground:#eeeeee;--app-theme-toolbar-control-hover:#1e1e1e;--app-theme-search-match-background:#5c2a14;--app-theme-search-match-foreground:#FFF7F1;--app-theme-sidebar-control-surface:#141414;--app-theme-sidebar-muted-foreground:#808080;--app-theme-terminal-scrollbar-hover:#3c3c3c;--app-theme-accent-surface-foreground:#eeeeee;--app-theme-message-action-foreground:#0a0a0a;--app-theme-toolbar-control-foreground:#eeeeee;--app-theme-search-match-active-background:#EC5B2B;--app-theme-search-match-active-foreground:#0a0a0a;color-scheme:dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Orng Dither preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#0a0a0a}
+[data-chat-column],[data-workspace-area="home"]{background-color:var(--background)!important;background-image:url("data:image/png;base64,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")!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;image-rendering:pixelated;image-rendering:crisp-edges}
+.dark [data-chat-column],.dark [data-workspace-area="home"]{background-image:url("data:image/png;base64,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")!important}
+[data-chat-column] [data-workspace-area="conversation"],[data-chat-column] .messages-timeline-scroll{background:transparent!important}
+[data-chat-column] *,[data-workspace-area="home"] *{image-rendering:auto}
+[data-chat-column] [data-chat-header]{background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+[data-chat-column] [data-timeline-loading],[data-chat-column]>div,[data-chat-column]>div>div,[data-chat-column] [data-workspace-area="conversation"]>div{background-color:transparent!important}
+[data-chat-composer-stack]:has(h1) [data-slot="composer-context-strip"]{background:transparent!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none!important;border:0!important;border-radius:0!important}
+[data-chat-composer-stack]:has(h1) [data-slot="composer-host"]{box-shadow:0 20px 50px -20px rgb(0 0 0/.75)!important}
+html [data-side-chat-pane] [data-chat-column]{background-image:none!important}
+</style>
+</head>
+<body class="dark">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Orng Dither</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Orng Dither</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Orng Dither</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

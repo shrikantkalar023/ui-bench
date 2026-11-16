@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme-id="preview" data-theme-selected="true" style="--app-theme-text:oklch(0.946105 0 0);--app-theme-error:oklch(0.625565 0.193340 23.026);--app-theme-focus:oklch(0.717327 0.152224 251.001);--app-theme-input:oklch(0.301184 0 0);--app-theme-muted:oklch(0.217787 0 0);--app-theme-accent:oklch(0.946105 0 0);--app-theme-border:oklch(0.239292 0 0);--app-theme-canvas:oklch(0.000000 0 0);--app-theme-chrome:oklch(0.000000 0 0);--app-theme-update:oklch(0.573097 0.214499 258.247);--app-theme-sidebar:oklch(0.000000 0 0);--app-theme-surface:oklch(0.144788 0 0);--app-theme-toolbar:oklch(0.000000 0 0);--app-theme-warning:oklch(0.816897 0.163895 75.837);--app-theme-icon-muted:oklch(0.650041 0 0);--app-theme-secondary:oklch(0.217787 0 0);--app-theme-text-muted:oklch(0.709000 0 0);--app-theme-placeholder:oklch(0.545169 0 0);--app-theme-error-surface:oklch(0.220652 0.037998 17.872);--app-theme-accent-surface:oklch(0.239292 0 0);--app-theme-message-action:oklch(0.946105 0 0);--app-theme-sidebar-border:oklch(0.239292 0 0);--app-theme-surface-raised:oklch(0.177638 0 0);--app-theme-toolbar-border:oklch(0.239292 0 0);--app-theme-update-surface:oklch(0.217535 0.043648 258.738);--app-theme-code-background:oklch(0.144788 0 0);--app-theme-code-foreground:oklch(0.946105 0 0);--app-theme-message-surface:oklch(0.217787 0 0);--app-theme-secondary-label:oklch(0.709000 0 0);--app-theme-surface-overlay:oklch(0.144788 0 0);--app-theme-terminal-cursor:oklch(0.946105 0 0);--app-theme-toolbar-control:oklch(0.217787 0 0);--app-theme-warning-surface:oklch(0.237481 0.039259 77.102);--app-theme-error-foreground:oklch(0.698428 0.192517 21.751);--app-theme-muted-foreground:oklch(0.709000 0 0);--app-theme-sidebar-row-hover:oklch(0.217787 0 0);--app-theme-accent-foreground:oklch(0.144788 0 0);--app-theme-sidebar-row-active:oklch(0.239292 0 0);--app-theme-update-foreground:oklch(0.717327 0.152224 251.001);--app-theme-message-foreground:oklch(0.946105 0 0);--app-theme-sidebar-foreground:oklch(0.946105 0 0);--app-theme-terminal-scrollbar:oklch(0.301184 0 0);--app-theme-terminal-selection:oklch(0.355053 0.112708 256.636);--app-theme-toolbar-foreground:oklch(0.946105 0 0);--app-theme-warning-foreground:oklch(0.769285 0.161688 73.122);--app-theme-message-action-hover:oklch(0.845222 0 0);--app-theme-sidebar-row-selected:oklch(0.239292 0 0);--app-theme-terminal-background:oklch(0.144788 0 0);--app-theme-terminal-foreground:oklch(0.946105 0 0);--app-theme-secondary-foreground:oklch(0.946105 0 0);--app-theme-toolbar-control-hover:oklch(0.280940 0 0);--app-theme-search-match-background:oklch(0.355053 0.112708 256.636);--app-theme-search-match-foreground:oklch(0.946105 0 0);--app-theme-sidebar-control-surface:oklch(0.144788 0 0);--app-theme-sidebar-muted-foreground:oklch(0.650041 0 0);--app-theme-terminal-scrollbar-hover:oklch(0.390421 0 0);--app-theme-accent-surface-foreground:oklch(0.946105 0 0);--app-theme-message-action-foreground:oklch(0.144788 0 0);--app-theme-toolbar-control-foreground:oklch(0.709000 0 0);--app-theme-search-match-active-background:oklch(0.573097 0.214499 258.247);--app-theme-search-match-active-foreground:oklch(1.000000 0 0);color-scheme:dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Vercel preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:oklch(0.000000 0 0)}
+.dark{--g:linear-gradient(90deg,#ffffff0a 1px,#0000 1px),linear-gradient(0deg,#ffffff0a 1px,#0000 1px);--gs:64px;--ring:inset 0 0 0 1px #ffffff14}.dark[data-theme-id]{--primary:#ededed!important;--primary-foreground:#0a0a0a!important;--accent:#ffffff0f!important;--accent-foreground:#ededed!important}.dark,.dark [data-app-sidebar],.dark [data-workspace-area=settings-nav]{--sidebar-row-hover:#ffffff0d!important;--sidebar-row-active:#ffffff14!important;--sidebar-row-selected:#ffffff14!important}.dark [data-slot=sidebar-wrapper]{background:#000;isolation:isolate}.dark [data-slot=sidebar-wrapper]::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:var(--g);background-size:var(--gs) var(--gs);background-position:center top;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 30%,#0000 100%);mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 30%,#0000 100%)}.dark [data-chat-canvas],.dark [data-side-chat-pane] [data-chat-canvas]{background:#0000!important}.dark [data-chat-canvas]:has(.messages-timeline-scroll){background:#000000e0!important}.dark [data-workspace-area=panel],.dark [data-workspace-area=pull-requests]{background:#0a0a0af0!important;border-color:#1f1f1f!important}.dark [data-slot=dialog-popup][data-app-modal]{background:#0a0a0a!important;border-color:#2e2e2e!important;box-shadow:0 0 0 1px #ffffff0a,0 24px 64px -16px #000!important}.dark [data-slot=sidebar-inset],.dark [data-slot=sidebar-inset]>div,.dark [data-chat-canvas] [data-workspace-area=conversation],.dark [data-chat-canvas] [data-timeline-loading],.dark [data-chat-canvas] .messages-timeline-scroll,.dark [data-chat-canvas] [data-chat-composer-form],.dark [data-workspace-area=panel] [class~=bg-background],.dark [data-workspace-area=panel] [class~=bg-card],.dark [data-settings-page-scroll],.dark [data-workspace-area=pull-requests] header{background-color:#0000!important;background-image:none!important}.dark [data-slot=sidebar-container]{border-right-color:#1f1f1f!important}.dark [data-slot=sidebar-inner]{background-color:color-mix(in srgb,#000 max(40%,var(--glass-opacity)),#0000)!important;background-image:none!important;backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturation))}.dark [data-thread-item] [aria-current=page]{background:#ffffff0f!important;box-shadow:var(--ring)!important;border-color:#0000!important;border-radius:6px!important}.dark [data-chat-header]{background:#000000cc!important;border-bottom:1px solid #1f1f1f}.dark [data-chat-column]:not(:has(.messages-timeline-scroll)) [data-chat-header]{background:#0000!important;border-bottom-color:#0000}.dark [data-chat-canvas]:not(:has(.messages-timeline-scroll)) [data-chat-composer-stack]::before{content:"T3";position:absolute;left:0;right:0;bottom:100%;margin-bottom:.2em;z-index:-1;text-align:center;font:700 clamp(120px,min(17vw,26vh),240px) / 1 var(--font-sans);letter-spacing:-.06em;white-space:nowrap;color:#0000;background:linear-gradient(180deg,#fff 20%,#ffffff33);-webkit-background-clip:text;background-clip:text;opacity:.9;pointer-events:none}.dark [data-chat-canvas]:not(:has(.messages-timeline-scroll)) [data-chat-composer-stack]::after{content:"";position:absolute;left:50%;top:0;width:min(60vw,760px);height:min(46vh,420px);transform:translate(-50%,-92%);z-index:-2;background:radial-gradient(closest-side,#000000d9,#00000080 55%,#0000);pointer-events:none}.dark [data-user-message-bubble]{background:#111!important;box-shadow:var(--ring)!important;border-radius:12px!important}.dark [data-chat-canvas]:has(.messages-timeline-scroll) [data-slot=composer-shell]::before,.dark [data-chat-canvas]:not(:has(.messages-timeline-scroll)) [data-slot=composer-host]::before{background-color:#0a0a0a!important;background-image:none!important;box-shadow:0 0 0 1px #2e2e2e,0 16px 40px -20px #000!important}.dark [data-slot=composer-context-strip]{background:#0000!important;backdrop-filter:none!important;box-shadow:none!important;border:0!important}.dark [data-thread-details-card]{background:#0a0a0a!important;border-color:#1f1f1f!important;box-shadow:none!important}.dark [data-workspace-area=settings-nav]{background:#00000080!important;border-color:#1f1f1f!important}.dark [data-workspace-area=settings-nav] [data-slot=sidebar-menu-button][data-active=true]{background:#ffffff0f!important;box-shadow:var(--ring)!important}.dark [data-slot=switch][data-checked]{background:#0070f3!important;border-color:#0000!important}.dark [data-slot=toggle][aria-pressed=true],.dark [data-environment-identification=pill]{background:#1f1f1f!important;color:#ededed;box-shadow:var(--ring)!important}.dark [data-chat-composer-form] button[class~=bg-message-action]:not(:disabled){background:#ededed!important;color:#0a0a0a!important;box-shadow:none!important}.dark [data-chat-composer-form] button[class~=bg-message-action]:not(:disabled):hover{background:#cccccc!important}.dark [data-chat-composer-form] button[class~="bg-destructive/90"]{background:#e5484d!important;color:#fff!important}.dark [data-slot=switch-thumb]{background:#fff!important}.dark [data-slot=popover-popup],.dark [data-slot=menu-popup]{background:color-mix(in srgb,#0a0a0a max(92%,var(--glass-opacity)),#0000)!important;border-color:#2e2e2e!important;box-shadow:0 0 0 1px #ffffff08,0 16px 48px -12px #000000f0!important}
+</style>
+</head>
+<body class="dark">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Vercel</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Vercel</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Vercel</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

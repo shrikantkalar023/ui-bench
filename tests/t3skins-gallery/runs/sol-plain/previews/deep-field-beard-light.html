@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="" data-theme-id="preview" data-theme-selected="true" style="--app-theme-search-match-background:#ffde8b;--app-theme-search-match-foreground:#21180a;--app-theme-search-match-active-background:#eea52b;--app-theme-search-match-active-foreground:#21180a;--app-theme-canvas:#fcfcfc;--app-theme-chrome:#fcfcfc;--app-theme-toolbar:#fcfcfc;--app-theme-toolbar-foreground:#27272a;--app-theme-toolbar-border:#e4e4e7;--app-theme-toolbar-control:#ffffff;--app-theme-toolbar-control-foreground:#27272a;--app-theme-toolbar-control-hover:#f4f4f5;--app-theme-surface:#ffffff;--app-theme-surface-raised:#fcfcfc;--app-theme-surface-overlay:#ffffff;--app-theme-text:#27272a;--app-theme-text-muted:#71717b;--app-theme-border:#e4e4e7;--app-theme-input:#d4d4d8;--app-theme-focus:#1b4ed8;--app-theme-accent:#1b4ed8;--app-theme-accent-foreground:#ffffff;--app-theme-secondary:#fafafa;--app-theme-secondary-foreground:#27272a;--app-theme-muted:#fafafa;--app-theme-muted-foreground:#71717b;--app-theme-placeholder:#71717b;--app-theme-secondary-label:#71717b;--app-theme-icon-muted:#71717b;--app-theme-error:#fb2c36;--app-theme-error-foreground:#c10007;--app-theme-error-surface:#fcebec;--app-theme-warning:#fe9a00;--app-theme-warning-foreground:#bb4d00;--app-theme-warning-surface:#fcf4e8;--app-theme-update:#1b4ed8;--app-theme-update-foreground:#1b4ed8;--app-theme-update-surface:#e0e6f7;--app-theme-accent-surface:#f4f4f5;--app-theme-accent-surface-foreground:#18181b;--app-theme-message-surface:#f4f4f5;--app-theme-message-foreground:#27272a;--app-theme-message-action:#1b4ed8;--app-theme-message-action-foreground:#ffffff;--app-theme-message-action-hover:#3160db;--app-theme-code-background:#ffffff;--app-theme-code-foreground:#27272a;--app-theme-sidebar:#fafafa;--app-theme-sidebar-foreground:#27272a;--app-theme-sidebar-muted-foreground:#71717b;--app-theme-sidebar-control-surface:#f4f4f5;--app-theme-sidebar-row-hover:#fcfcfc;--app-theme-sidebar-row-active:#ffffff;--app-theme-sidebar-row-selected:#ffffff;--app-theme-sidebar-border:#e4e4e7;--app-theme-terminal-background:#fcfcfc;--app-theme-terminal-foreground:#27272a;--app-theme-terminal-cursor:#26384e;--app-theme-terminal-selection:#d0d6dd;--app-theme-terminal-scrollbar:#d6d6d6;--app-theme-terminal-scrollbar-hover:#bdbdbd;color-scheme:light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Deep Field preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#fcfcfc}
+/* Deep Field (dark mode): a slow flight through a solar system. Area background: static sky and sun.
+   ::before: near stars zoom (GPU). ::after: bodies; depth falls on each one's clock, and size and offset scale by 1/depth. */
+@property --sp-m { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes sp-m { to { --sp-m: 360deg; } }
+@property --sp-a { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --sp-b { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --sp-c { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --sp-d { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --sp-e { syntax: "<number>"; inherits: false; initial-value: 0; }
+@keyframes sp-a { to { --sp-a: 1; } }
+@keyframes sp-b { to { --sp-b: 1; } }
+@keyframes sp-c { to { --sp-c: 1; } }
+@keyframes sp-d { to { --sp-d: 1; } }
+@keyframes sp-e { to { --sp-e: 1; } }
+@keyframes sp-zoom { 0% { transform: scale(1); opacity: 0; } 12% { opacity: .9; } 82% { opacity: .9; } 100% { transform: scale(2.2); opacity: 0; } }
+
+.dark [data-workspace-area="conversation"] {
+  --sp-stars: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><circle cx='463' cy='573' r='0.8' fill='%23d6e6ff' opacity='.6'/><circle cx='189' cy='524' r='0.8' fill='%23ffd9d0' opacity='.6'/><circle cx='96' cy='457' r='0.7' fill='%23fff' opacity='.4'/><circle cx='551' cy='42' r='1' fill='%23d6e6ff' opacity='1'/><circle cx='161' cy='15' r='1' fill='%23fff' opacity='.4'/><circle cx='36' cy='194' r='0.6' fill='%23ffeccc' opacity='.4'/><circle cx='475' cy='334' r='0.8' fill='%23ffeccc' opacity='.6'/><circle cx='531' cy='239' r='1.3' fill='%23fff' opacity='1'/><circle cx='4' cy='87' r='0.8' fill='%23ffd9d0' opacity='.8'/><circle cx='416' cy='564' r='0.5' fill='%23ffd9d0' opacity='.8'/><circle cx='322' cy='235' r='1' fill='%23fff' opacity='.4'/><circle cx='71' cy='576' r='0.5' fill='%23d6e6ff' opacity='.4'/><circle cx='297' cy='395' r='0.5' fill='%23fff' opacity='.4'/><circle cx='218' cy='214' r='0.5' fill='%23d6e6ff' opacity='1'/><circle cx='406' cy='429' r='0.5' fill='%23ffeccc' opacity='.6'/><circle cx='276' cy='344' r='0.5' fill='%23fff' opacity='.8'/><circle cx='15' cy='419' r='0.5' fill='%23fff' opacity='.6'/><circle cx='103' cy='11' r='0.5' fill='%23d6e6ff' opacity='1'/><circle cx='181' cy='572' r='0.6' fill='%23d6e6ff' opacity='.6'/><circle cx='134' cy='429' r='1.3' fill='%23d6e6ff' opacity='.4'/><circle cx='404' cy='430' r='0.6' fill='%23fff' opacity='.8'/><circle cx='311' cy='20' r='0.6' fill='%23fff' opacity='1'/><circle cx='590' cy='102' r='0.5' fill='%23fff' opacity='.6'/><circle cx='452' cy='264' r='0.5' fill='%23ffeccc' opacity='.8'/><circle cx='303' cy='395' r='0.5' fill='%23fff' opacity='.4'/><circle cx='213' cy='596' r='1.3' fill='%23fff' opacity='.4'/><circle cx='377' cy='380' r='1' fill='%23d6e6ff' opacity='.6'/><circle cx='495' cy='588' r='0.6' fill='%23d6e6ff' opacity='.6'/><circle cx='157' cy='318' r='0.6' fill='%23ffeccc' opacity='.6'/><circle cx='194' cy='162' r='1.3' fill='%23ffd9d0' opacity='.6'/><circle cx='397' cy='494' r='1' fill='%23fff' opacity='1'/><circle cx='48' cy='106' r='0.5' fill='%23fff' opacity='.8'/></svg>");
+  isolation: isolate; overflow: clip;
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'><defs><radialGradient id='g'><stop offset='0' stop-color='%23fff1c8' stop-opacity='.55'/><stop offset='.2' stop-color='%23ffc777' stop-opacity='.22'/><stop offset='.5' stop-color='%23ff9a4a' stop-opacity='.06'/><stop offset='1' stop-color='%23ff8a3a' stop-opacity='0'/></radialGradient><radialGradient id='d'><stop offset='0' stop-color='%23fffdf6'/><stop offset='.6' stop-color='%23fff2cc'/><stop offset='.88' stop-color='%23ffd88a'/><stop offset='1' stop-color='%23ffb04a'/></radialGradient><filter id='n' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 .75 0 0 0 0 .35 0 0 0 -1.4 .9'/><feComposite in2='SourceGraphic' operator='in'/></filter><filter id='c' x='-50%25' y='-50%25' width='200%25' height='200%25'><feTurbulence type='fractalNoise' baseFrequency='.03 .09' numOctaves='3' seed='8'/><feDisplacementMap in='SourceGraphic' scale='18'/><feGaussianBlur stdDeviation='3'/></filter><filter id='f'><feGaussianBlur stdDeviation='1.5'/></filter></defs><circle cx='150' cy='150' r='150' fill='url(%23g)'/><circle cx='150' cy='150' r='48' fill='%23ffd79a' opacity='.45' filter='url(%23c)'/><ellipse cx='150' cy='150' rx='150' ry='1.6' fill='%23cfe2ff' opacity='.5' filter='url(%23f)'/><g stroke='%23fff3d6' stroke-width='1' opacity='.35' filter='url(%23f)'><path d='M150 70v160M70 150h160M95 95l110 110M205 95 95 205'/></g><circle cx='150' cy='150' r='30' fill='url(%23d)'/><circle cx='150' cy='150' r='30' fill='%23fff' filter='url(%23n)' opacity='.5'/></svg>"),
+    radial-gradient(14px 14px at 26% 30%, rgb(140 200 255 / .07), transparent),
+    radial-gradient(34px 34px at 40% 47%, transparent 70%, rgb(255 200 140 / .06) 85%, transparent),
+    radial-gradient(42% 38% at 6% 6%, rgb(255 180 100 / .12), transparent 70%),
+    radial-gradient(55% 50% at 88% 82%, rgb(110 60 220 / .11), transparent 70%),
+    radial-gradient(45% 35% at 65% 18%, rgb(30 170 170 / .06), transparent 70%),
+    var(--sp-stars),
+    radial-gradient(120% 90% at 50% 50%, #06070f, #020205) !important;
+  background-size: 320px 320px, auto, auto, auto, auto, auto, 420px 420px, auto !important;
+  background-position: -70px -80px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0 !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat !important;
+}
+.dark [data-workspace-area="conversation"]::before, .dark [data-workspace-area="conversation"]::after { content: ""; position: absolute; z-index: -1; pointer-events: none; }
+.dark [data-workspace-area="conversation"]::before {
+  inset: 0; background: var(--sp-stars) center / 600px 600px repeat;
+  transform-origin: 50% 50%; will-change: transform, opacity;
+  animation: sp-zoom 48s linear infinite;
+}
+.dark [data-workspace-area="conversation"]::after {
+  inset: 0;
+  --ka: calc(.06 / (1 - .94 * var(--sp-a))); --kb: calc(.06 / (1 - .94 * var(--sp-b))); --kc: calc(.06 / (1 - .94 * var(--sp-c))); --kd: calc(.06 / (1 - .94 * var(--sp-d))); --ke: calc(.06 / (1 - .94 * var(--sp-e))); 
+  background-image: linear-gradient(to right, transparent 6%, rgb(3 3 8 / .6) 24%, rgb(3 3 8 / .6) 76%, transparent 94%), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><radialGradient id='s' cx='.3' cy='.27' r='.95'><stop offset='.35' stop-opacity='0'/><stop offset='.62' stop-opacity='.35'/><stop offset='.8' stop-opacity='.8'/><stop offset='1' stop-opacity='.97'/></radialGradient><filter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'><feGaussianBlur stdDeviation='1.2'/></filter><radialGradient id='a' cx='.5' cy='.5' r='.5'><stop offset='.86' stop-color='%237fc0ff' stop-opacity='0'/><stop offset='.9' stop-color='%237fc0ff' stop-opacity='.55'/><stop offset='1' stop-color='%237fc0ff' stop-opacity='0'/></radialGradient><radialGradient id='o' cx='.38' cy='.32' r='.75'><stop offset='0' stop-color='%233a8be0'/><stop offset='.5' stop-color='%2317509f'/><stop offset='1' stop-color='%23071b42'/></radialGradient><radialGradient id='g' cx='.33' cy='.3' r='.2'><stop offset='0' stop-color='%23fff' stop-opacity='.35'/><stop offset='1' stop-color='%23fff' stop-opacity='0'/></radialGradient><clipPath id='c'><circle cx='100' cy='100' r='90'/></clipPath></defs><circle cx='100' cy='100' r='99' fill='url(%23a)'/><circle cx='100' cy='100' r='90' fill='url(%23o)'/><g clip-path='url(%23c)'><g filter='url(%23b)'><path fill='%234f7536' d='M30 58c12-16 34-20 50-12 10 5 6 16 14 22 9 7 4 22-6 26-12 5-12 20-24 22-14 2-18-10-28-16-12-7-16-28-6-42z'/><path fill='%23a88d58' d='M48 62c8-6 20-6 26 0 4 6-4 12-12 12s-20-6-14-12z'/><path fill='%2355793a' d='M112 34c16-8 38-2 46 12 6 10-4 16 2 28 6 11 18 14 12 30-6 14-24 12-30 2-6-12 2-20-8-28-12-10-36-30-22-44z'/><path fill='%23b19760' d='M126 48c10-2 18 4 16 12-2 6-12 6-18 2-6-4-6-12 2-14z'/><path fill='%234a6f33' d='M88 132c12-6 30 0 32 12 2 10-6 22-18 22s-20-12-20-20 0-12 6-14z'/><path fill='%23e9f0f5' d='M40 178c30-10 90-10 130 0v30H40z'/></g><g fill='%23fff' filter='url(%23b)' opacity='.8'><path d='M10 96c26-10 52 2 80-4 26-6 50-14 100-2-26 12-56 16-86 12-30-4-60 6-94-6z'/><path d='M52 40c20-10 50-6 66-2-20 8-46 10-66 2z'/><path d='M120 120c14-10 34-8 44 2-10 0-16 6-26 6-10 0-14-6-18-8z'/><path d='M70 150c18-4 34 2 48-2-12 8-34 10-48 2z'/><circle cx='150' cy='70' r='6'/></g><circle cx='100' cy='100' r='90' fill='url(%23g)'/></g><circle cx='100' cy='100' r='90' fill='url(%23s)'/><g fill='%23ffcf7a' opacity='.55'><circle cx='150' cy='150' r='.8'/><circle cx='156' cy='144' r='.6'/><circle cx='142' cy='160' r='.7'/><circle cx='165' cy='130' r='.6'/><circle cx='130' cy='168' r='.6'/></g></svg>"), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 280'><defs><radialGradient id='s' cx='.3' cy='.27' r='.95'><stop offset='.35' stop-opacity='0'/><stop offset='.62' stop-opacity='.35'/><stop offset='.8' stop-opacity='.8'/><stop offset='1' stop-opacity='.97'/></radialGradient><filter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'><feGaussianBlur stdDeviation='2.2'/></filter><linearGradient id='p' x2='0' y2='1'><stop offset='0' stop-color='%23d9c7a0'/><stop offset='.12' stop-color='%23cdb184'/><stop offset='.2' stop-color='%23e8dab9'/><stop offset='.28' stop-color='%23b98e5c'/><stop offset='.34' stop-color='%23d8be90'/><stop offset='.42' stop-color='%23eadcbc'/><stop offset='.5' stop-color='%23c49866'/><stop offset='.56' stop-color='%23e4d0a8'/><stop offset='.64' stop-color='%23a97c4e'/><stop offset='.72' stop-color='%23d6b98a'/><stop offset='.8' stop-color='%23bf9a6a'/><stop offset='.9' stop-color='%23a8885e'/><stop offset='1' stop-color='%238c7454'/></linearGradient><linearGradient id='r' x2='1'><stop offset='0' stop-color='%23cdbb96' stop-opacity='.15'/><stop offset='.3' stop-color='%23e6d6b4' stop-opacity='.8'/><stop offset='.5' stop-color='%23f2e6c8' stop-opacity='.9'/><stop offset='.7' stop-color='%23e6d6b4' stop-opacity='.8'/><stop offset='1' stop-color='%23cdbb96' stop-opacity='.15'/></linearGradient><g id='R'><ellipse cx='220' cy='140' rx='150' ry='34' stroke='%238a7a5e' stroke-width='10' opacity='.35'/><ellipse cx='220' cy='140' rx='172' ry='39' stroke='url(%23r)' stroke-width='22'/><ellipse cx='220' cy='140' rx='186' ry='42.5' stroke='%23000' stroke-width='3' opacity='.6'/><ellipse cx='220' cy='140' rx='198' ry='45' stroke='url(%23r)' stroke-width='16' opacity='.75'/></g><clipPath id='t'><rect width='440' height='140'/></clipPath><clipPath id='u'><rect y='140' width='440' height='140'/></clipPath><clipPath id='c'><circle cx='220' cy='140' r='86'/></clipPath></defs><g transform='rotate(-16 220 140)' fill='none'><use href='%23R' clip-path='url(%23t)'/><circle cx='220' cy='140' r='86' fill='url(%23p)'/><g clip-path='url(%23c)'><g filter='url(%23b)' opacity='.45'><path d='M120 112c30 6 60-6 100 0s70 8 110-2v8c-40 10-70 2-110-2s-70 6-100-2z' fill='%23f2e4c4'/><path d='M120 168c40-6 70 6 110 0s60-6 100 2v8c-40-6-60 2-100 4s-70-8-110-6z' fill='%238e6a42'/></g><ellipse cx='252' cy='166' rx='13' ry='7' fill='%23b8643a' opacity='.75' filter='url(%23b)'/><ellipse cx='220' cy='158' rx='176' ry='40' stroke='%23000' stroke-width='14' opacity='.35' filter='url(%23b)'/></g><circle cx='220' cy='140' r='86' fill='url(%23s)'/><use href='%23R' clip-path='url(%23u)'/></g></svg>"), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><radialGradient id='s' cx='.3' cy='.27' r='.95'><stop offset='.35' stop-opacity='0'/><stop offset='.62' stop-opacity='.35'/><stop offset='.8' stop-opacity='.8'/><stop offset='1' stop-opacity='.97'/></radialGradient><filter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'><feGaussianBlur stdDeviation='2'/></filter><radialGradient id='a' cx='.5' cy='.5' r='.5'><stop offset='.86' stop-color='%23ffbf9a' stop-opacity='0'/><stop offset='.9' stop-color='%23ffbf9a' stop-opacity='.55'/><stop offset='1' stop-color='%23ffbf9a' stop-opacity='0'/></radialGradient><radialGradient id='o' cx='.38' cy='.32' r='.75'><stop offset='0' stop-color='%23e08a58'/><stop offset='.55' stop-color='%23a94a24'/><stop offset='1' stop-color='%233d150a'/></radialGradient><clipPath id='c'><circle cx='100' cy='100' r='90'/></clipPath></defs><circle cx='100' cy='100' r='99' fill='url(%23a)'/><circle cx='100' cy='100' r='90' fill='url(%23o)'/><g clip-path='url(%23c)'><g filter='url(%23b)' fill='%235e2412' opacity='.5'><path d='M60 80c14-10 30-4 34 8s-6 30-18 34-30-2-30-16 4-20 14-26z'/><path d='M120 110c16-6 40 0 44 14s-10 22-26 18-30-24-18-32z'/><path d='M20 120c20 4 40-2 60 6-14 8-44 10-60-6z'/></g><path d='M70 96c20-4 40 0 70-6' stroke='%234a1a0c' stroke-width='2.5' fill='none' opacity='.5'/><ellipse cx='100' cy='14' rx='46' ry='14' fill='%23fff4ec' opacity='.85' filter='url(%23b)'/><g opacity='.5'><circle cx='134' cy='62' r='7' fill='%237a3218'/><circle cx='133' cy='61' r='7' fill='none' stroke='%23f2b08a' stroke-width='1' stroke-dasharray='11 40'/><circle cx='84' cy='140' r='10' fill='%237a3218'/><circle cx='83' cy='139' r='10' fill='none' stroke='%23f2b08a' stroke-width='1.2' stroke-dasharray='15 60'/><circle cx='150' cy='150' r='4' fill='%237a3218'/><circle cx='46' cy='70' r='5' fill='%237a3218'/></g></g><circle cx='100' cy='100' r='90' fill='url(%23s)'/></svg>"), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><radialGradient id='s' cx='.3' cy='.27' r='.95'><stop offset='.35' stop-opacity='0'/><stop offset='.62' stop-opacity='.35'/><stop offset='.8' stop-opacity='.8'/><stop offset='1' stop-opacity='.97'/></radialGradient><filter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'><feGaussianBlur stdDeviation='1.6'/></filter><radialGradient id='a' cx='.5' cy='.5' r='.5'><stop offset='.86' stop-color='%239fc4ff' stop-opacity='0'/><stop offset='.9' stop-color='%239fc4ff' stop-opacity='.55'/><stop offset='1' stop-color='%239fc4ff' stop-opacity='0'/></radialGradient><radialGradient id='o' cx='.38' cy='.32' r='.75'><stop offset='0' stop-color='%235b8cf0'/><stop offset='.55' stop-color='%232849b8'/><stop offset='1' stop-color='%230a1650'/></radialGradient><linearGradient id='k' x2='0' y2='1'><stop offset='0' stop-color='%23fff' stop-opacity='0'/><stop offset='.3' stop-color='%239ec0ff' stop-opacity='.18'/><stop offset='.38' stop-color='%23fff' stop-opacity='0'/><stop offset='.62' stop-color='%230a1a5c' stop-opacity='.25'/><stop offset='.72' stop-color='%239ec0ff' stop-opacity='.15'/><stop offset='1' stop-color='%23fff' stop-opacity='0'/></linearGradient><clipPath id='c'><circle cx='100' cy='100' r='90'/></clipPath></defs><circle cx='100' cy='100' r='99' fill='url(%23a)'/><circle cx='100' cy='100' r='90' fill='url(%23o)'/><g clip-path='url(%23c)'><rect width='200' height='200' fill='url(%23k)'/><ellipse cx='118' cy='118' rx='16' ry='9' fill='%230d2066' opacity='.7' filter='url(%23b)'/><g fill='%23fff' opacity='.8' filter='url(%23b)'><path d='M96 108c10-3 22-2 30 2-10 2-20 2-30-2z'/><path d='M40 72c16-4 32-3 46 0-14 4-32 4-46 0z'/><path d='M120 150c8-2 18-2 24 1-8 2-16 2-24-1z'/></g></g><circle cx='100' cy='100' r='90' fill='url(%23s)'/></svg>"), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300'><defs><radialGradient id='r' cx='.3' cy='.3' r='.9'><stop offset='0' stop-color='%23b8ada0'/><stop offset='.55' stop-color='%236a6158'/><stop offset='1' stop-color='%231c1916'/></radialGradient><path id='k0' fill='url(%23r)' d='M-10-6 2-11 11-4 9 7-3 10-11 3z'/><path id='k1' fill='url(%23r)' d='M-8-9 7-8 12 2 4 10-9 7-12-1z'/><path id='k2' fill='url(%23r)' d='M-12-3-4-10 10-8 11 5 0 9-9 6z'/></defs><use href='%23k2' transform='translate(543 147) scale(1.4) rotate(333)'/><use href='%23k2' transform='translate(79 82) scale(0.7) rotate(127)'/><use href='%23k2' transform='translate(126 165) scale(0.7) rotate(126)'/><use href='%23k1' transform='translate(1133 139) scale(0.3) rotate(293)'/><use href='%23k0' transform='translate(46 145) scale(0.4) rotate(199)'/><use href='%23k0' transform='translate(167 111) scale(0.4) rotate(316)'/><use href='%23k2' transform='translate(931 152) scale(0.3) rotate(107)'/><use href='%23k0' transform='translate(359 152) scale(0.4) rotate(148)'/><use href='%23k1' transform='translate(427 95) scale(0.4) rotate(93)'/><use href='%23k2' transform='translate(423 136) scale(0.7) rotate(152)'/><use href='%23k0' transform='translate(759 73) scale(0.5) rotate(33)'/><use href='%23k1' transform='translate(637 195) scale(1) rotate(300)'/><use href='%23k0' transform='translate(712 183) scale(0.5) rotate(246)'/><use href='%23k2' transform='translate(666 164) scale(0.4) rotate(246)'/><use href='%23k1' transform='translate(380 247) scale(0.3) rotate(183)'/><use href='%23k1' transform='translate(57 186) scale(1) rotate(214)'/><use href='%23k1' transform='translate(790 145) scale(0.3) rotate(92)'/><use href='%23k2' transform='translate(422 148) scale(0.3) rotate(125)'/></svg>"), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><radialGradient id='s' cx='.3' cy='.27' r='.95'><stop offset='.35' stop-opacity='0'/><stop offset='.62' stop-opacity='.35'/><stop offset='.8' stop-opacity='.8'/><stop offset='1' stop-opacity='.97'/></radialGradient><filter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'><feGaussianBlur stdDeviation='1'/></filter><radialGradient id='o' cx='.38' cy='.32' r='.75'><stop offset='0' stop-color='%23d8d4cc'/><stop offset='.6' stop-color='%238f8a82'/><stop offset='1' stop-color='%233a3834'/></radialGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23o)'/><g fill='%235d5a54' opacity='.45'><circle cx='36' cy='38' r='8' filter='url(%23b)'/><circle cx='62' cy='58' r='11' filter='url(%23b)'/><circle cx='58' cy='28' r='4'/><circle cx='30' cy='64' r='5'/><circle cx='72' cy='40' r='3'/></g><circle cx='50' cy='50' r='45' fill='url(%23s)'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 0, calc(50% + 4vw + -78vw * var(--ka)) calc(50% + -3vh + 62vh * var(--ka)), calc(50% + -3vw + 85vw * var(--kb)) calc(50% + 3vh + -75vh * var(--kb)), calc(50% + 3vw + 72vw * var(--kc)) calc(50% + 4vh + 70vh * var(--kc)), calc(50% + -2vw + -74vw * var(--kd)) calc(50% + -4vh + -70vh * var(--kd)), calc(50% + 0vw + 6vw * var(--ke)) calc(50% + 1vh + 40vh * var(--ke)), calc(50% + -3vw + (85vw + 70vmin * cos(var(--sp-m))) * var(--kb)) calc(50% + 3vh + (-75vh + 16vmin * sin(var(--sp-m))) * var(--kb));
+  background-size: auto, calc(46vmin * var(--ka)) auto, calc(95vmin * var(--kb)) auto, calc(30vmin * var(--kc)) auto, calc(52vmin * var(--kd)) auto, calc(260vmin * var(--ke)) auto, calc(12vmin * var(--kb)) auto;
+  animation: sp-a 120s linear -25s infinite, sp-b 190s linear -150s infinite, sp-c 100s linear -62s infinite, sp-d 230s linear -30s infinite, sp-e 150s linear -100s infinite, sp-m 50s linear infinite;
+}
+/* warp: open thread is Working */
+.dark:has([data-sidebar-row][aria-current="page"][aria-label*=", Working"]) [data-workspace-area="conversation"]::before {
+  background: repeating-conic-gradient(#d4e4ff26 0 .25deg, #0000 0 2.5deg), var(--sp-stars) center / 600px 600px repeat;
+  mask: repeating-radial-gradient(#0000 0 22px, #000 0 70px), radial-gradient(#0000 10%, #000 50%); mask-composite: intersect;
+  animation-duration: 7s;
+}
+@media (prefers-reduced-motion: reduce) { .dark [data-workspace-area="conversation"]::before, .dark [data-workspace-area="conversation"]::after { animation-play-state: paused !important; } }
+
+</style>
+</head>
+<body class="">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Deep Field</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Deep Field</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Deep Field</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

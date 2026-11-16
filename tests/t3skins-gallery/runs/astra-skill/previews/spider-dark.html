@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme-id="preview" data-theme-selected="true" style="--app-theme-text:#d8dde8;--app-theme-error:#ff7b8a;--app-theme-focus:#e5484d;--app-theme-input:#2a3040;--app-theme-accent:#d63a3a;--app-theme-border:#2a3040;--app-theme-canvas:#12151d;--app-theme-chrome:#0e1118;--app-theme-sidebar:#0e1118;--app-theme-surface:#181c26;--app-theme-toolbar:#0e1118;--app-theme-warning:#e8b44c;--app-theme-icon-muted:#8a93a6;--app-theme-text-muted:#9aa3b5;--app-theme-placeholder:#7d8699;--app-theme-error-surface:#2a1520;--app-theme-accent-surface:#2a1a22;--app-theme-sidebar-border:#222838;--app-theme-surface-raised:#1e2330;--app-theme-toolbar-border:#222838;--app-theme-code-background:#0d1016;--app-theme-code-foreground:#d0d6e2;--app-theme-message-surface:#2a1a22;--app-theme-secondary-label:#9aa3b5;--app-theme-surface-overlay:#1e2330;--app-theme-terminal-cursor:#e5484d;--app-theme-warning-surface:#2a2214;--app-theme-sidebar-row-hover:#161a24;--app-theme-accent-foreground:#ffffff;--app-theme-sidebar-row-active:#1c2130;--app-theme-message-foreground:#ece4e6;--app-theme-sidebar-foreground:#d8dde8;--app-theme-terminal-selection:#2b4a7a;--app-theme-sidebar-row-selected:#1f2638;--app-theme-terminal-background:#0d1016;--app-theme-terminal-foreground:#d0d6e2;--app-theme-search-match-background:#2b4a7a;--app-theme-search-match-foreground:#ffffff;--app-theme-sidebar-muted-foreground:#9aa3b5;--app-theme-accent-surface-foreground:#f0d9dc;--app-theme-search-match-active-background:#3d6bb3;--app-theme-search-match-active-foreground:#ffffff;color-scheme:dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Spider preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#12151d}
+[data-workspace-area="conversation"] { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' viewBox='0 0 900 900'%3E%3Cpath d='M900 0L900 945M900 0L752 933M900 0L608 899M900 0L471 842M900 0L345 765M900 0L232 668M900 0L135 555M900 0L58 429M900 0L1 292M900 0L-33 148M900 0L-45 0M900 70Q895 63 889 69M889 69Q885 61 878 67M878 67Q876 58 868 62M868 62Q867 54 859 57M859 57Q859 48 851 49M851 49Q852 41 843 41M843 41Q846 33 838 32M838 32Q842 24 833 22M833 22Q839 15 831 11M831 11Q837 5 830 0M900 152Q889 137 876 150M876 150Q868 133 853 145M853 145Q848 127 831 136M831 136Q828 117 811 123M811 123Q811 104 792 108M792 108Q796 89 777 89M777 89Q783 72 764 69M764 69Q773 52 755 47M755 47Q767 32 750 24M750 24Q763 11 748 0M900 240Q883 215 863 237M863 237Q850 210 826 228M826 228Q817 199 791 213M791 213Q787 184 759 194M759 194Q760 164 731 169M731 169Q736 140 706 141M706 141Q716 113 687 109M687 109Q701 83 672 74M672 74Q690 50 663 37M663 37Q685 17 660 0M900 331Q877 297 848 327M848 327Q831 289 798 314M798 314Q786 275 750 295M750 295Q744 254 706 268M706 268Q707 226 666 234M666 234Q674 193 632 194M632 194Q646 156 605 150M605 150Q625 114 586 102M586 102Q611 69 573 52M573 52Q603 23 569 0M900 425Q870 381 834 419M834 419Q811 372 769 404M769 404Q754 353 707 378M707 378Q700 326 650 343M650 343Q652 291 600 300M600 300Q609 248 557 250M557 250Q574 200 522 193M522 193Q547 146 496 131M496 131Q528 89 481 66M481 66Q519 30 475 0M900 521Q863 467 819 514M819 514Q791 456 739 495M739 495Q721 433 664 464M664 464Q655 400 594 421M594 421Q596 356 532 368M532 368Q544 304 479 306M479 306Q500 245 436 236M436 236Q467 179 405 161M405 161Q444 109 386 81M386 81Q433 37 379 0M900 619Q856 555 803 611M803 611Q770 542 709 589M709 589Q687 515 619 551M619 551Q609 475 536 501M536 501Q538 424 462 438M462 438Q476 362 399 364M399 364Q425 291 349 281M349 281Q385 213 311 191M311 191Q358 130 289 97M289 97Q345 44 281 0M900 719Q849 645 788 710M788 710Q749 629 678 684M678 684Q652 598 574 640M574 640Q562 552 478 581M478 581Q480 492 392 508M392 508Q408 420 319 422M319 422Q348 338 260 326M260 326Q302 248 216 222M216 222Q271 151 190 112M190 112Q255 51 181 0M900 820Q842 736 772 810M772 810Q728 718 647 780M647 780Q618 682 528 731M528 731Q514 629 418 663M418 663Q421 561 320 580M320 580Q339 479 237 482M237 482Q271 386 169 372M169 372Q218 282 120 253M120 253Q182 172 90 128M90 128Q164 58 80 0' fill='none' stroke='%238fa3c8' stroke-opacity='0.07' stroke-width='1.2'/%3E%3C/svg%3E") right top / min(900px, 80%) auto no-repeat, radial-gradient(ellipse 70% 45% at 100% 0%, rgba(214,58,58,0.05), transparent 70%), radial-gradient(ellipse 70% 50% at 0% 100%, rgba(61,107,179,0.06), transparent 70%), #12151d !important; }
+[data-user-message-bubble] { box-shadow: inset 2px 0 0 #d63a3a; }
+.chat-markdown a { color: #6ea8ff !important; }
+.chat-markdown-codeblock { border-left: 2px solid #3d6bb3; }
+[data-slot="composer-host"]:focus-within { box-shadow: 0 0 0 1px rgba(229,72,77,0.55); }
+::-webkit-scrollbar-thumb { background: #2a3040; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #3a4256; }
+</style>
+</head>
+<body class="dark">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Spider</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Spider</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Spider</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

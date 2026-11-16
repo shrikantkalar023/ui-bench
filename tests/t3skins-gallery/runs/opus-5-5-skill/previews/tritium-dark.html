@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme-id="preview" data-theme-selected="true" style="--app-theme-text:#D7EFE8;--app-theme-error:#FF6F87;--app-theme-focus:#5DFFC4;--app-theme-input:#204343;--app-theme-muted:#0B1717;--app-theme-accent:#5DFFC4;--app-theme-border:#173030;--app-theme-canvas:#060D0D;--app-theme-chrome:#081212;--app-theme-update:#5DFFC4;--app-theme-sidebar:#050B0B;--app-theme-surface:#0A1515;--app-theme-toolbar:#081212;--app-theme-warning:#F5D06B;--app-theme-icon-muted:#789B93;--app-theme-secondary:#112424;--app-theme-text-muted:#86A8A0;--app-theme-placeholder:#6E918A;--app-theme-error-surface:#33111A;--app-theme-accent-surface:#0C2C24;--app-theme-message-action:#163232;--app-theme-sidebar-border:#112323;--app-theme-surface-raised:#0F1E1E;--app-theme-toolbar-border:#173030;--app-theme-update-surface:#0A2A22;--app-theme-code-background:#040A0A;--app-theme-code-foreground:#C5E3DB;--app-theme-message-surface:#0E2020;--app-theme-secondary-label:#86A8A0;--app-theme-surface-overlay:#0D1A1A;--app-theme-terminal-cursor:#5DFFC4;--app-theme-toolbar-control:#0D1B1B;--app-theme-warning-surface:#2C250F;--app-theme-error-foreground:#FF9BAC;--app-theme-muted-foreground:#86A8A0;--app-theme-sidebar-row-hover:#0C1919;--app-theme-accent-foreground:#03130E;--app-theme-sidebar-row-active:#0F332B;--app-theme-update-foreground:#8CFFD6;--app-theme-message-foreground:#E1F5EF;--app-theme-sidebar-foreground:#CDE7E0;--app-theme-terminal-scrollbar:#1A3535;--app-theme-terminal-selection:#14453A;--app-theme-toolbar-foreground:#D7EFE8;--app-theme-warning-foreground:#F8DC91;--app-theme-message-action-hover:#1F4545;--app-theme-sidebar-row-selected:#0C2721;--app-theme-terminal-background:#040A0A;--app-theme-terminal-foreground:#C5E3DB;--app-theme-secondary-foreground:#D7EFE8;--app-theme-toolbar-control-hover:#163030;--app-theme-search-match-background:#1F4A5C;--app-theme-search-match-foreground:#D6F4FF;--app-theme-sidebar-control-surface:#0D1B1B;--app-theme-sidebar-muted-foreground:#789B93;--app-theme-terminal-scrollbar-hover:#295050;--app-theme-accent-surface-foreground:#B6FFE5;--app-theme-message-action-foreground:#D7EFE8;--app-theme-toolbar-control-foreground:#BEDDD4;--app-theme-search-match-active-background:#5DFFC4;--app-theme-search-match-active-foreground:#03130E;color-scheme:dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Tritium preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#060D0D}
+/* Tritium: an instrument panel. Blueprint grid that fades toward the edges, and HUD corner brackets instead of rounded cards. */
+.dark [data-workspace-area="conversation"]{background-color:#060D0D!important;background-image:radial-gradient(ellipse 75% 65% at 50% 40%,transparent 0,#060D0D 92%),linear-gradient(#5DFFC412 1px,transparent 1px),linear-gradient(90deg,#5DFFC412 1px,transparent 1px),linear-gradient(#5DFFC40A 1px,transparent 1px),linear-gradient(90deg,#5DFFC40A 1px,transparent 1px)!important;background-size:100% 100%,160px 160px,160px 160px,32px 32px,32px 32px!important;background-repeat:no-repeat,repeat,repeat,repeat,repeat!important}
+.dark .messages-timeline-scroll{background:transparent!important}
+.dark [data-chat-header]{box-shadow:0 1px 0 #173030!important}
+/* Your messages: bracketed readout. Four 1px strokes drawn as background layers. */
+.dark [data-user-message-bubble]{border-radius:0!important;box-shadow:none!important;background:linear-gradient(#5DFFC4,#5DFFC4) top left/12px 1px no-repeat,linear-gradient(#5DFFC4,#5DFFC4) top left/1px 12px no-repeat,linear-gradient(#5DFFC4,#5DFFC4) bottom right/12px 1px no-repeat,linear-gradient(#5DFFC4,#5DFFC4) bottom right/1px 12px no-repeat,#0E2020!important}
+.dark [data-slot="composer-host"],.dark [data-chat-composer-form],.dark [data-slot="composer-host"]::before,.dark [data-slot="composer-host"]::after{border-radius:4px!important}
+.dark [data-slot="composer-host"]{box-shadow:0 0 0 1px #204343,0 14px 40px -18px #000000CC!important;transition:box-shadow .2s ease}
+.dark [data-slot="composer-host"]:focus-within{box-shadow:0 0 0 1px #5DFFC480,0 0 0 4px #5DFFC414,0 0 30px -8px #5DFFC44D!important}
+.dark .composer-tiptap{caret-color:#5DFFC4!important}
+.dark .chat-markdown-codeblock{border-radius:2px!important;box-shadow:inset 0 0 0 1px #173030,inset 2px 0 0 #5DFFC466!important}
+.dark .chat-markdown :not(pre)>code{color:#8CFFD6!important}
+.dark .chat-markdown a{color:#5DFFC4!important;text-underline-offset:3px}
+.dark .chat-markdown :is(h1,h2,h3){color:#EAFBF6!important}
+.dark [data-thread-item],.dark [data-slot="button"],.dark [data-slot="input"],.dark [data-slot="select-trigger"],.dark [data-slot="tooltip-popup"]{border-radius:3px!important}
+.dark [data-slot="menu-popup"],.dark [data-slot="popover-popup"],.dark [data-slot="dialog-popup"],.dark [data-thread-details-card]{border-radius:4px!important;box-shadow:0 0 0 1px #204343,0 18px 50px -12px #000000E6!important}
+.dark [data-slot="button"]:focus-visible,.dark [data-slot="input"]:focus-visible,.dark [data-slot="select-trigger"]:focus-visible{outline:2px solid #5DFFC4!important;outline-offset:2px!important}
+.dark svg.lucide{stroke-width:1.5}
+.dark ::selection{background:#1A5C4C;color:#FFFFFF}
+.dark [data-slot="scroll-area-thumb"]{background-color:#234646!important;border-radius:1px!important}
+.dark ::-webkit-scrollbar-thumb{background-color:#234646;border-radius:1px}
+.dark ::-webkit-scrollbar-thumb:hover{background-color:#336262}
+
+</style>
+</head>
+<body class="dark">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Tritium</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Tritium</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Tritium</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

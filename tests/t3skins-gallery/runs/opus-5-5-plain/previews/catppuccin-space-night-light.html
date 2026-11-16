@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="" data-theme-id="preview" data-theme-selected="true" style="--app-theme-canvas:oklch(0.957761 0.005767 264.532);--app-theme-chrome:oklch(0.957761 0.005767 264.532);--app-theme-toolbar:oklch(0.957761 0.005767 264.532);--app-theme-toolbar-foreground:oklch(0.201294 0.014113 298.198);--app-theme-toolbar-border:oklch(0.857761 0.022613 301.19);--app-theme-toolbar-control:oklch(0.907761 0.016168 301.19);--app-theme-toolbar-control-foreground:oklch(0.201294 0.014113 298.198);--app-theme-toolbar-control-hover:oklch(0.867761 0.019899 301.19);--app-theme-surface:oklch(0.933459 0.008714 264.521);--app-theme-surface-raised:oklch(0.933459 0.008714 264.521);--app-theme-surface-overlay:oklch(0.957761 0.005767 264.532);--app-theme-text:oklch(0.43547 0.043008 279.325);--app-theme-text-muted:oklch(0.43547 0.043008 279.325);--app-theme-border:oklch(0.758394 0.020453 273.154);--app-theme-input:oklch(0.797761 0.022613 301.19);--app-theme-focus:oklch(0.55467 0.250346 297.016);--app-theme-accent:oklch(0.55467 0.250346 297.016);--app-theme-accent-foreground:oklch(1 0 0);--app-theme-secondary:oklch(0.897761 0.028266 301.19);--app-theme-secondary-foreground:oklch(0.2 0.014133 301.19);--app-theme-muted:oklch(0.917761 0.019786 301.19);--app-theme-muted-foreground:oklch(0.505175 0.015577 300.635);--app-theme-placeholder:oklch(0.498829 0.01249 299.91);--app-theme-secondary-label:oklch(0.528621 0.009035 289.594);--app-theme-icon-muted:oklch(0.528621 0.009035 289.594);--app-theme-error:oklch(0.550474 0.215514 19.809);--app-theme-error-foreground:oklch(0.509494 0.208583 28.513);--app-theme-error-surface:oklch(0.923473 0.017094 356.913);--app-theme-warning:oklch(0.555431 0.167139 42.148);--app-theme-warning-foreground:oklch(0.535178 0.152223 45.359);--app-theme-warning-surface:oklch(0.9396 0.013338 76.628);--app-theme-update:oklch(0.869229 0.056531 301.19);--app-theme-update-foreground:oklch(0.2 0.014133 301.19);--app-theme-update-surface:oklch(0.867761 0.031092 301.19);--app-theme-accent-surface:oklch(0.857477 0.01448 268.476);--app-theme-accent-surface-foreground:oklch(0.2 0.014133 301.19);--app-theme-message-surface:oklch(0.857761 0.033919 301.19);--app-theme-message-foreground:oklch(0.2 0.014133 301.19);--app-theme-message-action:oklch(0.55467 0.250346 297.016);--app-theme-message-action-foreground:oklch(1 0 0);--app-theme-message-action-hover:oklch(0.789229 0.06 351.19);--app-theme-code-background:oklch(0.933459 0.008714 264.521);--app-theme-code-foreground:oklch(0.201294 0.014113 298.198);--app-theme-search-match-background:oklch(0.861386 0.059222 227.196);--app-theme-search-match-foreground:oklch(0.43547 0.043008 279.325);--app-theme-search-match-active-background:oklch(0.804637 0.069555 0.259);--app-theme-search-match-active-foreground:oklch(0 0 0);--app-theme-sidebar:oklch(0.933459 0.008714 264.521);--app-theme-sidebar-foreground:oklch(0.43547 0.043008 279.325);--app-theme-sidebar-muted-foreground:oklch(0.496867 0.014297 299.986);--app-theme-sidebar-control-surface:oklch(0.887761 0.018655 301.19);--app-theme-sidebar-row-hover:oklch(0.894517 0.011382 269.54);--app-theme-sidebar-row-active:oklch(0.857477 0.01448 268.476);--app-theme-sidebar-row-selected:oklch(0.857477 0.01448 268.476);--app-theme-sidebar-border:oklch(0.933459 0.008714 264.521);--app-theme-terminal-background:oklch(0.957761 0.005767 264.532);--app-theme-terminal-foreground:oklch(0.43547 0.043008 279.325);--app-theme-terminal-cursor:oklch(0.714133 0.104543 33.097);--app-theme-terminal-selection:oklch(0.758394 0.020453 273.154);--app-theme-terminal-scrollbar:oklch(0.857941 0.012829 271.266);--app-theme-terminal-scrollbar-hover:oklch(0.737761 0.012437 301.19);color-scheme:light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Catppuccin Space Night preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:oklch(0.957761 0.005767 264.532)}
+/* Catppuccin Mocha space night (dark only). Light mode is untouched. */
+html.dark {
+  background: radial-gradient(120% 90% at 50% 0%, #161834 0%, #0d0e1c 55%, #08091a 100%) #0b0c1a !important;
+}
+/* Let the sky show through the app's opaque base layers. */
+html.dark body,
+.dark [data-slot="sidebar-inset"],
+.dark [data-slot="sidebar-inset"] > div:has(> [data-chat-column]),
+.dark [data-workspace-area="conversation"] {
+  background: transparent !important;
+}
+.dark [data-chat-header] {
+  background: linear-gradient(to bottom, rgb(11 12 26 / 0.7), rgb(11 12 26 / 0)) !important;
+}
+.dark [data-slot="sidebar-inner"] {
+  background: rgb(10 11 22 / 0.62) !important;
+  border-right: 1px solid rgb(180 190 254 / 0.08);
+}
+.dark [data-slot="composer-host"] { box-shadow: 0 0 0 1px rgb(203 166 247 / 0.14), 0 8px 30px rgb(0 0 0 / 0.35); }
+.dark [data-user-message-bubble] { box-shadow: 0 0 0 1px rgb(137 180 250 / 0.12); }
+.dark .chat-markdown { text-shadow: 0 0 6px rgb(11 12 26 / 0.9); }
+
+/* Sky layers: fixed, behind everything; animate only transform/opacity so the GPU composites instead of repainting. */
+html.dark::before, html.dark body::before, html.dark body::after, html.dark #root::before {
+  content: ""; position: fixed; z-index: -1; pointer-events: none;
+}
+/* Nebula glow: mauve + blue, slow breathing. */
+html.dark::before {
+  inset: -10%;
+  background:
+    radial-gradient(38% 30% at 22% 28%, rgb(203 166 247 / 0.16), transparent 70%),
+    radial-gradient(34% 28% at 78% 64%, rgb(137 180 250 / 0.14), transparent 70%),
+    radial-gradient(26% 22% at 60% 12%, rgb(245 194 231 / 0.07), transparent 70%);
+  animation: t3sky-nebula 48s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+/* Faint star dust, drifting left. */
+html.dark body::before {
+  top: 0; left: 0; width: calc(100% + 640px); height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Ccircle cx='207' cy='97' r='0.8' fill='%23b4befe' opacity='0.68'/%3E%3Ccircle cx='60' cy='373' r='1.0' fill='%23cdd6f4' opacity='0.36'/%3E%3Ccircle cx='278' cy='45' r='0.5' fill='%2389dceb' opacity='0.37'/%3E%3Ccircle cx='362' cy='606' r='0.8' fill='%23f5e0dc' opacity='0.58'/%3E%3Ccircle cx='254' cy='625' r='0.5' fill='%2389b4fa' opacity='0.47'/%3E%3Ccircle cx='92' cy='75' r='0.7' fill='%2389b4fa' opacity='0.39'/%3E%3Ccircle cx='366' cy='120' r='0.5' fill='%23b4befe' opacity='0.58'/%3E%3Ccircle cx='396' cy='318' r='0.8' fill='%23f5c2e7' opacity='0.54'/%3E%3Ccircle cx='591' cy='231' r='0.6' fill='%2389b4fa' opacity='0.63'/%3E%3Ccircle cx='156' cy='368' r='0.8' fill='%23f5c2e7' opacity='0.64'/%3E%3Ccircle cx='184' cy='627' r='0.6' fill='%2389dceb' opacity='0.42'/%3E%3Ccircle cx='219' cy='597' r='0.7' fill='%23b4befe' opacity='0.66'/%3E%3Ccircle cx='367' cy='560' r='0.7' fill='%23f5c2e7' opacity='0.59'/%3E%3Ccircle cx='371' cy='292' r='0.9' fill='%23cba6f7' opacity='0.54'/%3E%3Ccircle cx='425' cy='39' r='0.9' fill='%23f9e2af' opacity='0.46'/%3E%3Ccircle cx='247' cy='428' r='0.5' fill='%23f9e2af' opacity='0.49'/%3E%3Ccircle cx='391' cy='316' r='0.6' fill='%23cba6f7' opacity='0.40'/%3E%3Ccircle cx='158' cy='250' r='0.9' fill='%23b4befe' opacity='0.42'/%3E%3Ccircle cx='257' cy='178' r='0.6' fill='%2389dceb' opacity='0.70'/%3E%3Ccircle cx='178' cy='266' r='0.7' fill='%2389dceb' opacity='0.73'/%3E%3Ccircle cx='97' cy='113' r='0.6' fill='%23cdd6f4' opacity='0.35'/%3E%3Ccircle cx='532' cy='117' r='0.6' fill='%2389b4fa' opacity='0.52'/%3E%3Ccircle cx='236' cy='362' r='1.0' fill='%23f5e0dc' opacity='0.53'/%3E%3Ccircle cx='557' cy='609' r='0.8' fill='%2389dceb' opacity='0.51'/%3E%3Ccircle cx='252' cy='308' r='0.7' fill='%23cdd6f4' opacity='0.38'/%3E%3Ccircle cx='134' cy='104' r='0.7' fill='%23f5e0dc' opacity='0.39'/%3E%3Ccircle cx='363' cy='343' r='1.0' fill='%23f5e0dc' opacity='0.38'/%3E%3Ccircle cx='133' cy='241' r='0.8' fill='%23f5c2e7' opacity='0.59'/%3E%3Ccircle cx='303' cy='74' r='0.7' fill='%23f9e2af' opacity='0.54'/%3E%3Ccircle cx='200' cy='92' r='0.9' fill='%23cba6f7' opacity='0.54'/%3E%3Ccircle cx='443' cy='330' r='0.6' fill='%23f5c2e7' opacity='0.41'/%3E%3Ccircle cx='348' cy='17' r='0.8' fill='%23b4befe' opacity='0.63'/%3E%3Ccircle cx='167' cy='235' r='0.6' fill='%23cdd6f4' opacity='0.56'/%3E%3Ccircle cx='499' cy='211' r='0.6' fill='%23cdd6f4' opacity='0.67'/%3E%3Ccircle cx='524' cy='474' r='0.6' fill='%23f9e2af' opacity='0.49'/%3E%3Ccircle cx='19' cy='18' r='0.6' fill='%23cba6f7' opacity='0.43'/%3E%3Ccircle cx='387' cy='220' r='0.9' fill='%23f5c2e7' opacity='0.73'/%3E%3Ccircle cx='233' cy='141' r='0.6' fill='%23cdd6f4' opacity='0.49'/%3E%3Ccircle cx='309' cy='631' r='0.8' fill='%23f5e0dc' opacity='0.54'/%3E%3Ccircle cx='418' cy='512' r='0.5' fill='%23b4befe' opacity='0.71'/%3E%3Ccircle cx='501' cy='480' r='0.7' fill='%2389b4fa' opacity='0.52'/%3E%3Ccircle cx='407' cy='56' r='1.0' fill='%2389dceb' opacity='0.54'/%3E%3Ccircle cx='476' cy='54' r='0.6' fill='%2389b4fa' opacity='0.36'/%3E%3Ccircle cx='378' cy='298' r='0.8' fill='%23f9e2af' opacity='0.61'/%3E%3Ccircle cx='224' cy='351' r='0.6' fill='%23f5e0dc' opacity='0.67'/%3E%3Ccircle cx='465' cy='66' r='0.9' fill='%2389b4fa' opacity='0.52'/%3E%3Ccircle cx='558' cy='529' r='0.6' fill='%23cba6f7' opacity='0.44'/%3E%3Ccircle cx='321' cy='489' r='0.7' fill='%2389dceb' opacity='0.68'/%3E%3Ccircle cx='39' cy='474' r='0.9' fill='%2389dceb' opacity='0.68'/%3E%3Ccircle cx='562' cy='84' r='0.6' fill='%23f5e0dc' opacity='0.70'/%3E%3Ccircle cx='497' cy='389' r='0.9' fill='%2389b4fa' opacity='0.42'/%3E%3Ccircle cx='303' cy='464' r='0.8' fill='%23f5c2e7' opacity='0.62'/%3E%3Ccircle cx='340' cy='309' r='0.9' fill='%23f5e0dc' opacity='0.45'/%3E%3Ccircle cx='177' cy='494' r='0.8' fill='%23f5e0dc' opacity='0.65'/%3E%3Ccircle cx='584' cy='284' r='0.8' fill='%23cdd6f4' opacity='0.63'/%3E%3Ccircle cx='290' cy='341' r='0.7' fill='%23cdd6f4' opacity='0.63'/%3E%3Ccircle cx='561' cy='603' r='0.6' fill='%23cdd6f4' opacity='0.69'/%3E%3Ccircle cx='88' cy='78' r='0.7' fill='%23b4befe' opacity='0.62'/%3E%3Ccircle cx='274' cy='136' r='0.7' fill='%23b4befe' opacity='0.71'/%3E%3Ccircle cx='99' cy='458' r='0.8' fill='%2389b4fa' opacity='0.45'/%3E%3Ccircle cx='88' cy='299' r='0.9' fill='%23b4befe' opacity='0.51'/%3E%3Ccircle cx='312' cy='634' r='0.9' fill='%2389b4fa' opacity='0.63'/%3E%3Ccircle cx='636' cy='258' r='0.7' fill='%23f5c2e7' opacity='0.48'/%3E%3Ccircle cx='462' cy='12' r='0.8' fill='%23f9e2af' opacity='0.63'/%3E%3Ccircle cx='246' cy='331' r='0.6' fill='%23b4befe' opacity='0.40'/%3E%3Ccircle cx='588' cy='146' r='0.9' fill='%23b4befe' opacity='0.46'/%3E%3Ccircle cx='25' cy='499' r='0.6' fill='%2389b4fa' opacity='0.68'/%3E%3Ccircle cx='544' cy='433' r='1.0' fill='%2389dceb' opacity='0.41'/%3E%3Ccircle cx='588' cy='365' r='0.9' fill='%23b4befe' opacity='0.46'/%3E%3Ccircle cx='512' cy='117' r='0.9' fill='%23cba6f7' opacity='0.73'/%3E%3C/svg%3E") repeat;
+  animation: t3sky-drift-x 256s linear infinite;
+  will-change: transform;
+}
+/* Brighter stars A: drift up, twinkle. */
+html.dark body::after {
+  top: 0; left: 0; width: 100%; height: calc(100% + 560px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='560'%3E%3Ccircle cx='92' cy='386' r='1.3' fill='%23f9e2af' opacity='0.96'/%3E%3Ccircle cx='554' cy='266' r='1.5' fill='%2389b4fa' opacity='0.88'/%3E%3Ccircle cx='132' cy='2' r='1.1' fill='%2389dceb' opacity='0.77'/%3E%3Ccircle cx='445' cy='130' r='1.0' fill='%23f5e0dc' opacity='0.86'/%3E%3Ccircle cx='557' cy='432' r='1.1' fill='%23f9e2af' opacity='0.76'/%3E%3Ccircle cx='184' cy='279' r='1.0' fill='%23f5c2e7' opacity='0.76'/%3E%3Ccircle cx='415' cy='50' r='1.4' fill='%23f5e0dc' opacity='0.86'/%3E%3Ccircle cx='309' cy='192' r='1.2' fill='%2389b4fa' opacity='0.92'/%3E%3Ccircle cx='263' cy='459' r='0.9' fill='%23cdd6f4' opacity='0.80'/%3E%3Ccircle cx='543' cy='501' r='1.4' fill='%23b4befe' opacity='0.78'/%3E%3Ccircle cx='267' cy='463' r='1.0' fill='%2389b4fa' opacity='0.97'/%3E%3Ccircle cx='229' cy='205' r='1.2' fill='%2389dceb' opacity='0.83'/%3E%3Ccircle cx='271' cy='149' r='1.4' fill='%2389b4fa' opacity='0.93'/%3E%3Ccircle cx='556' cy='278' r='1.2' fill='%23cdd6f4' opacity='0.89'/%3E%3Ccircle cx='178' cy='549' r='1.0' fill='%2389b4fa' opacity='0.91'/%3E%3Ccircle cx='467' cy='186' r='1.4' fill='%23cba6f7' opacity='0.81'/%3E%3Ccircle cx='94' cy='517' r='1.0' fill='%2389dceb' opacity='0.84'/%3E%3Ccircle cx='383' cy='379' r='1.4' fill='%23cdd6f4' opacity='0.85'/%3E%3Ccircle cx='554' cy='538' r='1.3' fill='%23f5c2e7' opacity='0.87'/%3E%3Ccircle cx='210' cy='138' r='1.4' fill='%2389b4fa' opacity='0.89'/%3E%3Ccircle cx='246' cy='228' r='1.3' fill='%23f5e0dc' opacity='0.96'/%3E%3Ccircle cx='29' cy='144' r='1.1' fill='%2389dceb' opacity='0.81'/%3E%3C/svg%3E") repeat;
+  animation: t3sky-drift-y 336s linear infinite, t3sky-twinkle 7s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+/* Brighter stars B: drift left, twinkle out of phase with A. */
+html.dark #root::before {
+  top: 0; left: 0; width: calc(100% + 720px); height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='720'%3E%3Ccircle cx='460' cy='18' r='1.1' fill='%23cdd6f4' opacity='0.78'/%3E%3Ccircle cx='74' cy='533' r='1.3' fill='%2389dceb' opacity='0.76'/%3E%3Ccircle cx='67' cy='168' r='1.3' fill='%23cdd6f4' opacity='0.93'/%3E%3Ccircle cx='505' cy='302' r='1.2' fill='%23cba6f7' opacity='0.95'/%3E%3Ccircle cx='5' cy='580' r='1.4' fill='%23f5c2e7' opacity='0.82'/%3E%3Ccircle cx='155' cy='550' r='1.0' fill='%2389dceb' opacity='0.77'/%3E%3Ccircle cx='610' cy='435' r='1.5' fill='%23f9e2af' opacity='0.88'/%3E%3Ccircle cx='701' cy='273' r='1.3' fill='%23f5c2e7' opacity='0.89'/%3E%3Ccircle cx='507' cy='33' r='1.1' fill='%23cba6f7' opacity='1.00'/%3E%3Ccircle cx='616' cy='624' r='1.2' fill='%23f9e2af' opacity='0.91'/%3E%3Ccircle cx='263' cy='267' r='1.0' fill='%23cba6f7' opacity='0.93'/%3E%3Ccircle cx='492' cy='51' r='1.3' fill='%23cdd6f4' opacity='0.79'/%3E%3Ccircle cx='273' cy='712' r='1.3' fill='%23cdd6f4' opacity='0.92'/%3E%3Ccircle cx='607' cy='559' r='1.1' fill='%23f5e0dc' opacity='0.95'/%3E%3Ccircle cx='289' cy='48' r='1.5' fill='%23f5c2e7' opacity='0.80'/%3E%3Ccircle cx='359' cy='637' r='1.3' fill='%2389b4fa' opacity='0.82'/%3E%3Ccircle cx='178' cy='404' r='1.1' fill='%2389dceb' opacity='0.97'/%3E%3Ccircle cx='288' cy='158' r='1.6' fill='%23f9e2af' opacity='0.77'/%3E%3Ccircle cx='34' cy='79' r='1.3' fill='%2389dceb' opacity='0.90'/%3E%3Ccircle cx='277' cy='429' r='1.2' fill='%23cba6f7' opacity='0.99'/%3E%3C/svg%3E") repeat;
+  animation: t3sky-drift-x2 416s linear infinite, t3sky-twinkle 9s ease-in-out -4s infinite alternate-reverse;
+  will-change: transform, opacity;
+}
+/* The app's .no-transitions rule zeroes every ::before/::after animation; keep the sky moving anyway. */
+html.dark::before { animation-duration: 48s !important; }
+html.dark body::before { animation-duration: 256s !important; }
+html.dark body::after { animation-duration: 336s, 7s !important; }
+html.dark #root::before { animation-duration: 416s, 9s !important; }
+@keyframes t3sky-drift-x  { to { transform: translate3d(-640px, 0, 0); } }
+@keyframes t3sky-drift-x2 { to { transform: translate3d(-720px, 0, 0); } }
+@keyframes t3sky-drift-y  { to { transform: translate3d(0, -560px, 0); } }
+@keyframes t3sky-twinkle  { from { opacity: 0.25; } to { opacity: 1; } }
+@keyframes t3sky-nebula   { from { opacity: 0.7; transform: scale(1); } to { opacity: 1; transform: scale(1.06); } }
+
+/* Reduced motion: static stars, no drift or twinkle. */
+@media (prefers-reduced-motion: reduce) {
+  html.dark::before, html.dark body::before, html.dark body::after, html.dark #root::before {
+    animation: none !important; opacity: 0.85;
+  }
+}
+</style>
+</head>
+<body class="">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Catppuccin Space Night</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Catppuccin Space Night</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Catppuccin Space Night</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

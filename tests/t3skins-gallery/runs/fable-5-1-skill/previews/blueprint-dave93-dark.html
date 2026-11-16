@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme-id="preview" data-theme-selected="true" style="--app-theme-canvas:#0f2b48;--app-theme-chrome:#0f2b48;--app-theme-toolbar:#0f2b48;--app-theme-toolbar-foreground:#e9f1f8;--app-theme-toolbar-border:#24476b;--app-theme-toolbar-control:#143556;--app-theme-toolbar-control-foreground:#e9f1f8;--app-theme-toolbar-control-hover:#1a3e63;--app-theme-surface:#133352;--app-theme-surface-raised:#163a5c;--app-theme-surface-overlay:#173c60;--app-theme-text:#e9f1f8;--app-theme-text-muted:#a3bdd4;--app-theme-border:#2a4e74;--app-theme-input:#345a82;--app-theme-focus:#ffd25a;--app-theme-accent:#ffd25a;--app-theme-accent-foreground:#10263f;--app-theme-secondary:#143556;--app-theme-secondary-foreground:#e9f1f8;--app-theme-muted:#143556;--app-theme-muted-foreground:#a3bdd4;--app-theme-placeholder:#86a2bd;--app-theme-secondary-label:#a3bdd4;--app-theme-icon-muted:#8eaac4;--app-theme-error:#ff7a6b;--app-theme-error-foreground:#ff9d91;--app-theme-error-surface:#3a2230;--app-theme-warning:#ffb547;--app-theme-warning-foreground:#ffc56e;--app-theme-warning-surface:#33301f;--app-theme-update:#ffd25a;--app-theme-update-foreground:#ffd25a;--app-theme-update-surface:#233c4f;--app-theme-accent-surface:#1d4166;--app-theme-accent-surface-foreground:#fbe7a6;--app-theme-message-surface:#1a3d61;--app-theme-message-foreground:#f1f6fb;--app-theme-message-action:#ffd25a;--app-theme-message-action-foreground:#10263f;--app-theme-message-action-hover:#ffdd80;--app-theme-code-background:#0b2139;--app-theme-code-foreground:#e9f1f8;--app-theme-search-match-background:#8c6c1f;--app-theme-search-match-foreground:#f5f5f5;--app-theme-search-match-active-background:#eea52b;--app-theme-search-match-active-foreground:#21180a;--app-theme-sidebar:#0c2440;--app-theme-sidebar-foreground:#e9f1f8;--app-theme-sidebar-muted-foreground:#9bb5cc;--app-theme-sidebar-control-surface:#112d4b;--app-theme-sidebar-row-hover:#133352;--app-theme-sidebar-row-active:#183d61;--app-theme-sidebar-row-selected:#163a5c;--app-theme-sidebar-border:#24476b;--app-theme-terminal-background:#0b2139;--app-theme-terminal-foreground:#e9f1f8;--app-theme-terminal-cursor:#ffd25a;--app-theme-terminal-selection:#24507a;--app-theme-terminal-scrollbar:#24476b;--app-theme-terminal-scrollbar-hover:#2f5a85;color-scheme:dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Blueprint preview</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee);
+  font:12px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.shell{display:grid;grid-template-columns:124px 1fr;height:100%;min-height:100%;
+  background:var(--app-theme-canvas,#111);color:var(--app-theme-text,#eee)}
+[data-slot="sidebar-wrapper"],[data-slot="sidebar"]{
+  background:var(--app-theme-sidebar,var(--app-theme-chrome,#0c0c0e));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text,#eee));
+  border-right:1px solid var(--app-theme-sidebar-border,var(--app-theme-border,#222));
+  padding:10px 8px;display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+[data-slot="sidebar-inner"]{display:flex;flex-direction:column;gap:6px;min-height:0}
+.brand{display:flex;align-items:center;gap:6px;font-weight:650;letter-spacing:-.02em}
+[data-slot="project-monogram"]{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;
+  background:var(--app-theme-accent,#7aa2f7);color:var(--app-theme-accent-foreground,#111);font-size:9px;font-weight:700}
+[data-thread-item],[data-testid="sidebar-row-card"],[data-sidebar-row]{
+  padding:6px 8px;border-radius:8px;color:var(--app-theme-sidebar-muted-foreground,var(--app-theme-muted-foreground,#9a9));
+  background:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-thread-item].on,[data-sidebar-row].on{
+  background:var(--app-theme-sidebar-row-active,var(--app-theme-sidebar-row-selected,var(--app-theme-muted,#222)));
+  color:var(--app-theme-sidebar-foreground,var(--app-theme-text))}
+[data-workspace-area="conversation"],[data-chat-column]{
+  display:flex;flex-direction:column;min-width:0;height:100%;
+  background:var(--app-theme-canvas,#111);position:relative}
+[data-chat-header]{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 12px;border-bottom:1px solid var(--app-theme-toolbar-border,var(--app-theme-border,#222));
+  background:var(--app-theme-toolbar,transparent);color:var(--app-theme-toolbar-foreground,var(--app-theme-text));
+  position:relative;z-index:2}
+.msgs{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-height:0}
+[data-message-role="assistant"]{max-width:86%;color:var(--app-theme-text);opacity:.95}
+[data-user-message-bubble]{align-self:flex-end;max-width:78%;padding:7px 10px;border-radius:12px 12px 4px 12px;
+  background:var(--app-theme-message-surface,var(--app-theme-surface,#222));
+  color:var(--app-theme-message-foreground,var(--app-theme-text))}
+code,pre{font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--app-theme-code-background,var(--app-theme-surface,#1a1a1a));
+  color:var(--app-theme-code-foreground,var(--app-theme-text));border-radius:6px;padding:1px 4px}
+[data-slot="composer-host"],[data-chat-composer-form],[data-slot="composer-shell"]{
+  margin:8px;padding:8px 10px;border:1px solid var(--app-theme-border,#222);
+  border-radius:12px;background:var(--app-theme-surface,var(--app-theme-input,#1a1a1a));
+  display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+[data-slot="input"],[data-chat-composer-main-surface]{flex:1;color:var(--app-theme-placeholder,var(--app-theme-text-muted,#888));}
+[data-slot="button"]{border:0;border-radius:8px;padding:5px 10px;cursor:default;font-weight:650;
+  background:var(--app-theme-message-action,var(--app-theme-accent,#7aa2f7));
+  color:var(--app-theme-message-action-foreground,var(--app-theme-accent-foreground,#111))}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--app-theme-accent);display:inline-block}
+
+html,body{background:#0f2b48}
+/* Drafting grid behind the chat: a 16px minor grid and a 96px major grid, drawn with gradients. */
+:root:not(.dark) [data-workspace-area="conversation"] {
+  background-image:
+    linear-gradient(rgba(29, 78, 137, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 137, 0.11) 1px, transparent 1px),
+    linear-gradient(rgba(29, 78, 137, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 137, 0.045) 1px, transparent 1px) !important;
+  background-size: 96px 96px, 96px 96px, 16px 16px, 16px 16px !important;
+}
+.dark [data-workspace-area="conversation"] {
+  background-image:
+    linear-gradient(rgba(233, 241, 248, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 241, 248, 0.09) 1px, transparent 1px),
+    linear-gradient(rgba(233, 241, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 241, 248, 0.035) 1px, transparent 1px) !important;
+  background-size: 96px 96px, 96px 96px, 16px 16px, 16px 16px !important;
+}
+
+/* Title-block lettering. */
+[data-slot="sidebar"], [data-chat-header] { font-family: var(--font-mono, ui-monospace, monospace); letter-spacing: -0.01em; }
+.chat-markdown :is(h1, h2, h3) { font-family: var(--font-mono, ui-monospace, monospace); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Drafting lines: near-square corners, dashed frames on code, square-capped icons. */
+[data-slot="composer-host"], .chat-markdown-codeblock, [data-user-message-bubble] { border-radius: 2px !important; }
+.chat-markdown-codeblock { border-style: dashed !important; }
+svg.lucide { stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; }
+:root:not(.dark) [data-user-message-bubble] { box-shadow: inset 2px 0 0 #1d4e89; }
+.dark [data-user-message-bubble] { box-shadow: inset 2px 0 0 #ffd25a; }
+
+/* Links take the accent; --info (the "Working" status) moves off the ground's own blue. */
+:root:not(.dark) { --info: #2a5f9e !important; --info-foreground: #2a5f9e !important; }
+.dark { --info: #8cc8ff !important; --info-foreground: #8cc8ff !important; }
+:root:not(.dark) :is(.chat-markdown, [data-user-message-bubble]) a:not(.chat-markdown-file-link) { color: #1d4e89 !important; }
+.dark :is(.chat-markdown, [data-user-message-bubble]) a:not(.chat-markdown-file-link) { color: #ffd25a !important; }
+:root:not(.dark) ::selection { background: #cfdbe8; color: #14304f; }
+.dark ::selection { background: #5b5530; color: #fffbe8; }
+</style>
+</head>
+<body class="dark">
+<div class="shell" data-chat-canvas data-chat-column>
+  <aside data-slot="sidebar-wrapper" data-slot="sidebar">
+    <div data-slot="sidebar-inner">
+      <div class="brand"><span data-slot="project-monogram">T3</span> Code</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row class="on">Blueprint</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Appearance</div>
+      <div data-thread-item data-testid="sidebar-row-card" data-sidebar-row>Fix HTTPS</div>
+    </div>
+  </aside>
+  <main data-workspace-area="conversation" data-chat-column>
+    <header data-chat-header>
+      <span>Blueprint</span>
+      <span data-chat-provider-model-picker data-model-picker-content>Opus 5.5 <span class="dot"></span></span>
+    </header>
+    <div class="msgs">
+      <div data-message-role="assistant">This is a live mock of T3 Code wearing <strong>Blueprint</strong>. Animated CSS in the skin should play here.</div>
+      <div data-user-message-bubble>Restyle the app and keep the sidebar readable.</div>
+      <div data-message-role="assistant">Done. Palette plus custom CSS are applied. Try <code>Settings → Appearance → Add</code>.</div>
+    </div>
+    <form data-chat-composer-form data-slot="composer-host" data-slot="composer-shell">
+      <div data-slot="input" data-chat-composer-main-surface>Ask T3 Code…</div>
+      <button type="button" data-slot="button">Send</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

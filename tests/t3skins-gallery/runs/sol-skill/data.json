@@ -1,0 +1,6058 @@
+{
+  "generatedAt": "2026-11-16T20:00:00+05:30",
+  "title": "T3 Code skins gallery",
+  "subtitle": "Community themes shared after T3 Code became fully customisable on 14 Nov 2026 (IST).",
+  "announcement": {
+    "url": "https://x.com/theo/status/2121455838414201200",
+    "author": "@theo",
+    "text": "T3 Code now lets you fully customize your UI in app. Ask your agent to make changes and it will update on the fly",
+    "createdAt": "2026-11-14T04:11:01Z",
+    "likes": 5149
+  },
+  "counts": {
+    "total": 78,
+    "t3skins": 41,
+    "github": 33,
+    "x": 4,
+    "animated": 40,
+    "hasCss": 69,
+    "withJson": 74
+  },
+  "skins": [
+    {
+      "id": "nyx",
+      "name": "Nyx",
+      "author": "Deepu",
+      "description": "A dark dithered night sky behind T3 Code. Pixel-art aurora and stars, frosted glass panels, and soft violet accents.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/nyx",
+      "installUrl": "https://www.t3skins.dev/skins/nyx/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/nyx/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/nyx/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "dither",
+        "pixel-art",
+        "night-sky",
+        "aurora",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:21:11.528Z",
+      "installCount": 118,
+      "likeCount": 8,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/nyx"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/nyx/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/nyx/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/nyx.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#000000",
+          "accent": "#8a7fe8",
+          "text": null,
+          "sidebar": "#000000",
+          "surface": "#0d0c20",
+          "border": "#1f1f27"
+        }
+      },
+      "previews": {
+        "dark": "previews/nyx-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#000000"
+        },
+        {
+          "label": "sidebar",
+          "color": "#000000"
+        },
+        {
+          "label": "surface",
+          "color": "#0d0c20"
+        },
+        {
+          "label": "accent",
+          "color": "#8a7fe8"
+        },
+        {
+          "label": "border",
+          "color": "#1f1f27"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "nebula",
+      "name": "Nebula",
+      "author": "itssotsot",
+      "description": "Deep purple and magenta, with slowly drifting nebula clouds behind the chat.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/nebula",
+      "installUrl": "https://www.t3skins.dev/skins/nebula/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/nebula/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/nebula/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "space",
+        "animated",
+        "purple",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:24:26.849Z",
+      "installCount": 40,
+      "likeCount": 5,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/nebula"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/nebula/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/nebula/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/nebula.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#0b060d",
+          "accent": "#d1458f",
+          "text": null,
+          "sidebar": "#160a18",
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "dark": "previews/nebula-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0b060d"
+        },
+        {
+          "label": "sidebar",
+          "color": "#160a18"
+        },
+        {
+          "label": "accent",
+          "color": "#d1458f"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "t3-clawd",
+      "name": "T3 Clawd",
+      "author": "rohit3a",
+      "description": "",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/t3-clawd",
+      "installUrl": "https://www.t3skins.dev/skins/t3-clawd/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/t3-clawd/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/t3-clawd/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:43:54.131Z",
+      "installCount": 39,
+      "likeCount": 6,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/t3-clawd"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/t3-clawd/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/t3-clawd/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/t3-clawd.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "oklch(0.213423 0 0)",
+          "accent": "oklch(0.67242 0.13084 38.756)",
+          "text": "oklch(0.952413 0.001331 286.374)",
+          "sidebar": "oklch(0.239292 0 0)",
+          "surface": "oklch(0.268618 0 0)",
+          "border": "oklch(0.301184 0 0)"
+        },
+        "light": {
+          "canvas": "oklch(0.981775 0.005392 95.099)",
+          "accent": "oklch(0.617148 0.137546 39.043)",
+          "text": "oklch(0.190839 0.001983 106.586)",
+          "sidebar": "oklch(0.965992 0.009326 99.984)",
+          "surface": "oklch(1 0 0)",
+          "border": "oklch(0.914896 0.012258 96.433)"
+        }
+      },
+      "previews": {
+        "dark": "previews/t3-clawd-dark.html",
+        "light": "previews/t3-clawd-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.213423 0 0)"
+        },
+        {
+          "label": "sidebar",
+          "color": "oklch(0.239292 0 0)"
+        },
+        {
+          "label": "surface",
+          "color": "oklch(0.268618 0 0)"
+        },
+        {
+          "label": "text",
+          "color": "oklch(0.952413 0.001331 286.374)"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.67242 0.13084 38.756)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(0.301184 0 0)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "pixel-koi-pond",
+      "name": "Pixel-Koi Pond",
+      "author": "kanigaraa",
+      "description": "Koi swim behind the chat, and a small frog follows your cursor while you type.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/pixel-koi-pond",
+      "installUrl": "https://www.t3skins.dev/skins/pixel-koi-pond/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/pixel-koi-pond/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/pixel-koi-pond/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "pixel-art",
+        "animated",
+        "koi",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T23:02:34.604Z",
+      "installCount": 34,
+      "likeCount": 8,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/pixel-koi-pond"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/pixel-koi-pond/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/pixel-koi-pond/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/pixel-koi-pond.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#07141f",
+          "accent": "#e8692c",
+          "text": "#eef8fc",
+          "sidebar": "#0b282c",
+          "surface": "#0a1a27",
+          "border": "#19394b"
+        }
+      },
+      "previews": {
+        "dark": "previews/pixel-koi-pond-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#07141f"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0b282c"
+        },
+        {
+          "label": "surface",
+          "color": "#0a1a27"
+        },
+        {
+          "label": "text",
+          "color": "#eef8fc"
+        },
+        {
+          "label": "accent",
+          "color": "#e8692c"
+        },
+        {
+          "label": "border",
+          "color": "#19394b"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "rainy-window",
+      "name": "Rainy Window",
+      "author": "@BobzHolmes",
+      "description": "Switches from Light Mode with the lights off to Dark Mode with the lights on! Edited from Claude Code version.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/rainy-window",
+      "installUrl": "https://www.t3skins.dev/skins/rainy-window/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/rainy-window/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/rainy-window/preview?live=1",
+      "appearance": "light",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "warm",
+        "lo-fi",
+        "retro",
+        "cosy",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:58:49.575Z",
+      "installCount": 20,
+      "likeCount": 4,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/rainy-window"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/rainy-window/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/rainy-window/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/rainy-window.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#fcfcfc",
+          "accent": "#1b4ed8",
+          "text": "#27272a",
+          "sidebar": "#fafafa",
+          "surface": "#ffffff",
+          "border": "#e4e4e7"
+        },
+        "dark": {
+          "canvas": "#161A2E",
+          "accent": "#8A97F0",
+          "text": "#ECE7DD",
+          "sidebar": "#12152A",
+          "surface": "#1C2138",
+          "border": "#2E3554"
+        }
+      },
+      "previews": {
+        "light": "previews/rainy-window-light.html",
+        "dark": "previews/rainy-window-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#fcfcfc"
+        },
+        {
+          "label": "sidebar",
+          "color": "#fafafa"
+        },
+        {
+          "label": "surface",
+          "color": "#ffffff"
+        },
+        {
+          "label": "text",
+          "color": "#27272a"
+        },
+        {
+          "label": "accent",
+          "color": "#1b4ed8"
+        },
+        {
+          "label": "border",
+          "color": "#e4e4e7"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "jetbrains-islands",
+      "name": "JetBrains Islands",
+      "author": "Blake Connally",
+      "description": "Jetbrains Rider Islands theme lookalike",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/jetbrains-islands",
+      "installUrl": "https://www.t3skins.dev/skins/jetbrains-islands/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/jetbrains-islands/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/jetbrains-islands/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "jetbrains",
+        "rider",
+        "intellij",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T21:55:43.068Z",
+      "installCount": 16,
+      "likeCount": 2,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/jetbrains-islands"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/jetbrains-islands/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/jetbrains-islands/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/jetbrains-islands.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#191A1C",
+          "accent": "#3871E1",
+          "text": "#D1D3D9",
+          "sidebar": "#191A1C",
+          "surface": "#212326",
+          "border": "#33353B"
+        },
+        "light": {
+          "canvas": "#FFFFFF",
+          "accent": "#3871E1",
+          "text": "#000000",
+          "sidebar": "#FFFFFF",
+          "surface": "#F7F8F9",
+          "border": "#DDDFE4"
+        }
+      },
+      "previews": {
+        "dark": "previews/jetbrains-islands-dark.html",
+        "light": "previews/jetbrains-islands-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#191A1C"
+        },
+        {
+          "label": "sidebar",
+          "color": "#191A1C"
+        },
+        {
+          "label": "surface",
+          "color": "#212326"
+        },
+        {
+          "label": "text",
+          "color": "#D1D3D9"
+        },
+        {
+          "label": "accent",
+          "color": "#3871E1"
+        },
+        {
+          "label": "border",
+          "color": "#33353B"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "solar-flare",
+      "name": "Solar Flare",
+      "author": "itssotsot",
+      "description": "Near-black with a molten orange accent, a warm glow rising behind the chat and a softly lit message box.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/solar-flare",
+      "installUrl": "https://www.t3skins.dev/skins/solar-flare/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/solar-flare/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/solar-flare/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "warm",
+        "orange",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.777Z",
+      "installCount": 15,
+      "likeCount": 1,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/solar-flare"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/solar-flare/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/solar-flare/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/solar-flare.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#0f0b08",
+          "accent": "#ff9f1c",
+          "text": "#f6ece2",
+          "sidebar": "#0b0806",
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "dark": "previews/solar-flare-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0f0b08"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0b0806"
+        },
+        {
+          "label": "text",
+          "color": "#f6ece2"
+        },
+        {
+          "label": "accent",
+          "color": "#ff9f1c"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "starry-ridge",
+      "name": "Starry Ridge",
+      "author": "DeepExtrema",
+      "description": "A dotted night sky behind T3 Code. Stars sparkle faintly, a shooting star passes now and then, and unread threads breathe a soft plum glow. Source: github.com/DeepExtrema/t3code-starry-ridge",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/starry-ridge",
+      "installUrl": "https://www.t3skins.dev/skins/starry-ridge/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/starry-ridge/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/starry-ridge/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "night-sky",
+        "dither",
+        "animated",
+        "plum",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T22:37:04.153Z",
+      "installCount": 13,
+      "likeCount": 6,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/starry-ridge"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/starry-ridge/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/starry-ridge/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/starry-ridge.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#09090b",
+          "accent": "#f86bd8",
+          "text": "#ffedce",
+          "sidebar": "#09090b",
+          "surface": "#16161b",
+          "border": "#4b4b55"
+        }
+      },
+      "previews": {
+        "dark": "previews/starry-ridge-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#09090b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#09090b"
+        },
+        {
+          "label": "surface",
+          "color": "#16161b"
+        },
+        {
+          "label": "text",
+          "color": "#ffedce"
+        },
+        {
+          "label": "accent",
+          "color": "#f86bd8"
+        },
+        {
+          "label": "border",
+          "color": "#4b4b55"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "aurora-sky",
+      "name": "Aurora Sky",
+      "author": "Yash Mahajan",
+      "description": "quiet night-sky theme for T3 Code Nightly: LED-dot aurora, a readable chat, and Nightly's sidebar art restored. Default colors, dark and light.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/aurora-sky",
+      "installUrl": "https://www.t3skins.dev/skins/aurora-sky/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/aurora-sky/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/aurora-sky/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "t3-code",
+        "t3code",
+        "t3-theme",
+        "dark-theme",
+        "light-theme",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T08:05:42.246Z",
+      "installCount": 9,
+      "likeCount": 3,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/aurora-sky"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/aurora-sky/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/aurora-sky/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/aurora-sky.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#0a0a0a",
+          "accent": "#346bf1",
+          "text": "#f5f5f5",
+          "sidebar": "#000000",
+          "surface": "#111111",
+          "border": "#191919"
+        },
+        "light": {
+          "canvas": "#fcfcfc",
+          "accent": "#1b4ed8",
+          "text": "#27272a",
+          "sidebar": "#fafafa",
+          "surface": "#ffffff",
+          "border": "#e4e4e7"
+        }
+      },
+      "previews": {
+        "dark": "previews/aurora-sky-dark.html",
+        "light": "previews/aurora-sky-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0a0a0a"
+        },
+        {
+          "label": "sidebar",
+          "color": "#000000"
+        },
+        {
+          "label": "surface",
+          "color": "#111111"
+        },
+        {
+          "label": "text",
+          "color": "#f5f5f5"
+        },
+        {
+          "label": "accent",
+          "color": "#346bf1"
+        },
+        {
+          "label": "border",
+          "color": "#191919"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "neon-arcade",
+      "name": "Neon Arcade",
+      "author": "itssotsot",
+      "description": "Retro synthwave: an animated sunset with a moving neon grid, glowing header and frosted-glass replies.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/neon-arcade",
+      "installUrl": "https://www.t3skins.dev/skins/neon-arcade/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/neon-arcade/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/neon-arcade/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "neon",
+        "animated",
+        "retro",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:24:26.889Z",
+      "installCount": 9,
+      "likeCount": 1,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/neon-arcade"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/neon-arcade/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/neon-arcade/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/neon-arcade.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#12051f",
+          "accent": "#ff2bd6",
+          "text": "#f4e9ff",
+          "sidebar": "#0c0216",
+          "surface": "#1c0a30",
+          "border": "#3d1a5e"
+        }
+      },
+      "previews": {
+        "dark": "previews/neon-arcade-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#12051f"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0c0216"
+        },
+        {
+          "label": "surface",
+          "color": "#1c0a30"
+        },
+        {
+          "label": "text",
+          "color": "#f4e9ff"
+        },
+        {
+          "label": "accent",
+          "color": "#ff2bd6"
+        },
+        {
+          "label": "border",
+          "color": "#3d1a5e"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "biscuit",
+      "name": "Biscuit",
+      "author": "itssotsot",
+      "description": "Warm browns and caramel, with a pixel pet above the message box that naps until you start typing.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/biscuit",
+      "installUrl": "https://www.t3skins.dev/skins/biscuit/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/biscuit/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/biscuit/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "warm",
+        "pixel-art",
+        "cozy",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:24:26.870Z",
+      "installCount": 9,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/biscuit"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/biscuit/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/biscuit/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/biscuit.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#1c1714",
+          "accent": "#c98a55",
+          "text": null,
+          "sidebar": null,
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "dark": "previews/biscuit-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#1c1714"
+        },
+        {
+          "label": "accent",
+          "color": "#c98a55"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "fjord",
+      "name": "Fjord",
+      "author": "itssotsot",
+      "description": "Deep slate blue with an icy cyan accent and a slow northern-lights glow drifting across the top of the chat.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/fjord",
+      "installUrl": "https://www.t3skins.dev/skins/fjord/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/fjord/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/fjord/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "cool",
+        "animated",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.790Z",
+      "installCount": 8,
+      "likeCount": 1,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/fjord"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/fjord/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/fjord/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/fjord.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#0e1621",
+          "accent": "#5cc8e8",
+          "text": "#e3edf5",
+          "sidebar": "#0a111a",
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "dark": "previews/fjord-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0e1621"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0a111a"
+        },
+        {
+          "label": "text",
+          "color": "#e3edf5"
+        },
+        {
+          "label": "accent",
+          "color": "#5cc8e8"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "matrix",
+      "name": "Matrix",
+      "author": "itssotsot",
+      "description": "Green-on-black with falling code rain behind the chat and glowing terminal text.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/matrix",
+      "installUrl": "https://www.t3skins.dev/skins/matrix/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/matrix/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/matrix/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "green",
+        "animated",
+        "hacker",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:24:26.865Z",
+      "installCount": 8,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/matrix"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/matrix/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/matrix/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/matrix.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#020705",
+          "accent": "#2bff88",
+          "text": "#d9ffe9",
+          "sidebar": "#020705",
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "dark": "previews/matrix-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#020705"
+        },
+        {
+          "label": "sidebar",
+          "color": "#020705"
+        },
+        {
+          "label": "text",
+          "color": "#d9ffe9"
+        },
+        {
+          "label": "accent",
+          "color": "#2bff88"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "pixel-orbit-glass",
+      "name": "Pixel Orbit Glass",
+      "author": "xski",
+      "description": "",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/pixel-orbit-glass",
+      "installUrl": "https://www.t3skins.dev/skins/pixel-orbit-glass/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/pixel-orbit-glass/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/pixel-orbit-glass/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "space",
+        "claude",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T07:18:19.355Z",
+      "installCount": 7,
+      "likeCount": 1,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/pixel-orbit-glass"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/pixel-orbit-glass/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/pixel-orbit-glass/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/pixel-orbit-glass.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#0a0a0b",
+          "accent": "#2563eb",
+          "text": "#f8f8f2",
+          "sidebar": "#0a0a0b",
+          "surface": "#111110",
+          "border": "#2a2a25"
+        }
+      },
+      "previews": {
+        "dark": "previews/pixel-orbit-glass-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0a0a0b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0a0a0b"
+        },
+        {
+          "label": "surface",
+          "color": "#111110"
+        },
+        {
+          "label": "text",
+          "color": "#f8f8f2"
+        },
+        {
+          "label": "accent",
+          "color": "#2563eb"
+        },
+        {
+          "label": "border",
+          "color": "#2a2a25"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "pixel-pal",
+      "name": "Pixel Pal",
+      "author": "itssotsot",
+      "description": "A retro pixel palette with a little pixel buddy above the message box that wakes up when you type.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/pixel-pal",
+      "installUrl": "https://www.t3skins.dev/skins/pixel-pal/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/pixel-pal/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/pixel-pal/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "pixel-art",
+        "playful",
+        "retro",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:24:26.836Z",
+      "installCount": 7,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/pixel-pal"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/pixel-pal/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/pixel-pal/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/pixel-pal.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#1a1c2c",
+          "accent": "#38b764",
+          "text": null,
+          "sidebar": null,
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "dark": "previews/pixel-pal-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#1a1c2c"
+        },
+        {
+          "label": "accent",
+          "color": "#38b764"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "firefly-dream",
+      "name": "Firefly Dream",
+      "author": "Dev Gupta",
+      "description": "Night meadow with glowing fireflies and a frosted-glass composer.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/firefly-dream",
+      "installUrl": "https://www.t3skins.dev/skins/firefly-dream/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/firefly-dream/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/firefly-dream/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "calm",
+        "animated",
+        "fireflies",
+        "glass",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T21:07:28.246Z",
+      "installCount": 6,
+      "likeCount": 3,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/firefly-dream"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/firefly-dream/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/firefly-dream/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/firefly-dream.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#0a0f14",
+          "accent": "#f2c47e",
+          "text": "#f1f2ee",
+          "sidebar": "#0a0f14",
+          "surface": "#0f171e",
+          "border": "#24313b"
+        }
+      },
+      "previews": {
+        "dark": "previews/firefly-dream-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0a0f14"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0a0f14"
+        },
+        {
+          "label": "surface",
+          "color": "#0f171e"
+        },
+        {
+          "label": "text",
+          "color": "#f1f2ee"
+        },
+        {
+          "label": "accent",
+          "color": "#f2c47e"
+        },
+        {
+          "label": "border",
+          "color": "#24313b"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "orange-space",
+      "name": "Orange Space",
+      "author": "vertopolkaLF",
+      "description": "dark theme in orange color with nice subtle animation as background.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/orange-space",
+      "installUrl": "https://www.t3skins.dev/skins/orange-space/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/orange-space/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/orange-space/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "space",
+        "dither",
+        "animated",
+        "orange",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T21:00:59.841Z",
+      "installCount": 6,
+      "likeCount": 2,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/orange-space"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/orange-space/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/orange-space/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/orange-space.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "oklch(0.144788 0 0 / 0.349)",
+          "accent": "oklch(0.750414 0.164926 49.385)",
+          "text": "oklch(0.950663 0.028052 51.848)",
+          "sidebar": "oklch(0.15434 0 0 / 0.6)",
+          "surface": "oklch(0.199785 0.00196 106.576 / 0.6)",
+          "border": "oklch(1 0 0 / 0.0902)"
+        }
+      },
+      "previews": {
+        "dark": "previews/orange-space-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.144788 0 0 / 0.349)"
+        },
+        {
+          "label": "sidebar",
+          "color": "oklch(0.15434 0 0 / 0.6)"
+        },
+        {
+          "label": "surface",
+          "color": "oklch(0.199785 0.00196 106.576 / 0.6)"
+        },
+        {
+          "label": "text",
+          "color": "oklch(0.950663 0.028052 51.848)"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.750414 0.164926 49.385)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(1 0 0 / 0.0902)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "your-deepest-darkest-black",
+      "name": "Your Deepest Darkest Black",
+      "author": "Vaibhav Pathak (vkpdeveloper)",
+      "description": "",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/your-deepest-darkest-black",
+      "installUrl": "https://www.t3skins.dev/skins/your-deepest-darkest-black/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/your-deepest-darkest-black/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/your-deepest-darkest-black/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "just-a-very-very-dark-an"
+      ],
+      "createdAt": "2026-11-15T19:31:02.770Z",
+      "installCount": 6,
+      "likeCount": 1,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/your-deepest-darkest-black"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/your-deepest-darkest-black/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/your-deepest-darkest-black/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/your-deepest-darkest-black.json",
+      "hasCss": false,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#000000",
+          "accent": "#62c073",
+          "text": "#ededed",
+          "sidebar": "#000000",
+          "surface": "#101010",
+          "border": "#1f1f1f"
+        }
+      },
+      "previews": {
+        "dark": "previews/your-deepest-darkest-black-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#000000"
+        },
+        {
+          "label": "sidebar",
+          "color": "#000000"
+        },
+        {
+          "label": "surface",
+          "color": "#101010"
+        },
+        {
+          "label": "text",
+          "color": "#ededed"
+        },
+        {
+          "label": "accent",
+          "color": "#62c073"
+        },
+        {
+          "label": "border",
+          "color": "#1f1f1f"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "rose",
+      "name": "Ros\u00e9",
+      "author": "itssotsot",
+      "description": "Blush pink and deep wine, with a soft petal glow in the corner and rounded, airy message bubbles.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/rose",
+      "installUrl": "https://www.t3skins.dev/skins/rose/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/rose/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/rose/preview?live=1",
+      "appearance": "light",
+      "modes": [
+        "light"
+      ],
+      "tags": [
+        "light",
+        "pink",
+        "soft",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.755Z",
+      "installCount": 6,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/rose"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/rose/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/rose/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/rose.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#fbf3f3",
+          "accent": "#9c2f4a",
+          "text": "#2e1a1f",
+          "sidebar": "#f6e8e9",
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "light": "previews/rose-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#fbf3f3"
+        },
+        {
+          "label": "sidebar",
+          "color": "#f6e8e9"
+        },
+        {
+          "label": "text",
+          "color": "#2e1a1f"
+        },
+        {
+          "label": "accent",
+          "color": "#9c2f4a"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "midnight-mono",
+      "name": "Midnight Mono",
+      "author": "itssotsot",
+      "description": "Pure black and white. No colour, no effects, just high contrast for long sessions.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/midnight-mono",
+      "installUrl": "https://www.t3skins.dev/skins/midnight-mono/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/midnight-mono/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/midnight-mono/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "minimal",
+        "high-contrast",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.741Z",
+      "installCount": 6,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/midnight-mono"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/midnight-mono/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/midnight-mono/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/midnight-mono.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#000000",
+          "accent": "#ffffff",
+          "text": "#f5f5f5",
+          "sidebar": "#0a0a0a",
+          "surface": null,
+          "border": "#262626"
+        }
+      },
+      "previews": {
+        "dark": "previews/midnight-mono-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#000000"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0a0a0a"
+        },
+        {
+          "label": "text",
+          "color": "#f5f5f5"
+        },
+        {
+          "label": "accent",
+          "color": "#ffffff"
+        },
+        {
+          "label": "border",
+          "color": "#262626"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "ember-blade",
+      "name": "Ember Blade",
+      "author": "Unknown",
+      "description": "Dark ember forge: drifting sparks, a flying ember comet and hot-orange glints on hover.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/ember-blade",
+      "installUrl": "https://www.t3skins.dev/skins/ember-blade/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/ember-blade/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/ember-blade/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "warm",
+        "animated",
+        "ember",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T21:05:57.675Z",
+      "installCount": 5,
+      "likeCount": 2,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/ember-blade"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/ember-blade/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/ember-blade/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/ember-blade.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#09080a",
+          "accent": "#e0452b",
+          "text": "#ece3dc",
+          "sidebar": "#070607",
+          "surface": "#110d0f",
+          "border": "#2a1c1e"
+        }
+      },
+      "previews": {
+        "dark": "previews/ember-blade-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#09080a"
+        },
+        {
+          "label": "sidebar",
+          "color": "#070607"
+        },
+        {
+          "label": "surface",
+          "color": "#110d0f"
+        },
+        {
+          "label": "text",
+          "color": "#ece3dc"
+        },
+        {
+          "label": "accent",
+          "color": "#e0452b"
+        },
+        {
+          "label": "border",
+          "color": "#2a1c1e"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "paper-lantern",
+      "name": "Paper Lantern",
+      "author": "itssotsot",
+      "description": "Warm paper tones with a vermilion accent, faint ruled lines behind the chat and serif headings in replies.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/paper-lantern",
+      "installUrl": "https://www.t3skins.dev/skins/paper-lantern/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/paper-lantern/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/paper-lantern/preview?live=1",
+      "appearance": "light",
+      "modes": [
+        "light"
+      ],
+      "tags": [
+        "light",
+        "warm",
+        "paper",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.796Z",
+      "installCount": 5,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/paper-lantern"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/paper-lantern/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/paper-lantern/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/paper-lantern.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#f6f1e7",
+          "accent": "#c8442f",
+          "text": "#2b2118",
+          "sidebar": "#efe7d8",
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "light": "previews/paper-lantern-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#f6f1e7"
+        },
+        {
+          "label": "sidebar",
+          "color": "#efe7d8"
+        },
+        {
+          "label": "text",
+          "color": "#2b2118"
+        },
+        {
+          "label": "accent",
+          "color": "#c8442f"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "sandstone",
+      "name": "Sandstone",
+      "author": "itssotsot",
+      "description": "Desert beige and terracotta by day, warm clay by night, with a faint sunlit gradient behind the chat.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/sandstone",
+      "installUrl": "https://www.t3skins.dev/skins/sandstone/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/sandstone/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/sandstone/preview?live=1",
+      "appearance": "light",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "warm",
+        "earthy",
+        "light-and-dark",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.686Z",
+      "installCount": 5,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/sandstone"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/sandstone/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/sandstone/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/sandstone.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#f1e6d6",
+          "accent": "#b5562d",
+          "text": "#2c1f14",
+          "sidebar": "#e9dcc8",
+          "surface": null,
+          "border": null
+        },
+        "dark": {
+          "canvas": "#1d1712",
+          "accent": "#e07a4a",
+          "text": "#efe2d1",
+          "sidebar": "#17120e",
+          "surface": "#231c16",
+          "border": "#33291f"
+        }
+      },
+      "previews": {
+        "light": "previews/sandstone-light.html",
+        "dark": "previews/sandstone-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#f1e6d6"
+        },
+        {
+          "label": "sidebar",
+          "color": "#e9dcc8"
+        },
+        {
+          "label": "text",
+          "color": "#2c1f14"
+        },
+        {
+          "label": "accent",
+          "color": "#b5562d"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "blueprint",
+      "name": "Blueprint",
+      "author": "itssotsot",
+      "description": "Drafting-table blue with a white grid behind the chat, dashed message outlines and monospace headings.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/blueprint",
+      "installUrl": "https://www.t3skins.dev/skins/blueprint/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/blueprint/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/blueprint/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "blue",
+        "technical",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.762Z",
+      "installCount": 4,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/blueprint"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/blueprint/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/blueprint/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/blueprint.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#0d2a4a",
+          "accent": "#f2f7ff",
+          "text": "#eaf2ff",
+          "sidebar": "#0a2340",
+          "surface": null,
+          "border": "#2a5283"
+        }
+      },
+      "previews": {
+        "dark": "previews/blueprint-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0d2a4a"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0a2340"
+        },
+        {
+          "label": "text",
+          "color": "#eaf2ff"
+        },
+        {
+          "label": "accent",
+          "color": "#f2f7ff"
+        },
+        {
+          "label": "border",
+          "color": "#2a5283"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "lagoon",
+      "name": "Lagoon",
+      "author": "itssotsot",
+      "description": "Deep teal water with a coral accent and slow light waves rolling across the bottom of the chat.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/lagoon",
+      "installUrl": "https://www.t3skins.dev/skins/lagoon/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/lagoon/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/lagoon/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "teal",
+        "animated",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.719Z",
+      "installCount": 4,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/lagoon"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/lagoon/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/lagoon/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/lagoon.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#072a2e",
+          "accent": "#ff7a5c",
+          "text": "#e2f4f2",
+          "sidebar": "#052226",
+          "surface": null,
+          "border": "#1a4d52"
+        }
+      },
+      "previews": {
+        "dark": "previews/lagoon-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#072a2e"
+        },
+        {
+          "label": "sidebar",
+          "color": "#052226"
+        },
+        {
+          "label": "text",
+          "color": "#e2f4f2"
+        },
+        {
+          "label": "accent",
+          "color": "#ff7a5c"
+        },
+        {
+          "label": "border",
+          "color": "#1a4d52"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "arctic",
+      "name": "Arctic",
+      "author": "itssotsot",
+      "description": "Cool white and clear blue, with a frosted-glass message box and a faint icy glow in the corner.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/arctic",
+      "installUrl": "https://www.t3skins.dev/skins/arctic/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/arctic/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/arctic/preview?live=1",
+      "appearance": "light",
+      "modes": [
+        "light"
+      ],
+      "tags": [
+        "light",
+        "cool",
+        "clean",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.661Z",
+      "installCount": 4,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/arctic"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/arctic/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/arctic/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/arctic.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#f4f8fc",
+          "accent": "#2f6fde",
+          "text": "#142235",
+          "sidebar": "#eaf1f8",
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "light": "previews/arctic-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#f4f8fc"
+        },
+        {
+          "label": "sidebar",
+          "color": "#eaf1f8"
+        },
+        {
+          "label": "text",
+          "color": "#142235"
+        },
+        {
+          "label": "accent",
+          "color": "#2f6fde"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "vitesse-nyx-emerald",
+      "name": "Vitesse Nyx Emerald",
+      "author": "Liam",
+      "description": "A pixel-art aurora and starfield behind frosted charcoal panels, with a softly glowing crystal above the composer. Warm off-white text, fine scanlines, and restrained green highlights keep long coding sessions calm and readable.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/vitesse-nyx-emerald",
+      "installUrl": "https://www.t3skins.dev/skins/vitesse-nyx-emerald/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/vitesse-nyx-emerald/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/vitesse-nyx-emerald/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "emerald",
+        "pixel-art",
+        "aurora",
+        "night-sky",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T01:43:16.627Z",
+      "installCount": 3,
+      "likeCount": 1,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/vitesse-nyx-emerald"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/vitesse-nyx-emerald/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/vitesse-nyx-emerald/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/vitesse-nyx-emerald.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#121212",
+          "accent": "#4d9375",
+          "text": "#ddd9cd",
+          "sidebar": "#0e0e0e",
+          "surface": "#1e1e1e",
+          "border": "#242424"
+        }
+      },
+      "previews": {
+        "dark": "previews/vitesse-nyx-emerald-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#121212"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0e0e0e"
+        },
+        {
+          "label": "surface",
+          "color": "#1e1e1e"
+        },
+        {
+          "label": "text",
+          "color": "#ddd9cd"
+        },
+        {
+          "label": "accent",
+          "color": "#4d9375"
+        },
+        {
+          "label": "border",
+          "color": "#242424"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "t3-aurora",
+      "name": "T3 Aurora",
+      "author": "jimg4",
+      "description": "",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/t3-aurora",
+      "installUrl": "https://www.t3skins.dev/skins/t3-aurora/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/t3-aurora/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/t3-aurora/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T21:34:28.662Z",
+      "installCount": 2,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/t3-aurora"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/t3-aurora/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/t3-aurora/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/t3-aurora.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#07090F",
+          "accent": "#86A5FF",
+          "text": "#C7D5FF",
+          "sidebar": "#07090F",
+          "surface": "#0C0E19",
+          "border": "#1C2138"
+        },
+        "light": {
+          "canvas": "#F5F7FD",
+          "accent": "#3D5BC4",
+          "text": "#0C0E19",
+          "sidebar": "#EDF0FA",
+          "surface": "#FFFFFF",
+          "border": "#DCE2F2"
+        }
+      },
+      "previews": {
+        "dark": "previews/t3-aurora-dark.html",
+        "light": "previews/t3-aurora-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#07090F"
+        },
+        {
+          "label": "sidebar",
+          "color": "#07090F"
+        },
+        {
+          "label": "surface",
+          "color": "#0C0E19"
+        },
+        {
+          "label": "text",
+          "color": "#C7D5FF"
+        },
+        {
+          "label": "accent",
+          "color": "#86A5FF"
+        },
+        {
+          "label": "border",
+          "color": "#1C2138"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "little-guardian",
+      "name": "Little Guardian",
+      "author": "Wesley Smits",
+      "description": "A true black theme with warm orange accents and an animated little guardian keeping you company while you code.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/little-guardian",
+      "installUrl": "https://www.t3skins.dev/skins/little-guardian/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/little-guardian/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/little-guardian/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "black",
+        "orange",
+        "animated",
+        "companion",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:51:54.878Z",
+      "installCount": 2,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/little-guardian"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/little-guardian/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/little-guardian/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/little-guardian.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#000000",
+          "accent": "#E8974F",
+          "text": "#FFF0DE",
+          "sidebar": "#000000",
+          "surface": "#14100C",
+          "border": "#3A2C20"
+        }
+      },
+      "previews": {
+        "dark": "previews/little-guardian-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#000000"
+        },
+        {
+          "label": "sidebar",
+          "color": "#000000"
+        },
+        {
+          "label": "surface",
+          "color": "#14100C"
+        },
+        {
+          "label": "text",
+          "color": "#FFF0DE"
+        },
+        {
+          "label": "accent",
+          "color": "#E8974F"
+        },
+        {
+          "label": "border",
+          "color": "#3A2C20"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "matcha",
+      "name": "Matcha",
+      "author": "itssotsot",
+      "description": "Soft green tea tones in light and dark, with a gentle leafy glow at the bottom of the chat.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/matcha",
+      "installUrl": "https://www.t3skins.dev/skins/matcha/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/matcha/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/matcha/preview?live=1",
+      "appearance": "light",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "green",
+        "calm",
+        "light-and-dark",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T20:02:45.784Z",
+      "installCount": 2,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/matcha"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/matcha/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/matcha/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/matcha.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#f3f5ec",
+          "accent": "#5b8a3a",
+          "text": "#1f2a18",
+          "sidebar": "#e9eedf",
+          "surface": null,
+          "border": null
+        },
+        "dark": {
+          "canvas": "#141a12",
+          "accent": "#8fc26a",
+          "text": "#e6ecd9",
+          "sidebar": "#10150e",
+          "surface": "#1a2117",
+          "border": "#2a3424"
+        }
+      },
+      "previews": {
+        "light": "previews/matcha-light.html",
+        "dark": "previews/matcha-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#f3f5ec"
+        },
+        {
+          "label": "sidebar",
+          "color": "#e9eedf"
+        },
+        {
+          "label": "text",
+          "color": "#1f2a18"
+        },
+        {
+          "label": "accent",
+          "color": "#5b8a3a"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "panda-syntax",
+      "name": "Panda Syntax",
+      "author": "MatiasCiccone",
+      "description": "Port of Panda Syntax by Siamak Mokhtari (\u00a9 2016, MIT), with a darker canvas after Panda Calibrated by Mahir Hami Abrar (\u00a9 2026, MIT). Mint, pink and peach on charcoal.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/panda-syntax",
+      "installUrl": "https://www.t3skins.dev/skins/panda-syntax/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/panda-syntax/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/panda-syntax/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "panda"
+      ],
+      "createdAt": "2026-11-16T03:20:26.159Z",
+      "installCount": 1,
+      "likeCount": 1,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/panda-syntax"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/panda-syntax/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/panda-syntax/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/panda-syntax.json",
+      "hasCss": false,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#242526",
+          "accent": "#19F9D8",
+          "text": "#E6E6E6",
+          "sidebar": "#242526",
+          "surface": "#2A2C2D",
+          "border": "#373B41"
+        }
+      },
+      "previews": {
+        "dark": "previews/panda-syntax-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#242526"
+        },
+        {
+          "label": "sidebar",
+          "color": "#242526"
+        },
+        {
+          "label": "surface",
+          "color": "#2A2C2D"
+        },
+        {
+          "label": "text",
+          "color": "#E6E6E6"
+        },
+        {
+          "label": "accent",
+          "color": "#19F9D8"
+        },
+        {
+          "label": "border",
+          "color": "#373B41"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "drafting-table",
+      "name": "Drafting Table",
+      "author": "Unknown",
+      "description": "An ink-black drafting table. A fine 16px dot grid sits under warm paper-white text. Amber is the only signal colour, with a rare steel-blue accent. Your messages and the selected thread carry crop-mark corners, and the composer glows amber while you type.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/drafting-table",
+      "installUrl": "https://www.t3skins.dev/skins/drafting-table/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/drafting-table/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/drafting-table/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "dark",
+        "minimal",
+        "technical",
+        "amber",
+        "grid",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T08:13:21.181Z",
+      "installCount": 1,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/drafting-table"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/drafting-table/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/drafting-table/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/drafting-table.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#0A0B0D",
+          "accent": "#E3A857",
+          "text": "#ECE8E1",
+          "sidebar": "#050506",
+          "surface": "#0F1114",
+          "border": "#1F2226"
+        },
+        "light": {
+          "canvas": "#EDEBE6",
+          "accent": "#9A6420",
+          "text": "#111417",
+          "sidebar": "#E2DFDA",
+          "surface": "#F4F2EF",
+          "border": "#CFCBC4"
+        }
+      },
+      "previews": {
+        "dark": "previews/drafting-table-dark.html",
+        "light": "previews/drafting-table-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0A0B0D"
+        },
+        {
+          "label": "sidebar",
+          "color": "#050506"
+        },
+        {
+          "label": "surface",
+          "color": "#0F1114"
+        },
+        {
+          "label": "text",
+          "color": "#ECE8E1"
+        },
+        {
+          "label": "accent",
+          "color": "#E3A857"
+        },
+        {
+          "label": "border",
+          "color": "#1F2226"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "visual-studio-2017",
+      "name": "Visual Studio 2017",
+      "author": "Blake Connally (@blakeconnall)",
+      "description": "Remake of the Visual Studio 2017 Design. This includes all search and model selectors.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/visual-studio-2017",
+      "installUrl": "https://www.t3skins.dev/skins/visual-studio-2017/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/visual-studio-2017/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/visual-studio-2017/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "visual-studio",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T03:17:05.853Z",
+      "installCount": 1,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/visual-studio-2017"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/visual-studio-2017/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/visual-studio-2017/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/visual-studio-2017.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#1e1e1e",
+          "accent": "#007acc",
+          "text": "#f1f1f1",
+          "sidebar": "#252526",
+          "surface": "#252526",
+          "border": "#3f3f46"
+        },
+        "light": {
+          "canvas": "#ffffff",
+          "accent": "#007acc",
+          "text": "#1e1e1e",
+          "sidebar": "#f5f5f5",
+          "surface": "#f5f5f5",
+          "border": "#cccedb"
+        }
+      },
+      "previews": {
+        "dark": "previews/visual-studio-2017-dark.html",
+        "light": "previews/visual-studio-2017-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#1e1e1e"
+        },
+        {
+          "label": "sidebar",
+          "color": "#252526"
+        },
+        {
+          "label": "surface",
+          "color": "#252526"
+        },
+        {
+          "label": "text",
+          "color": "#f1f1f1"
+        },
+        {
+          "label": "accent",
+          "color": "#007acc"
+        },
+        {
+          "label": "border",
+          "color": "#3f3f46"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "tritium",
+      "name": "Tritium",
+      "author": "Blake Connally (@blakeconnall)",
+      "description": "Tritium - Focused on a sleek, greenish dark theme with high readability for night time work.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/tritium",
+      "installUrl": "https://www.t3skins.dev/skins/tritium/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/tritium/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/tritium/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "night",
+        "readable",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T03:16:22.039Z",
+      "installCount": 1,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/tritium"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/tritium/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/tritium/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/tritium.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#060D0D",
+          "accent": "#5DFFC4",
+          "text": "#D7EFE8",
+          "sidebar": "#050B0B",
+          "surface": "#0A1515",
+          "border": "#173030"
+        }
+      },
+      "previews": {
+        "dark": "previews/tritium-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#060D0D"
+        },
+        {
+          "label": "sidebar",
+          "color": "#050B0B"
+        },
+        {
+          "label": "surface",
+          "color": "#0A1515"
+        },
+        {
+          "label": "text",
+          "color": "#D7EFE8"
+        },
+        {
+          "label": "accent",
+          "color": "#5DFFC4"
+        },
+        {
+          "label": "border",
+          "color": "#173030"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "gotham-noir",
+      "name": "Gotham Noir",
+      "author": "Fayeque Peerzade",
+      "description": "This is an art deco style batman theme, also the batman moves when you type!",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/gotham-noir",
+      "installUrl": "https://www.t3skins.dev/skins/gotham-noir/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/gotham-noir/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/gotham-noir/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "art-deco",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T14:03:04.203Z",
+      "installCount": 0,
+      "likeCount": 2,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/gotham-noir"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/gotham-noir/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/gotham-noir/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/gotham-noir.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05030a",
+          "accent": "#f3d48c",
+          "text": "#f4f0f8",
+          "sidebar": "#07050c",
+          "surface": "#0e0b14",
+          "border": "#2a2333"
+        }
+      },
+      "previews": {
+        "dark": "previews/gotham-noir-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05030a"
+        },
+        {
+          "label": "sidebar",
+          "color": "#07050c"
+        },
+        {
+          "label": "surface",
+          "color": "#0e0b14"
+        },
+        {
+          "label": "text",
+          "color": "#f4f0f8"
+        },
+        {
+          "label": "accent",
+          "color": "#f3d48c"
+        },
+        {
+          "label": "border",
+          "color": "#2a2333"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "spider",
+      "name": "Spider",
+      "author": "bzhsf",
+      "description": "spidey inspired",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/spider",
+      "installUrl": "https://www.t3skins.dev/skins/spider/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/spider/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/spider/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "ide-design-rules",
+        "contrast",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T10:03:32.134Z",
+      "installCount": 0,
+      "likeCount": 1,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/spider"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/spider/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/spider/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/spider.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#12151d",
+          "accent": "#d63a3a",
+          "text": "#d8dde8",
+          "sidebar": "#0e1118",
+          "surface": "#181c26",
+          "border": "#2a3040"
+        }
+      },
+      "previews": {
+        "dark": "previews/spider-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#12151d"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0e1118"
+        },
+        {
+          "label": "surface",
+          "color": "#181c26"
+        },
+        {
+          "label": "text",
+          "color": "#d8dde8"
+        },
+        {
+          "label": "accent",
+          "color": "#d63a3a"
+        },
+        {
+          "label": "border",
+          "color": "#2a3040"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "stillwater",
+      "name": "Stillwater",
+      "author": "Kayzel",
+      "description": "Gruvbox-warm text on deep charcoal with a calm teal accent, glass cards, and a gradient header and scrollbar. Dark and light modes.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/stillwater",
+      "installUrl": "https://www.t3skins.dev/skins/stillwater/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/stillwater/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/stillwater/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "dark",
+        "light",
+        "gruvbox",
+        "teal",
+        "warm",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T13:23:30.227Z",
+      "installCount": 0,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/stillwater"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/stillwater/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/stillwater/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/stillwater.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#1d2021",
+          "accent": "#5aa8b4",
+          "text": "#ebdbb2",
+          "sidebar": "#1a1c1d",
+          "surface": "#222526",
+          "border": "#3c3836"
+        },
+        "light": {
+          "canvas": "#f4efe6",
+          "accent": "#3d7a88",
+          "text": "#3c3836",
+          "sidebar": "#ebe4d8",
+          "surface": "#ebe4d8",
+          "border": "#d5cbb8"
+        }
+      },
+      "previews": {
+        "dark": "previews/stillwater-dark.html",
+        "light": "previews/stillwater-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#1d2021"
+        },
+        {
+          "label": "sidebar",
+          "color": "#1a1c1d"
+        },
+        {
+          "label": "surface",
+          "color": "#222526"
+        },
+        {
+          "label": "text",
+          "color": "#ebdbb2"
+        },
+        {
+          "label": "accent",
+          "color": "#5aa8b4"
+        },
+        {
+          "label": "border",
+          "color": "#3c3836"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "minimalist-color-edges",
+      "name": "Minimalist color edges",
+      "author": "rgrvlsk",
+      "description": "The sidebar does not need to be a hard-to-read mess. Status icons and labels are removed to leave a single bar on the row's edge. Its shape says what the thread needs: full height waits on you, short has a result to read, dashed is running or held. Hover brings the label back.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/minimalist-color-edges",
+      "installUrl": "https://www.t3skins.dev/skins/minimalist-color-edges/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/minimalist-color-edges/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/minimalist-color-edges/preview?live=1",
+      "appearance": "light",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "sidebar",
+        "status",
+        "accessibility",
+        "minimalist",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T13:07:40.292Z",
+      "installCount": 0,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/minimalist-color-edges"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/minimalist-color-edges/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/minimalist-color-edges/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/minimalist-color-edges.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "oklch(0.982446 0.010114 325.653)",
+          "accent": null,
+          "text": null,
+          "sidebar": null,
+          "surface": null,
+          "border": null
+        },
+        "dark": {
+          "canvas": "oklch(0.22813 0.020366 307.469)",
+          "accent": null,
+          "text": null,
+          "sidebar": null,
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "light": "previews/minimalist-color-edges-light.html",
+        "dark": "previews/minimalist-color-edges-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.982446 0.010114 325.653)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "author": "H\u00fcsam \ud83e\udd51",
+      "description": "Pure black with Geist-style grays, white primary buttons and blue focus accents. A faint 64px grid fades in from the top, and surfaces use crisp 1px borders.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/vercel",
+      "installUrl": "https://www.t3skins.dev/skins/vercel/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/vercel/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/vercel/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T12:01:31.203Z",
+      "installCount": 0,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/vercel"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/vercel/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/vercel/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/vercel.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "oklch(0.000000 0 0)",
+          "accent": "oklch(0.946105 0 0)",
+          "text": "oklch(0.946105 0 0)",
+          "sidebar": "oklch(0.000000 0 0)",
+          "surface": "oklch(0.144788 0 0)",
+          "border": "oklch(0.239292 0 0)"
+        }
+      },
+      "previews": {
+        "dark": "previews/vercel-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.000000 0 0)"
+        },
+        {
+          "label": "sidebar",
+          "color": "oklch(0.000000 0 0)"
+        },
+        {
+          "label": "surface",
+          "color": "oklch(0.144788 0 0)"
+        },
+        {
+          "label": "text",
+          "color": "oklch(0.946105 0 0)"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.946105 0 0)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(0.239292 0 0)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "telemetry",
+      "name": "Telemetry",
+      "author": "xayot.dmg",
+      "description": "Mission-control HUD for T3 Code. Teal signal on near-black, monospace chrome, dotted grid canvas, HUD corner brackets on cards and composer, CRT-style scanlines, // headings, teal active-thread rail. Dark only; full borders/fonts need T3 Code 0.1.10+.",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/telemetry",
+      "installUrl": "https://www.t3skins.dev/skins/telemetry/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/telemetry/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/telemetry/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "hud",
+        "telemetry",
+        "monospace",
+        "teal",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T11:00:15.918Z",
+      "installCount": 0,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/telemetry"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/telemetry/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/telemetry/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/telemetry.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#0a0a0c",
+          "accent": "#5eead4",
+          "text": "#e6e7ea",
+          "sidebar": "#08080a",
+          "surface": "#111215",
+          "border": "#22242a"
+        }
+      },
+      "previews": {
+        "dark": "previews/telemetry-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0a0a0c"
+        },
+        {
+          "label": "sidebar",
+          "color": "#08080a"
+        },
+        {
+          "label": "surface",
+          "color": "#111215"
+        },
+        {
+          "label": "text",
+          "color": "#e6e7ea"
+        },
+        {
+          "label": "accent",
+          "color": "#5eead4"
+        },
+        {
+          "label": "border",
+          "color": "#22242a"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "orng-dither",
+      "name": "Orng Dither",
+      "author": "Khushal",
+      "description": "capy like dither orng theme",
+      "source": "t3skins.dev",
+      "sourceUrl": "https://www.t3skins.dev/skins/orng-dither",
+      "installUrl": "https://www.t3skins.dev/skins/orng-dither/download",
+      "skinJsonUrl": "https://www.t3skins.dev/skins/orng-dither/skin.json",
+      "livePreviewUrl": "https://www.t3skins.dev/skins/orng-dither/preview?live=1",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "orng",
+        "dither",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T07:22:01.091Z",
+      "installCount": 0,
+      "likeCount": 0,
+      "links": [
+        {
+          "label": "t3skins.dev",
+          "url": "https://www.t3skins.dev/skins/orng-dither"
+        },
+        {
+          "label": "Download JSON",
+          "url": "https://www.t3skins.dev/skins/orng-dither/download"
+        },
+        {
+          "label": "Live official preview",
+          "url": "https://www.t3skins.dev/skins/orng-dither/preview?live=1"
+        }
+      ],
+      "jsonFile": "skins/orng-dither.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#0a0a0a",
+          "accent": "#EC5B2B",
+          "text": "#eeeeee",
+          "sidebar": "#0a0a0a",
+          "surface": "#141414",
+          "border": "#1e1e1e"
+        },
+        "light": {
+          "canvas": "#ffffff",
+          "accent": "#EC5B2B",
+          "text": "#1a1a1a",
+          "sidebar": "#FFF7F1",
+          "surface": "#ffffff",
+          "border": "#ebebeb"
+        }
+      },
+      "previews": {
+        "dark": "previews/orng-dither-dark.html",
+        "light": "previews/orng-dither-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0a0a0a"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0a0a0a"
+        },
+        {
+          "label": "surface",
+          "color": "#141414"
+        },
+        {
+          "label": "text",
+          "color": "#eeeeee"
+        },
+        {
+          "label": "accent",
+          "color": "#EC5B2B"
+        },
+        {
+          "label": "border",
+          "color": "#1e1e1e"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-dither",
+      "name": "Dither Live \u2014 Dither",
+      "author": "Marve10s",
+      "description": "A T3 Code theme whose dotted gradient background changes every 20 minutes when the repo's installer is running. This file is the Dither variant.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/01-dither.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-dither.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#6ea0ff",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-dither-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#6ea0ff"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-streaks",
+      "name": "Dither Live \u2014 Streaks",
+      "author": "Marve10s",
+      "description": "Streaks variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/02-streaks.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-streaks.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#5cc8e6",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-streaks-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#5cc8e6"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-horizon",
+      "name": "Dither Live \u2014 Horizon",
+      "author": "Marve10s",
+      "description": "Horizon variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/03-horizon.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-horizon.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#ff8a4c",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-horizon-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#ff8a4c"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-flutes",
+      "name": "Dither Live \u2014 Flutes",
+      "author": "Marve10s",
+      "description": "Flutes variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/04-flutes.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-flutes.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#ffa24a",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-flutes-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#ffa24a"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-arcs",
+      "name": "Dither Live \u2014 Arcs",
+      "author": "Marve10s",
+      "description": "Arcs variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/05-arcs.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-arcs.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#ffb02e",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-arcs-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#ffb02e"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-ember",
+      "name": "Dither Live \u2014 Ember",
+      "author": "Marve10s",
+      "description": "Ember variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series",
+        "warm"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/06-ember.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-ember.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#ff7a3d",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-ember-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#ff7a3d"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-dusk",
+      "name": "Dither Live \u2014 Dusk",
+      "author": "Marve10s",
+      "description": "Dusk variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/07-dusk.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-dusk.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#ff7d8a",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-dusk-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#ff7d8a"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-neon",
+      "name": "Dither Live \u2014 Neon",
+      "author": "Marve10s",
+      "description": "Neon variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series",
+        "neon"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/08-neon.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-neon.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#3fd4d4",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-neon-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#3fd4d4"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-gold",
+      "name": "Dither Live \u2014 Gold",
+      "author": "Marve10s",
+      "description": "Gold variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/09-gold.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-gold.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#f2c14e",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-gold-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#f2c14e"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "dither-live-glint",
+      "name": "Dither Live \u2014 Glint",
+      "author": "Marve10s",
+      "description": "Glint variant of Dither Live, a rotating dotted-gradient series.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Marve10s/t3code-dotted-gradient",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "dither",
+        "gradient",
+        "dark",
+        "series"
+      ],
+      "createdAt": "2026-11-16T14:37:35Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Marve10s/t3code-dotted-gradient"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Marve10s/t3code-dotted-gradient/main/themes/10-glint.json"
+        }
+      ],
+      "jsonFile": "skins/dither-live-glint.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#05070b",
+          "accent": "#e8c27a",
+          "text": "#e8ecf4",
+          "sidebar": "#04060a",
+          "surface": "#0a0d14",
+          "border": "#1a2130"
+        }
+      },
+      "previews": {
+        "dark": "previews/dither-live-glint-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#05070b"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04060a"
+        },
+        {
+          "label": "surface",
+          "color": "#0a0d14"
+        },
+        {
+          "label": "text",
+          "color": "#e8ecf4"
+        },
+        {
+          "label": "accent",
+          "color": "#e8c27a"
+        },
+        {
+          "label": "border",
+          "color": "#1a2130"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "groknight",
+      "name": "GrokNight",
+      "author": "MistanKh",
+      "description": "GrokNight palette for T3 Code (colours only, no custom CSS in the published file).",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/MistanKh/t3code-groknight",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "palette",
+        "grok"
+      ],
+      "createdAt": "2026-11-16T12:40:56Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/MistanKh/t3code-groknight"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/MistanKh/t3code-groknight/main/themes/groknight.json"
+        }
+      ],
+      "jsonFile": "skins/groknight.json",
+      "hasCss": false,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#141414",
+          "accent": "#A9BCCB",
+          "text": "#e1e1e1",
+          "sidebar": "#0c0c0c",
+          "surface": "#141414",
+          "border": "#242424"
+        }
+      },
+      "previews": {
+        "dark": "previews/groknight-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#141414"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0c0c0c"
+        },
+        {
+          "label": "surface",
+          "color": "#141414"
+        },
+        {
+          "label": "text",
+          "color": "#e1e1e1"
+        },
+        {
+          "label": "accent",
+          "color": "#A9BCCB"
+        },
+        {
+          "label": "border",
+          "color": "#242424"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "aurora-azul",
+      "name": "Aurora Azul",
+      "author": "marcosotomac",
+      "description": "Personal T3 Code theme from a four-skin set (Aurora Azul, Medianoche, Nebulosa, V\u00eda L\u00e1ctea).",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/marcosotomac/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "aurora",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T05:00:25Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/marcosotomac/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/marcosotomac/t3code-themes/main/themes/aurora-azul.json"
+        }
+      ],
+      "jsonFile": "skins/aurora-azul.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "oklch(0.1 0.028 255)",
+          "accent": "oklch(0.8 0.115 212)",
+          "text": "oklch(0.96 0.012 255)",
+          "sidebar": "oklch(0.1 0.028 255)",
+          "surface": "oklch(0.155 0.035 255)",
+          "border": "oklch(0.29 0.04 255)"
+        }
+      },
+      "previews": {
+        "dark": "previews/aurora-azul-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.1 0.028 255)"
+        },
+        {
+          "label": "sidebar",
+          "color": "oklch(0.1 0.028 255)"
+        },
+        {
+          "label": "surface",
+          "color": "oklch(0.155 0.035 255)"
+        },
+        {
+          "label": "text",
+          "color": "oklch(0.96 0.012 255)"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.8 0.115 212)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(0.29 0.04 255)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "medianoche",
+      "name": "Medianoche",
+      "author": "marcosotomac",
+      "description": "Personal T3 Code theme from a four-skin set.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/marcosotomac/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T05:00:25Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/marcosotomac/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/marcosotomac/t3code-themes/main/themes/medianoche.json"
+        }
+      ],
+      "jsonFile": "skins/medianoche.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "oklch(0.1 0.028 262)",
+          "accent": "oklch(0.78 0.1 252)",
+          "text": "oklch(0.96 0.012 262)",
+          "sidebar": "oklch(0.1 0.028 262)",
+          "surface": "oklch(0.155 0.035 262)",
+          "border": "oklch(0.29 0.04 262)"
+        }
+      },
+      "previews": {
+        "dark": "previews/medianoche-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.1 0.028 262)"
+        },
+        {
+          "label": "sidebar",
+          "color": "oklch(0.1 0.028 262)"
+        },
+        {
+          "label": "surface",
+          "color": "oklch(0.155 0.035 262)"
+        },
+        {
+          "label": "text",
+          "color": "oklch(0.96 0.012 262)"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.78 0.1 252)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(0.29 0.04 262)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "nebulosa",
+      "name": "Nebulosa",
+      "author": "marcosotomac",
+      "description": "Personal T3 Code theme from a four-skin set.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/marcosotomac/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "space",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T05:00:25Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/marcosotomac/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/marcosotomac/t3code-themes/main/themes/nebulosa.json"
+        }
+      ],
+      "jsonFile": "skins/nebulosa.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "oklch(0.1 0.028 272)",
+          "accent": "oklch(0.73 0.13 284)",
+          "text": "oklch(0.96 0.012 272)",
+          "sidebar": "oklch(0.1 0.028 272)",
+          "surface": "oklch(0.155 0.035 272)",
+          "border": "oklch(0.29 0.04 272)"
+        }
+      },
+      "previews": {
+        "dark": "previews/nebulosa-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.1 0.028 272)"
+        },
+        {
+          "label": "sidebar",
+          "color": "oklch(0.1 0.028 272)"
+        },
+        {
+          "label": "surface",
+          "color": "oklch(0.155 0.035 272)"
+        },
+        {
+          "label": "text",
+          "color": "oklch(0.96 0.012 272)"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.73 0.13 284)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(0.29 0.04 272)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "via-lactea",
+      "name": "V\u00eda L\u00e1ctea",
+      "author": "marcosotomac",
+      "description": "Personal T3 Code theme from a four-skin set.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/marcosotomac/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "space",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-16T05:00:25Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/marcosotomac/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/marcosotomac/t3code-themes/main/themes/via-lactea.json"
+        }
+      ],
+      "jsonFile": "skins/via-lactea.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "oklch(0.1 0.028 268)",
+          "accent": "oklch(0.8 0.085 278)",
+          "text": "oklch(0.96 0.012 268)",
+          "sidebar": "oklch(0.1 0.028 268)",
+          "surface": "oklch(0.155 0.035 268)",
+          "border": "oklch(0.29 0.04 268)"
+        }
+      },
+      "previews": {
+        "dark": "previews/via-lactea-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.1 0.028 268)"
+        },
+        {
+          "label": "sidebar",
+          "color": "oklch(0.1 0.028 268)"
+        },
+        {
+          "label": "surface",
+          "color": "oklch(0.155 0.035 268)"
+        },
+        {
+          "label": "text",
+          "color": "oklch(0.96 0.012 268)"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.8 0.085 278)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(0.29 0.04 268)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "claude-desktop",
+      "name": "Claude Desktop",
+      "author": "KevinXC5",
+      "description": "Claude Desktop-inspired theme: warm charcoal and parchment palettes, Anthropic Serif prose, terracotta accents, and a 6-tier flowing-laser reasoning selector. Dark and light.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/KevinXC5/t3code-claude-desktop-theme",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "dark",
+        "light",
+        "editorial",
+        "serif",
+        "terracotta",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T15:46:43Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/KevinXC5/t3code-claude-desktop-theme"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/KevinXC5/t3code-claude-desktop-theme/main/claude-desktop.json"
+        }
+      ],
+      "jsonFile": "skins/claude-desktop.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#191919",
+          "accent": "#D97757",
+          "text": "#EBEBEB",
+          "sidebar": "#1F1F1F",
+          "surface": "#202020",
+          "border": "#2E2E2E"
+        },
+        "light": {
+          "canvas": "#FCFBF9",
+          "accent": "#C96442",
+          "text": "#141413",
+          "sidebar": "#F7F6F2",
+          "surface": "#FFFFFF",
+          "border": "#EAE8E2"
+        }
+      },
+      "previews": {
+        "dark": "previews/claude-desktop-dark.html",
+        "light": "previews/claude-desktop-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#191919"
+        },
+        {
+          "label": "sidebar",
+          "color": "#1F1F1F"
+        },
+        {
+          "label": "surface",
+          "color": "#202020"
+        },
+        {
+          "label": "text",
+          "color": "#EBEBEB"
+        },
+        {
+          "label": "accent",
+          "color": "#D97757"
+        },
+        {
+          "label": "border",
+          "color": "#2E2E2E"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "tool-flow",
+      "name": "Tool Flow",
+      "author": "haozhanghz / @haozhangzh",
+      "description": "Whack-a-mole for T3 Code: the chat background becomes a pixel-art meadow. A mole pops up for every tool call and is whacked when the call ends. The whole game is theme CSS.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/haozhanghz/tool-flow-t3code",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "animated",
+        "pixel-art",
+        "game",
+        "custom-css",
+        "dark",
+        "light"
+      ],
+      "createdAt": "2026-11-15T20:25:21Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/haozhanghz/tool-flow-t3code"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/haozhanghz/tool-flow-t3code/main/tool-flow.json"
+        },
+        {
+          "label": "X post",
+          "url": "https://x.com/haozhangzh/status/2122067508777881665"
+        }
+      ],
+      "jsonFile": "skins/tool-flow.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#0a0f24",
+          "accent": "#f7d154",
+          "text": null,
+          "sidebar": null,
+          "surface": null,
+          "border": null
+        },
+        "light": {
+          "canvas": "#e3f5ff",
+          "accent": "#2f9a4c",
+          "text": "#0a1a0d",
+          "sidebar": "#cfecd2",
+          "surface": "#def3e1",
+          "border": "#b4d5b8"
+        }
+      },
+      "previews": {
+        "dark": "previews/tool-flow-dark.html",
+        "light": "previews/tool-flow-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0a0f24"
+        },
+        {
+          "label": "accent",
+          "color": "#f7d154"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "stargazer",
+      "name": "Stargazer",
+      "author": "wellbrained",
+      "description": "A night-sky theme for T3 Code: deep blue gradient, pixel stars and star signs that draw themselves beside your chat.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/wellbrained/t3code-stargazer",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "night-sky",
+        "pixel-art",
+        "animated",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-14T17:16:13Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/wellbrained/t3code-stargazer"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/wellbrained/t3code-stargazer/main/stargazer.json"
+        }
+      ],
+      "jsonFile": "skins/stargazer.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#070c14",
+          "accent": "#7fb6e3",
+          "text": "#e2eaf3",
+          "sidebar": "#0b121c",
+          "surface": "#0b131e",
+          "border": "#1b2a3b"
+        }
+      },
+      "previews": {
+        "dark": "previews/stargazer-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#070c14"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0b121c"
+        },
+        {
+          "label": "surface",
+          "color": "#0b131e"
+        },
+        {
+          "label": "text",
+          "color": "#e2eaf3"
+        },
+        {
+          "label": "accent",
+          "color": "#7fb6e3"
+        },
+        {
+          "label": "border",
+          "color": "#1b2a3b"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "deep-field-beard",
+      "name": "Deep Field",
+      "author": "@beardwhocodes",
+      "description": "Keeps the default T3 Code palette and adds an animated flight through a solar system behind the open thread. Warp streaks show while the thread works.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/beardwhocodes/t3-themes",
+      "appearance": "light",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "space",
+        "custom-css",
+        "light",
+        "dark"
+      ],
+      "createdAt": "2026-11-16T01:01:37Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/beardwhocodes/t3-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/beardwhocodes/t3-themes/main/themes/deep-field/deep-field.json"
+        },
+        {
+          "label": "Repo README",
+          "url": "https://github.com/beardwhocodes/t3-themes"
+        }
+      ],
+      "jsonFile": "skins/deep-field-beard.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "light": {
+          "canvas": "#fcfcfc",
+          "accent": "#1b4ed8",
+          "text": "#27272a",
+          "sidebar": "#fafafa",
+          "surface": "#ffffff",
+          "border": "#e4e4e7"
+        },
+        "dark": {
+          "canvas": "#0a0a0a",
+          "accent": "#346bf1",
+          "text": "#f5f5f5",
+          "sidebar": "#000000",
+          "surface": "#111111",
+          "border": "#191919"
+        }
+      },
+      "previews": {
+        "light": "previews/deep-field-beard-light.html",
+        "dark": "previews/deep-field-beard-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#fcfcfc"
+        },
+        {
+          "label": "sidebar",
+          "color": "#fafafa"
+        },
+        {
+          "label": "surface",
+          "color": "#ffffff"
+        },
+        {
+          "label": "text",
+          "color": "#27272a"
+        },
+        {
+          "label": "accent",
+          "color": "#1b4ed8"
+        },
+        {
+          "label": "border",
+          "color": "#e4e4e7"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "deep-field-stiven",
+      "name": "Deep Field (pixel-art)",
+      "author": "StivenKN",
+      "description": "An animated pixel-art space theme for T3 Code, published as a standalone repo the same weekend.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/StivenKN/t3code-deep-field",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "space",
+        "pixel-art",
+        "dark",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-14T17:01:12Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/StivenKN/t3code-deep-field"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/StivenKN/t3code-deep-field/main/deep-field.json"
+        }
+      ],
+      "jsonFile": "skins/deep-field-stiven.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "#000000",
+          "accent": "#8ab4ff",
+          "text": "#ffffff",
+          "sidebar": "#070a17",
+          "surface": null,
+          "border": null
+        }
+      },
+      "previews": {
+        "dark": "previews/deep-field-stiven-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#000000"
+        },
+        {
+          "label": "sidebar",
+          "color": "#070a17"
+        },
+        {
+          "label": "text",
+          "color": "#ffffff"
+        },
+        {
+          "label": "accent",
+          "color": "#8ab4ff"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "yorha",
+      "name": "YoRHa",
+      "author": "mths-mcfs",
+      "description": "A NieR: Automata inspired theme for T3 Code, with light and dark variants.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/mths-mcfs/t3code-yorha-theme",
+      "appearance": "light",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "light",
+        "dark",
+        "nier",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-14T16:48:18Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/mths-mcfs/t3code-yorha-theme"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/mths-mcfs/t3code-yorha-theme/main/yorha.theme.json"
+        }
+      ],
+      "jsonFile": "skins/yorha.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "light": {
+          "canvas": "#c8c3ab",
+          "accent": "#4e4b42",
+          "text": "#454138",
+          "sidebar": "#bdb8a0",
+          "surface": "#dad4bb",
+          "border": "#a09b86"
+        },
+        "dark": {
+          "canvas": "#38352d",
+          "accent": "#dad4bb",
+          "text": "#dad4bb",
+          "sidebar": "#302e27",
+          "surface": "#403d34",
+          "border": "#5f5b4e"
+        }
+      },
+      "previews": {
+        "light": "previews/yorha-light.html",
+        "dark": "previews/yorha-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#c8c3ab"
+        },
+        {
+          "label": "sidebar",
+          "color": "#bdb8a0"
+        },
+        {
+          "label": "surface",
+          "color": "#dad4bb"
+        },
+        {
+          "label": "text",
+          "color": "#454138"
+        },
+        {
+          "label": "accent",
+          "color": "#4e4b42"
+        },
+        {
+          "label": "border",
+          "color": "#a09b86"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "catppuccin-space-night",
+      "name": "Catppuccin Space Night",
+      "author": "PeytonWDYM",
+      "description": "Catppuccin space night theme for T3 Code: navy sky, drifting pastel stars, Latte in light mode.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/PeytonWDYM/t3code-space-night",
+      "appearance": "light",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "catppuccin",
+        "space",
+        "light",
+        "dark",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-14T14:35:05Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/PeytonWDYM/t3code-space-night"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/PeytonWDYM/t3code-space-night/main/catppuccin-space-night.json"
+        }
+      ],
+      "jsonFile": "skins/catppuccin-space-night.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "light": {
+          "canvas": "oklch(0.957761 0.005767 264.532)",
+          "accent": "oklch(0.55467 0.250346 297.016)",
+          "text": "oklch(0.43547 0.043008 279.325)",
+          "sidebar": "oklch(0.933459 0.008714 264.521)",
+          "surface": "oklch(0.933459 0.008714 264.521)",
+          "border": "oklch(0.758394 0.020453 273.154)"
+        },
+        "dark": {
+          "canvas": "#0b0c1a",
+          "accent": "#cba6f7",
+          "text": "#cdd6f4",
+          "sidebar": "#0a0b16",
+          "surface": "#181825",
+          "border": "#2a2b3f"
+        }
+      },
+      "previews": {
+        "light": "previews/catppuccin-space-night-light.html",
+        "dark": "previews/catppuccin-space-night-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.957761 0.005767 264.532)"
+        },
+        {
+          "label": "sidebar",
+          "color": "oklch(0.933459 0.008714 264.521)"
+        },
+        {
+          "label": "surface",
+          "color": "oklch(0.933459 0.008714 264.521)"
+        },
+        {
+          "label": "text",
+          "color": "oklch(0.43547 0.043008 279.325)"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.55467 0.250346 297.016)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(0.758394 0.020453 273.154)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "habamax",
+      "name": "Habamax",
+      "author": "mark-vella",
+      "description": "Habamax (dark) and Xamabah (light) for T3 Code, based on the Vim colorschemes by Maxim Kim.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/mark-vella/t3code-habamax",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "dark",
+        "light",
+        "vim",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-14T11:45:07Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/mark-vella/t3code-habamax"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/mark-vella/t3code-habamax/main/habamax.json"
+        }
+      ],
+      "jsonFile": "skins/habamax.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#1c1c1c",
+          "accent": "#87afd7",
+          "text": "#dadada",
+          "sidebar": "#262626",
+          "surface": "#262626",
+          "border": "#4e4e4e"
+        },
+        "light": {
+          "canvas": "#d7d7d7",
+          "accent": "#005faf",
+          "text": "#000000",
+          "sidebar": "#cccccc",
+          "surface": "#e4e4e4",
+          "border": "#9e9e9e"
+        }
+      },
+      "previews": {
+        "dark": "previews/habamax-dark.html",
+        "light": "previews/habamax-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#1c1c1c"
+        },
+        {
+          "label": "sidebar",
+          "color": "#262626"
+        },
+        {
+          "label": "surface",
+          "color": "#262626"
+        },
+        {
+          "label": "text",
+          "color": "#dadada"
+        },
+        {
+          "label": "accent",
+          "color": "#87afd7"
+        },
+        {
+          "label": "border",
+          "color": "#4e4e4e"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "pixel-quest-js",
+      "name": "Pixel Quest",
+      "author": "Jonathon-Sherrouse",
+      "description": "An animated JRPG pixel-art night theme for T3 Code. (17 GitHub stars as of 16 Nov 2026.)",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Jonathon-Sherrouse/t3code-pixel-quest",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "pixel-art",
+        "jrpg",
+        "dark",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-14T05:23:09Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Jonathon-Sherrouse/t3code-pixel-quest"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Jonathon-Sherrouse/t3code-pixel-quest/main/pixel-quest.json"
+        }
+      ],
+      "jsonFile": "skins/pixel-quest-js.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "dark": {
+          "canvas": "oklch(0.132576 0.021554 300.616)",
+          "accent": "oklch(0.724928 0.165434 298.216)",
+          "text": "#f6f1ff",
+          "sidebar": "#100b19",
+          "surface": "#161021",
+          "border": "oklch(0.292576 0.057902 298.216)"
+        }
+      },
+      "previews": {
+        "dark": "previews/pixel-quest-js-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "oklch(0.132576 0.021554 300.616)"
+        },
+        {
+          "label": "sidebar",
+          "color": "#100b19"
+        },
+        {
+          "label": "surface",
+          "color": "#161021"
+        },
+        {
+          "label": "text",
+          "color": "#f6f1ff"
+        },
+        {
+          "label": "accent",
+          "color": "oklch(0.724928 0.165434 298.216)"
+        },
+        {
+          "label": "border",
+          "color": "oklch(0.292576 0.057902 298.216)"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "bookshelf-calm",
+      "name": "Bookshelf Calm",
+      "author": "vatana7",
+      "description": "A low-glare, book-style light theme for T3 Code. Palette only (no custom CSS).",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/vatana7/t3code-bookshelf-themes",
+      "appearance": "light",
+      "modes": [
+        "light"
+      ],
+      "tags": [
+        "light",
+        "book",
+        "calm",
+        "palette"
+      ],
+      "createdAt": "2026-11-10T05:38:05Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/vatana7/t3code-bookshelf-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/vatana7/t3code-bookshelf-themes/main/themes/Bookshelf-Calm.json"
+        }
+      ],
+      "jsonFile": "skins/bookshelf-calm.json",
+      "hasCss": false,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#f1e5cf",
+          "accent": "#93542a",
+          "text": "#3d3022",
+          "sidebar": "#e7d8bc",
+          "surface": "#f7eedd",
+          "border": "#d9c7a6"
+        }
+      },
+      "previews": {
+        "light": "previews/bookshelf-calm-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#f1e5cf"
+        },
+        {
+          "label": "sidebar",
+          "color": "#e7d8bc"
+        },
+        {
+          "label": "surface",
+          "color": "#f7eedd"
+        },
+        {
+          "label": "text",
+          "color": "#3d3022"
+        },
+        {
+          "label": "accent",
+          "color": "#93542a"
+        },
+        {
+          "label": "border",
+          "color": "#d9c7a6"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "bookshelf-paper",
+      "name": "Bookshelf Paper",
+      "author": "vatana7",
+      "description": "A low-glare, book-style light theme for T3 Code. Palette only (no custom CSS).",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/vatana7/t3code-bookshelf-themes",
+      "appearance": "light",
+      "modes": [
+        "light"
+      ],
+      "tags": [
+        "light",
+        "book",
+        "paper",
+        "palette"
+      ],
+      "createdAt": "2026-11-10T05:38:05Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/vatana7/t3code-bookshelf-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/vatana7/t3code-bookshelf-themes/main/themes/Bookshelf-Paper.json"
+        }
+      ],
+      "jsonFile": "skins/bookshelf-paper.json",
+      "hasCss": false,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#f8f4ea",
+          "accent": "#3e5f78",
+          "text": "#34312c",
+          "sidebar": "#efe9dc",
+          "surface": "#fcf9f2",
+          "border": "#e1d9c8"
+        }
+      },
+      "previews": {
+        "light": "previews/bookshelf-paper-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#f8f4ea"
+        },
+        {
+          "label": "sidebar",
+          "color": "#efe9dc"
+        },
+        {
+          "label": "surface",
+          "color": "#fcf9f2"
+        },
+        {
+          "label": "text",
+          "color": "#34312c"
+        },
+        {
+          "label": "accent",
+          "color": "#3e5f78"
+        },
+        {
+          "label": "border",
+          "color": "#e1d9c8"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "pixel-koi-pond-light",
+      "name": "Pixel-Koi Pond Light",
+      "author": "kanigaraa",
+      "description": "Light-mode companion to Pixel-Koi Pond. The dark version is also on t3skins.dev. Koi swim behind the chat; a frog follows the cursor.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/kanigaraa/t3code-pixelkoi",
+      "appearance": "light",
+      "modes": [
+        "light"
+      ],
+      "tags": [
+        "pixel-art",
+        "animated",
+        "koi",
+        "light",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T13:42:18Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/kanigaraa/t3code-pixelkoi"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/kanigaraa/t3code-pixelkoi/main/themes/pixel-koi-pond-light.json"
+        },
+        {
+          "label": "Dark on t3skins",
+          "url": "https://www.t3skins.dev/skins/pixel-koi-pond"
+        }
+      ],
+      "jsonFile": "skins/pixel-koi-pond-light.json",
+      "hasCss": true,
+      "animated": true,
+      "palettes": {
+        "light": {
+          "canvas": "#eef4ef",
+          "accent": "#a94f26",
+          "text": "#263a3b",
+          "sidebar": "#e2ede6",
+          "surface": "#f2f6f2",
+          "border": "#c8d8d1"
+        }
+      },
+      "previews": {
+        "light": "previews/pixel-koi-pond-light-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#eef4ef"
+        },
+        {
+          "label": "sidebar",
+          "color": "#e2ede6"
+        },
+        {
+          "label": "surface",
+          "color": "#f2f6f2"
+        },
+        {
+          "label": "text",
+          "color": "#263a3b"
+        },
+        {
+          "label": "accent",
+          "color": "#a94f26"
+        },
+        {
+          "label": "border",
+          "color": "#c8d8d1"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "orbit-dave93",
+      "name": "Orbit",
+      "author": "Dave93 / @YulDavr",
+      "description": "Deep space with a star field and a rocket-orange accent in dark; a mission-control flight document with orbit rings in light. Part of a five-theme set posted on X.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Dave93/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "space",
+        "dark",
+        "light",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:12:22Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Dave93/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Dave93/t3code-themes/main/dist/orbit.json"
+        },
+        {
+          "label": "X post",
+          "url": "https://x.com/YulDavr/status/2122050167348350986"
+        }
+      ],
+      "jsonFile": "skins/orbit-dave93.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#070b14",
+          "accent": "#ff8a3d",
+          "text": "#e8edf5",
+          "sidebar": "#04070d",
+          "surface": "#0d1320",
+          "border": "#1c2538"
+        },
+        "light": {
+          "canvas": "#f5f5f2",
+          "accent": "#c2410c",
+          "text": "#11151c",
+          "sidebar": "#ecece7",
+          "surface": "#ffffff",
+          "border": "#dcdcd6"
+        }
+      },
+      "previews": {
+        "dark": "previews/orbit-dave93-dark.html",
+        "light": "previews/orbit-dave93-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#070b14"
+        },
+        {
+          "label": "sidebar",
+          "color": "#04070d"
+        },
+        {
+          "label": "surface",
+          "color": "#0d1320"
+        },
+        {
+          "label": "text",
+          "color": "#e8edf5"
+        },
+        {
+          "label": "accent",
+          "color": "#ff8a3d"
+        },
+        {
+          "label": "border",
+          "color": "#1c2538"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "canopy-dave93",
+      "name": "Canopy",
+      "author": "Dave93 / @YulDavr",
+      "description": "Morning meadow with patches of sun in light; night forest with fireflies and a lime accent in dark.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Dave93/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "nature",
+        "dark",
+        "light",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:12:22Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Dave93/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Dave93/t3code-themes/main/dist/canopy.json"
+        }
+      ],
+      "jsonFile": "skins/canopy-dave93.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#0f1f10",
+          "accent": "#c6f19d",
+          "text": "#eef5e6",
+          "sidebar": "#0b170c",
+          "surface": "#162a17",
+          "border": "#24402a"
+        },
+        "light": {
+          "canvas": "#f3f6ec",
+          "accent": "#3d6b1f",
+          "text": "#1d2b16",
+          "sidebar": "#e9efe0",
+          "surface": "#fdfdf8",
+          "border": "#d5dfc8"
+        }
+      },
+      "previews": {
+        "dark": "previews/canopy-dave93-dark.html",
+        "light": "previews/canopy-dave93-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0f1f10"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0b170c"
+        },
+        {
+          "label": "surface",
+          "color": "#162a17"
+        },
+        {
+          "label": "text",
+          "color": "#eef5e6"
+        },
+        {
+          "label": "accent",
+          "color": "#c6f19d"
+        },
+        {
+          "label": "border",
+          "color": "#24402a"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "blueprint-dave93",
+      "name": "Blueprint (Dave93)",
+      "author": "Dave93 / @YulDavr",
+      "description": "Drafting vellum and blue ink in light; cyanotype blue, chalk text, pencil-yellow accent and a grid in dark. Distinct from the t3skins.dev skin also named Blueprint.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Dave93/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "technical",
+        "grid",
+        "dark",
+        "light",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:12:22Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Dave93/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Dave93/t3code-themes/main/dist/blueprint.json"
+        }
+      ],
+      "jsonFile": "skins/blueprint-dave93.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#0f2b48",
+          "accent": "#ffd25a",
+          "text": "#e9f1f8",
+          "sidebar": "#0c2440",
+          "surface": "#133352",
+          "border": "#2a4e74"
+        },
+        "light": {
+          "canvas": "#f3f0e6",
+          "accent": "#1d4e89",
+          "text": "#14304f",
+          "sidebar": "#ebe7da",
+          "surface": "#fbf9f3",
+          "border": "#d6d0bf"
+        }
+      },
+      "previews": {
+        "dark": "previews/blueprint-dave93-dark.html",
+        "light": "previews/blueprint-dave93-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#0f2b48"
+        },
+        {
+          "label": "sidebar",
+          "color": "#0c2440"
+        },
+        {
+          "label": "surface",
+          "color": "#133352"
+        },
+        {
+          "label": "text",
+          "color": "#e9f1f8"
+        },
+        {
+          "label": "accent",
+          "color": "#ffd25a"
+        },
+        {
+          "label": "border",
+          "color": "#2a4e74"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "sage-paper",
+      "name": "Sage Paper",
+      "author": "Dave93 / @YulDavr",
+      "description": "Warm paper with a deep sage accent in light; green-black, bone text and a pale sage accent in dark.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Dave93/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "paper",
+        "sage",
+        "dark",
+        "light",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:12:22Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Dave93/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Dave93/t3code-themes/main/dist/sage-paper.json"
+        }
+      ],
+      "jsonFile": "skins/sage-paper.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#f8f7f3",
+          "accent": "#2f6f57",
+          "text": "#1f2421",
+          "sidebar": "#f0efe9",
+          "surface": "#ffffff",
+          "border": "#e4e2da"
+        },
+        "dark": {
+          "canvas": "#161c1a",
+          "accent": "#9fc7b8",
+          "text": "#e3e2da",
+          "sidebar": "#121715",
+          "surface": "#1c2321",
+          "border": "#2a3330"
+        }
+      },
+      "previews": {
+        "light": "previews/sage-paper-light.html",
+        "dark": "previews/sage-paper-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#f8f7f3"
+        },
+        {
+          "label": "sidebar",
+          "color": "#f0efe9"
+        },
+        {
+          "label": "surface",
+          "color": "#ffffff"
+        },
+        {
+          "label": "text",
+          "color": "#1f2421"
+        },
+        {
+          "label": "accent",
+          "color": "#2f6f57"
+        },
+        {
+          "label": "border",
+          "color": "#e4e2da"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "pixel-quest-dave93",
+      "name": "Pixel Quest (Dave93)",
+      "author": "Dave93 / @YulDavr",
+      "description": "8-bit overworld with gold dialog boxes in light; a night dungeon with navy dialog boxes and a gold accent in dark. Built on the Sweetie 16 palette by GrafxKid. Distinct from Jonathon-Sherrouse's animated JRPG Pixel Quest.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/Dave93/t3code-themes",
+      "appearance": "dark",
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "tags": [
+        "pixel-art",
+        "dark",
+        "light",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T19:12:22Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Dave93/t3code-themes"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/Dave93/t3code-themes/main/dist/pixel-quest.json"
+        }
+      ],
+      "jsonFile": "skins/pixel-quest-dave93.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "dark": {
+          "canvas": "#1a1c2c",
+          "accent": "#ffcd75",
+          "text": "#f4f4f4",
+          "sidebar": "#141522",
+          "surface": "#22263a",
+          "border": "#333c57"
+        },
+        "light": {
+          "canvas": "#eef2f5",
+          "accent": "#b13e53",
+          "text": "#1a1c2c",
+          "sidebar": "#e1e9ef",
+          "surface": "#ffffff",
+          "border": "#c5d2dd"
+        }
+      },
+      "previews": {
+        "dark": "previews/pixel-quest-dave93-dark.html",
+        "light": "previews/pixel-quest-dave93-light.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#1a1c2c"
+        },
+        {
+          "label": "sidebar",
+          "color": "#141522"
+        },
+        {
+          "label": "surface",
+          "color": "#22263a"
+        },
+        {
+          "label": "text",
+          "color": "#f4f4f4"
+        },
+        {
+          "label": "accent",
+          "color": "#ffcd75"
+        },
+        {
+          "label": "border",
+          "color": "#333c57"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "verdigris",
+      "name": "Verdigris",
+      "author": "mr-karan",
+      "description": "A calm colour theme in two flavours, Limestone and Slate: weathered stone and patinated copper. The T3 Code port lives at ports/t3code/verdigris.json and includes light plus a dark variant.",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/mr-karan/verdigris",
+      "appearance": "light",
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "tags": [
+        "light",
+        "dark",
+        "copper",
+        "calm",
+        "custom-css"
+      ],
+      "createdAt": "2026-11-15T11:18:11Z",
+      "installCount": null,
+      "likeCount": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/mr-karan/verdigris"
+        },
+        {
+          "label": "Theme JSON",
+          "url": "https://raw.githubusercontent.com/mr-karan/verdigris/main/ports/t3code/verdigris.json"
+        }
+      ],
+      "jsonFile": "skins/verdigris.json",
+      "hasCss": true,
+      "animated": false,
+      "palettes": {
+        "light": {
+          "canvas": "#f3f3ee",
+          "accent": "#2c6e64",
+          "text": "#1e2523",
+          "sidebar": "#ebece6",
+          "surface": "#f7f7f3",
+          "border": "#dddfd7"
+        },
+        "dark": {
+          "canvas": "#151a19",
+          "accent": "#82c3b4",
+          "text": "#dde3df",
+          "sidebar": "#111615",
+          "surface": "#191f1e",
+          "border": "#29312f"
+        }
+      },
+      "previews": {
+        "light": "previews/verdigris-light.html",
+        "dark": "previews/verdigris-dark.html"
+      },
+      "swatches": [
+        {
+          "label": "canvas",
+          "color": "#f3f3ee"
+        },
+        {
+          "label": "sidebar",
+          "color": "#ebece6"
+        },
+        {
+          "label": "surface",
+          "color": "#f7f7f3"
+        },
+        {
+          "label": "text",
+          "color": "#1e2523"
+        },
+        {
+          "label": "accent",
+          "color": "#2c6e64"
+        },
+        {
+          "label": "border",
+          "color": "#dddfd7"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "x-market-ticker",
+      "name": "Market ticker (untitled)",
+      "author": "@nitesh_btc",
+      "description": "An X-shared T3 Code theme that shows live prices for Nasdaq, S&P 500 and Bitcoin and tells the author whether to keep working or retire. No public JSON file was found; preview is from the author's video.",
+      "source": "X",
+      "sourceUrl": "https://x.com/nitesh_btc/status/2122025707895152971",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "animated",
+        "hud",
+        "stocks",
+        "dark",
+        "preview-only"
+      ],
+      "createdAt": "2026-11-15T17:55:28Z",
+      "installCount": null,
+      "likeCount": 10,
+      "hasCss": false,
+      "animated": true,
+      "links": [
+        {
+          "label": "X post (video)",
+          "url": "https://x.com/nitesh_btc/status/2122025707895152971"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/x-market-ticker-nitesh_btc-market.jpg",
+          "alt": "Market ticker theme screenshot from X"
+        }
+      ],
+      "jsonFile": null,
+      "palettes": {},
+      "previews": {},
+      "swatches": []
+    },
+    {
+      "id": "x-libes66-gradient",
+      "name": "Flipped usage + gradient (untitled)",
+      "author": "@Libes66",
+      "description": "Borrowed a gradient idea from @itssotsot and flipped the usage-limits display from 'left' to 'used'. The post says a theme link is below, but only screenshots were attached; no public JSON was found.",
+      "source": "X",
+      "sourceUrl": "https://x.com/Libes66/status/2121945694797697451",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "gradient",
+        "usage",
+        "dark",
+        "preview-only"
+      ],
+      "createdAt": "2026-11-15T12:37:32Z",
+      "installCount": null,
+      "likeCount": 6,
+      "hasCss": false,
+      "animated": false,
+      "links": [
+        {
+          "label": "X post",
+          "url": "https://x.com/Libes66/status/2121945694797697451"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/x-libes66-gradient-libes66-1.jpg",
+          "alt": "Libes66 theme screenshot 1"
+        },
+        {
+          "src": "assets/x-libes66-gradient-libes66-2.jpg",
+          "alt": "Libes66 theme screenshot 2"
+        }
+      ],
+      "jsonFile": null,
+      "palettes": {},
+      "previews": {},
+      "swatches": []
+    },
+    {
+      "id": "x-zwb44-wip",
+      "name": "Pixel WIP (untitled)",
+      "author": "@zwb44",
+      "description": "A work-in-progress pixel T3 Code theme shared as a screenshot. The author noted that X compression makes the pixel work look odd. No public JSON was found.",
+      "source": "X",
+      "sourceUrl": "https://x.com/zwb44/status/2122045867876135169",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "pixel-art",
+        "wip",
+        "dark",
+        "preview-only"
+      ],
+      "createdAt": "2026-11-15T19:15:35Z",
+      "installCount": null,
+      "likeCount": 26,
+      "hasCss": false,
+      "animated": false,
+      "links": [
+        {
+          "label": "X post",
+          "url": "https://x.com/zwb44/status/2122045867876135169"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/x-zwb44-wip-zwb44-wip.png",
+          "alt": "zwb44 work-in-progress pixel theme"
+        }
+      ],
+      "jsonFile": null,
+      "palettes": {},
+      "previews": {},
+      "swatches": []
+    },
+    {
+      "id": "x-yachty-skins",
+      "name": "Quoted skins preview (untitled)",
+      "author": "@yachtyyachty",
+      "description": "Screenshots posted while quoting Theo's customisation announcement: 'The upcoming T3 code skins features is FIRE.' No theme file was attached, so this may be a skin the author was already running rather than a new shareable file.",
+      "source": "X",
+      "sourceUrl": "https://x.com/yachtyyachty/status/2122242925459550553",
+      "appearance": "dark",
+      "modes": [
+        "dark"
+      ],
+      "tags": [
+        "dark",
+        "preview-only"
+      ],
+      "createdAt": "2026-11-16T08:18:37Z",
+      "installCount": null,
+      "likeCount": 0,
+      "hasCss": false,
+      "animated": false,
+      "links": [
+        {
+          "label": "X post",
+          "url": "https://x.com/yachtyyachty/status/2122242925459550553"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/x-yachty-skins-yachty-1.jpg",
+          "alt": "yachtyyachty T3 Code screenshot 1"
+        },
+        {
+          "src": "assets/x-yachty-skins-yachty-2.jpg",
+          "alt": "yachtyyachty T3 Code screenshot 2"
+        }
+      ],
+      "jsonFile": null,
+      "palettes": {},
+      "previews": {},
+      "swatches": []
+    }
+  ]
+}
