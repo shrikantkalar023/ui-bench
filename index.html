@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ui-bench: frontend redesigns by frontier models</title>
+<meta name="description" content="Compare how frontier LLMs redesign the same page, with and without Anthropic's frontend design skill.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="./" aria-label="ui-bench home">ui-bench</a>
+
+  <label class="test">
+    <span class="sr-only">Test case</span>
+    <select id="test"></select>
+  </label>
+
+  <nav class="models" aria-label="Model">
+    <div class="models-track" id="models" role="radiogroup" aria-label="Model"></div>
+  </nav>
+
+  <div class="controls">
+    <button class="skill" id="skill" type="button" role="switch" aria-checked="true">
+      <span class="skill-track" aria-hidden="true"><span class="skill-knob"></span></span>
+      <span class="skill-text"><span class="wide">Design skill</span><span class="narrow">Skill</span> <b id="skill-state">on</b></span>
+    </button>
+
+    <div class="seg" role="group" aria-label="Layout">
+      <button type="button" id="compare" aria-pressed="false" title="Compare skill off and on (C)">Compare</button>
+      <button type="button" id="mobile" aria-pressed="false" title="Mobile viewport (M)">Mobile</button>
+    </div>
+
+    <button type="button" class="plain-btn" id="brief-open">Brief</button>
+    <a class="plain-btn" id="newtab" target="_blank" rel="noopener">Open page</a>
+  </div>
+</header>
+
+<main class="stage" id="stage" data-vp="full"></main>
+
+<dialog class="brief" id="brief" aria-labelledby="brief-title">
+  <form method="dialog" class="brief-head">
+    <h2 id="brief-title">The brief</h2>
+    <button class="plain-btn" value="close">Close</button>
+  </form>
+  <div class="brief-body">
+    <p id="brief-summary"></p>
+    <p>Every model got the same prompt below and its own copy of the original folder. Runs with the design skill were also told to read and follow <a href="skills/frontend-design/SKILL.md" target="_blank" rel="noopener">Anthropic's frontend-design skill</a> (Apache 2.0). Runs without it were told not to load any design skill.</p>
+    <dl class="runs" id="brief-models"></dl>
+    <pre id="brief-prompt">Loading the prompt…</pre>
+    <p class="hint">Shortcuts: 0 to 5 pick a model, S switches the skill, C compares, M toggles mobile.</p>
+  </div>
+</dialog>
+
+<script src="bench.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
